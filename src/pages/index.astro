@@ -1,46 +1,113 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
-import PostPreview from '../components/PostPreview.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
 import siteConfig from '../data/site-config';
-import { sortItemsByDateDesc } from '../utils/data-utils';
-
-const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
-const featuredPosts = posts.filter(({ data }) => data.isFeatured);
-
-const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
-    <Hero />
-    {
-        featuredProjects?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Projects</h2>
-                {featuredProjects.map((project) => (
-                    <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/projects">View All Projects</Button>
-                </div>
-            </div>
-        )
-    }
-    {
-        featuredPosts?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Writing</h2>
-                {featuredPosts.map((post) => (
-                    <PostPreview post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">View All Posts</Button>
-                </div>
-            </div>
-        )
-    }
+  <Hero />
+
+  <section class="mt-16">
+    <h2 class="text-xl font-bold mb-4">О себе</h2>
+    <p class="mb-2">
+      Я — Иван, твой навигатор по недвижимости ОАЭ.<br/>
+      Работаю не по шаблону, а по смыслу: для меня важно, чтобы пространство совпадало с твоими ценностями и целями.
+    </p>
+    <p class="mb-2 italic text-gray-700">
+      Иногда самый правильный выбор — сделать паузу.<br/>
+      Ты здесь для себя, а не для риэлтора.
+    </p>
+    <p>
+      ИИ помогает фильтровать шум и подбирать варианты, которые действительно подходят под твой сценарий.
+    </p>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-xl font-bold mb-4">Проекты по Эмиратам</h2>
+    <ul class="list-disc pl-5 mb-2">
+      <li>
+        <span class="font-semibold">Дубай:</span>
+        <ul class="list-disc pl-5">
+          <li>Пальма Джумейра: Виллы, Пентхаусы, Апартаменты</li>
+          <li>Dubai Islands: Апартаменты у моря</li>
+          <li>Downtown: Элитные квартиры</li>
+        </ul>
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Абу-Даби:</span>
+        <ul class="list-disc pl-5">
+          <li>Саадият Айленд: Виллы, Резиденции</li>
+          <li>Яс-Айленд: Семейные дома</li>
+        </ul>
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Рас-эль-Хайма:</span>
+        <ul class="list-disc pl-5">
+          <li>Al Marjan: Виллы, Инвестиционные квартиры</li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все проекты →</a>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-xl font-bold mb-4">Кейсы</h2>
+    <ul class="list-disc pl-5 mb-4">
+      <li>
+        <span class="font-semibold">Пентхаус на Пальме</span> — найден не по цене, а по ритму жизни.<br/>
+        <span class="text-gray-700">AI помог увидеть то, что совпадает с личным сценарием клиента.</span>
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Вилла в Дубае</span> — честно рекомендовал отказаться.<br/>
+        <span class="text-gray-700">Инсайт: объект не совпал по ощущениям и атмосфере — поиск продолжаем.</span>
+      </li>
+    </ul>
+    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все кейсы →</a>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-xl font-bold mb-4">Инновации и ИИ</h2>
+    <p class="mb-2">
+      ИИ помогает фильтровать информационный шум, находить совпадения по стилю жизни и советовать честно, когда лучше подождать или отказаться.
+    </p>
+    <a href="#" class="!text-black !underline hover:!text-black font-normal">Подробнее о подходе →</a>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-xl font-bold mb-4">Блог</h2>
+    <ul class="list-disc pl-5 mb-4">
+      <li>
+        <span class="font-semibold">Как ИИ помог избежать импульсивной покупки</span><br/>
+        История выбора, где главное — не цифры, а твой ритм.<br/>
+        Чем эта история полезна тебе?
+        <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Пульс Дубая: почему ощущения важнее локации</span><br/>
+        Разбираю рынок для тех, кто выбирает для жизни.<br/>
+        Как избежать типовых ошибок?
+        <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
+      </li>
+    </ul>
+    <a href="#" class="!text-black !underline hover:!text-black font-normal">Читать все статьи →</a>
+  </section>
+
+  <section class="mt-12 mb-16">
+    <h2 class="text-xl font-bold mb-4">FAQ — Частые вопросы</h2>
+    <ul class="list-disc pl-5 mb-4">
+      <li>
+        <span class="font-semibold">Сколько стоит консультация?</span><br/>
+        Бесплатно. Ты платишь только, если реально найдём твой вариант.
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Я еще не решил, что хочу. Можно просто обсудить?</span><br/>
+        Конечно! Иногда важнее сделать паузу и задать пару правильных вопросов.
+      </li>
+      <li class="mt-2">
+        <span class="font-semibold">Вы работаете только с Дубаем?</span><br/>
+        Фокус — побережье ОАЭ, но открыт к разным сценариям.
+      </li>
+    </ul>
+    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все вопросы →</a>
+  </section>
 </BaseLayout>

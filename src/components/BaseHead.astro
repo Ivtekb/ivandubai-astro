@@ -11,8 +11,8 @@ export type Props = {
     pageType?: 'website' | 'article';
 };
 
-const { description = '', image = siteConfig.image, pageType = 'website' } = Astro.props;
-const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ');
+const { description = siteConfig.description, image = siteConfig.image, pageType = 'website' } = Astro.props;
+const title = Astro.props.title ?? siteConfig.title;
 const resolvedImage = image?.src
     ? {
           src: new URL(image.src, Astro.site).toString(),
@@ -21,21 +21,15 @@ const resolvedImage = image?.src
     : undefined;
 const canonicalURL = new URL(Astro.request.url, Astro.site);
 
-/**
- * Enforce some standard canonical URL formatting across the site.
- */
 function formatCanonicalURL(url: string | URL) {
     const path = url.toString();
     const hasQueryParams = path.includes('?');
-    // If there are query params, make sure the URL has no trailing slash
     if (hasQueryParams) {
-        path.replace(/\/?$/, '');
+        return path.replace(/\/?$/, '');
     }
-    // otherwise, canonical URL always has a trailing slash
-    return path.replace(/\/?$/, hasQueryParams ? '' : '/');
+    return path.replace(/\/?$/, '/');
 }
 ---
-
 <!-- High Priority Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />

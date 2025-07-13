@@ -4,12 +4,13 @@ import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro'
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
+import siteConfig from '../data/site-config';
 
 export type Props = HeadProps & { showHeader?: boolean };
 
-const { showHeader = true, ...head } = Astro.props;
+const { showHeader = true, ...rest } = Astro.props;
+const head = { ...siteConfig, ...rest };
 ---
-
 <!doctype html>
 <html lang="en" class="antialiased break-words">
     <head>
