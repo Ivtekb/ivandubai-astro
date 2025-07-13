@@ -9,6 +9,7 @@ const siteConfig = {
     },
     headerNavLinks: [
         { text: 'Главная', href: '/' },
+        { text: 'Моя история', href: '/about' },
         { text: 'Проекты', href: '/projects' },
         { text: 'Кейсы', href: '/cases' },
         { text: 'Блог', href: '/blog' },
@@ -17,6 +18,7 @@ const siteConfig = {
     ],
     footerNavLinks: [
         { text: 'Главная', href: '/' },
+        { text: 'Моя история', href: '/about' },
         { text: 'Проекты', href: '/projects' },
         { text: 'Кейсы', href: '/cases' },
         { text: 'Блог', href: '/blog' },
