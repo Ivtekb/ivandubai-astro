@@ -20,38 +20,6 @@ html.dark {
     --border-main: #f2f1ec;
 }
 
-/* Cyan */
-/*
-:root {
-    --text-main: #162a2b;
-    --bg-main: #d6e0e2;
-    --bg-muted: #ccd8db;
-    --border-main: #162a2b;
-}
-html.dark {
-    --text-main: #d6e0e2;
-    --bg-main: #162a2b;
-    --bg-muted: #1c3537;
-    --border-main: #d6e0e2;
-}
-*/
-
-/* Green */
-/*
-:root {
-    --text-main: #3a4238;
-    --bg-main: #f3efe6;
-    --bg-muted: #eee9dc;
-    --border-main: #3a4238;
-}
-html.dark {
-    --text-main: #f3efe6;
-    --bg-main: #5e6c5b;
-    --bg-muted: #596756;
-    --border-main: #f3efe6;
-}
-*/
-
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
     --font-serif: 'Newsreader Variable', serif;
@@ -95,4 +63,58 @@ html.dark {
     .prose blockquote {
         @apply font-serif font-normal italic border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
     }
+}
+
+/* ====== ПРАВИЛЬНАЯ ИЕРАРХИЯ ЗАГОЛОВКОВ ====== */
+
+/* 1. Первый подзаголовок на about странице (после фото) */
+main h2:first-of-type {
+  font-size: 1.5rem !important;
+  font-family: ui-serif, Georgia, Cambria, serif !important;
+  font-weight: 600 !important;
+  margin-bottom: 2rem !important;
+  margin-top: 0 !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 640px) {
+  main h2:first-of-type {
+    font-size: 1.875rem !important;
+  }
+}
+
+/* 2. Остальные H2 заголовки на markdown страницах */
+main h2:not(:first-of-type),
+.prose h2:not(:first-of-type) {
+  font-size: 1.25rem !important;
+  font-family: ui-serif, Georgia, Cambria, serif !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  margin-top: 2rem !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 640px) {
+  main h2:not(:first-of-type),
+  .prose h2:not(:first-of-type) {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 3. Заголовки карточек проектов - средний размер */
+a[href*="/projects/"] h2,
+a[href*="/projects/"] h3,
+.group h2,
+.group h3 {
+  font-size: 1.125rem !important;
+  line-height: 1.25 !important;
+}
+
+@media (min-width: 640px) {
+  a[href*="/projects/"] h2,
+  a[href*="/projects/"] h3,
+  .group h2,
+  .group h3 {
+    font-size: 1.375rem !important;
+  }
 }

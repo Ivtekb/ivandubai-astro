@@ -1,113 +1,133 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
 import siteConfig from '../data/site-config';
 ---
-
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
-  <Hero />
 
-  <section class="mt-16">
-    <h2 class="text-xl font-bold mb-4">О себе</h2>
-    <p class="mb-2">
-      Я — Иван, твой навигатор по недвижимости ОАЭ.<br/>
-      Работаю не по шаблону, а по смыслу: для меня важно, чтобы пространство совпадало с твоими ценностями и целями.
-    </p>
-    <p class="mb-2 italic text-gray-700">
-      Иногда самый правильный выбор — сделать паузу.<br/>
-      Ты здесь для себя, а не для риэлтора.
-    </p>
-    <p>
-      ИИ помогает фильтровать шум и подбирать варианты, которые действительно подходят под твой сценарий.
-    </p>
-  </section>
+  <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight mb-6">
+    Недвижимость в ОАЭ — твой сценарий, твой ритм
+  </h1>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-bold mb-4">Проекты по Эмиратам</h2>
-    <ul class="list-disc pl-5 mb-2">
-      <li>
-        <span class="font-semibold">Дубай:</span>
-        <ul class="list-disc pl-5">
-          <li>Пальма Джумейра: Виллы, Пентхаусы, Апартаменты</li>
-          <li>Dubai Islands: Апартаменты у моря</li>
-          <li>Downtown: Элитные квартиры</li>
-        </ul>
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Абу-Даби:</span>
-        <ul class="list-disc pl-5">
-          <li>Саадият Айленд: Виллы, Резиденции</li>
-          <li>Яс-Айленд: Семейные дома</li>
-        </ul>
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Рас-эль-Хайма:</span>
-        <ul class="list-disc pl-5">
-          <li>Al Marjan: Виллы, Инвестиционные квартиры</li>
-        </ul>
-      </li>
-    </ul>
-    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все проекты →</a>
-  </section>
+  <img class="w-full mb-8" src="/hero.jpeg" loading="lazy" decoding="async" alt="Ivan Tyrtyshnyy - персональный консультант по недвижимости в Дубае" />
 
-  <section class="mt-12">
-    <h2 class="text-xl font-bold mb-4">Кейсы</h2>
-    <ul class="list-disc pl-5 mb-4">
-      <li>
-        <span class="font-semibold">Пентхаус на Пальме</span> — найден не по цене, а по ритму жизни.<br/>
-        <span class="text-gray-700">AI помог увидеть то, что совпадает с личным сценарием клиента.</span>
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Вилла в Дубае</span> — честно рекомендовал отказаться.<br/>
-        <span class="text-gray-700">Инсайт: объект не совпал по ощущениям и атмосфере — поиск продолжаем.</span>
-      </li>
-    </ul>
-    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все кейсы →</a>
-  </section>
+  <p class="text-lg leading-relaxed text-muted-foreground mb-8 text-center">
+    Моя задача — помочь тебе найти то, что подходит именно под твой стиль жизни, даже если это значит отказаться от некоторых вариантов.
+  </p>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-bold mb-4">Инновации и ИИ</h2>
-    <p class="mb-2">
-      ИИ помогает фильтровать информационный шум, находить совпадения по стилю жизни и советовать честно, когда лучше подождать или отказаться.
-    </p>
-    <a href="#" class="!text-black !underline hover:!text-black font-normal">Подробнее о подходе →</a>
-  </section>
+  <div class="flex flex-wrap gap-4 justify-center mb-12">
+    <a 
+      href="/#projects"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+    >
+      Получить подборку
+    </a>
+    <a 
+      href="/#contact"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+    >
+      Задать вопрос
+    </a>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-bold mb-4">Блог</h2>
-    <ul class="list-disc pl-5 mb-4">
-      <li>
-        <span class="font-semibold">Как ИИ помог избежать импульсивной покупки</span><br/>
-        История выбора, где главное — не цифры, а твой ритм.<br/>
-        Чем эта история полезна тебе?
-        <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Пульс Дубая: почему ощущения важнее локации</span><br/>
-        Разбираю рынок для тех, кто выбирает для жизни.<br/>
-        Как избежать типовых ошибок?
-        <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
-      </li>
-    </ul>
-    <a href="#" class="!text-black !underline hover:!text-black font-normal">Читать все статьи →</a>
-  </section>
+  <h2 class="text-xl font-bold mb-4">О себе</h2>
+  <p class="mb-2">
+    Я — Иван, твой навигатор по недвижимости ОАЭ.<br/>
+    Работаю не по шаблону, а по смыслу: для меня важно, чтобы пространство совпадало с твоими ценностями и целями.
+  </p>
+  <p class="mb-2 italic text-gray-700">
+    Иногда самый правильный выбор — сделать паузу.<br/>
+    Ты здесь для себя, а не для риэлтора.
+  </p>
+  <p class="mb-8">
+    ИИ помогает фильтровать шум и подбирать варианты, которые действительно подходят под твой сценарий.
+  </p>
 
-  <section class="mt-12 mb-16">
-    <h2 class="text-xl font-bold mb-4">FAQ — Частые вопросы</h2>
-    <ul class="list-disc pl-5 mb-4">
-      <li>
-        <span class="font-semibold">Сколько стоит консультация?</span><br/>
-        Бесплатно. Ты платишь только, если реально найдём твой вариант.
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Я еще не решил, что хочу. Можно просто обсудить?</span><br/>
-        Конечно! Иногда важнее сделать паузу и задать пару правильных вопросов.
-      </li>
-      <li class="mt-2">
-        <span class="font-semibold">Вы работаете только с Дубаем?</span><br/>
-        Фокус — побережье ОАЭ, но открыт к разным сценариям.
-      </li>
-    </ul>
-    <a href="#" class="!text-black !underline hover:!text-black font-normal">Смотреть все вопросы →</a>
-  </section>
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Проекты по Эмиратам</h2>
+  <ul class="list-disc pl-5 mb-2">
+    <li>
+      <span class="font-semibold">Дубай:</span>
+      <ul class="list-disc pl-5">
+        <li>Пальма Джумейра: Виллы, Пентхаусы, Апартаменты</li>
+        <li>Dubai Islands: Апартаменты у моря</li>
+        <li>Downtown: Элитные квартиры</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Абу-Даби:</span>
+      <ul class="list-disc pl-5">
+        <li>Саадият Айленд: Виллы, Резиденции</li>
+        <li>Яс-Айленд: Семейные дома</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Рас-эль-Хайма:</span>
+      <ul class="list-disc pl-5">
+        <li>Al Marjan: Виллы, Инвестиционные квартиры</li>
+      </ul>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/projects" class="!text-black !underline hover:!text-black font-normal">Смотреть все проекты →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Кейсы</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">Пентхаус на Пальме</span> — найден не по цене, а по ритму жизни.<br/>
+      <span class="text-gray-700">AI помог увидеть то, что совпадает с личным сценарием клиента.</span>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Вилла в Дубае</span> — честно рекомендовал отказаться.<br/>
+      <span class="text-gray-700">Инсайт: объект не совпал по ощущениям и атмосфере — поиск продолжаем.</span>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/cases" class="!text-black !underline hover:!text-black font-normal">Смотреть все кейсы →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Инновации и ИИ</h2>
+  <p class="mb-2">
+    ИИ помогает фильтровать информационный шум, находить совпадения по стилю жизни и советовать честно, когда лучше подождать или отказаться.
+  </p>
+  <p class="mb-8"><a href="#" class="!text-black !underline hover:!text-black font-normal">Подробнее о подходе →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Блог</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">Как ИИ помог избежать импульсивной покупки</span><br/>
+      История выбора, где главное — не цифры, а твой ритм.<br/>
+      Чем эта история полезна тебе?
+      <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Пульс Дубая: почему ощущения важнее локации</span><br/>
+      Разбираю рынок для тех, кто выбирает для жизни.<br/>
+      Как избежать типовых ошибок?
+      <a href="#" class="!text-black !underline hover:!text-black font-normal">читать статью</a>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/blog" class="!text-black !underline hover:!text-black font-normal">Читать все статьи →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">FAQ — Частые вопросы</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">Сколько стоит консультация?</span><br/>
+      Бесплатно. Ты платишь только, если реально найдём твой вариант.
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Я еще не решил, что хочу. Можно просто обсудить?</span><br/>
+      Конечно! Иногда важнее сделать паузу и задать пару правильных вопросов.
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Вы работаете только с Дубаем?</span><br/>
+      Фокус — побережье ОАЭ, но открыт к разным сценариям.
+    </li>
+  </ul>
+  <p class="mb-16"><a href="/faq" class="!text-black !underline hover:!text-black font-normal">Смотреть все вопросы →</a></p>
 </BaseLayout>
