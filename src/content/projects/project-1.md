@@ -1,66 +1,104 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: 'Palm Jumeirah · Сценарий жизни'
+description: 'Элитная недвижимость на Palm Jumeirah в Дубае: эксклюзивные резиденции с панорамным видом на Burj Al Arab и Персидский залив. Премиальные апартаменты с частными пляжами и закрытыми входами.'
+publishDate: 'Jan 15 2024'
 seo:
   image:
     src: '/project-1.jpg'
-    alt: Project preview
+    alt: 'Palm Jumeirah недвижимость - элитные резиденции с видом на Burj Al Arab, Дубай'
 ---
 
-![Project preview](/project-1.jpg)
+![Palm Jumeirah недвижимость - элитные резиденции с видом на Burj Al Arab](/project-1.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Восточный полумесяц**
 
-**Project Overview:**
-EcoBuddy is a revolutionary mobile application designed to make sustainable living accessible, engaging, and rewarding. With a focus on gamification and real-world impact, EcoBuddy encourages users to adopt eco-friendly habits, reduce their carbon footprint, and contribute to a healthier planet.
+## Открытие
 
-## Objectives
+Восточный полумесяц Пальмы — территория, где взгляд не спешит, а течёт.  
+Это панорама: Burj Al Arab — якорь горизонта, Burj Khalifa растворяется в прозрачном воздухе,  
+а линия воды совпадает с ритмом дыхания.
 
-1. Develop a user-friendly mobile app that motivates individuals to adopt sustainable practices in their daily lives.
-2. Utilize gamification elements to make sustainable living fun and interactive.
-3. Provide educational resources and personalized challenges to empower users to make informed eco-conscious decisions.
+> Ты не спрашиваешь — можно? Тебя встречают у трапа.  
+> Через 20 минут ты открываешь балкон, и город встаёт на паузу.  
+> Яхты внизу скользят, словно на нитке времени.
 
-## Features
+Здесь редкость ощутима. Каждая резиденция — как выдержанное вино:  
+частный пляж, закрытые входы, земля, за которой давно закреплён особый смысл.
 
-1. **EcoScore and Challenges:**
+## Утро без слов
 
-- Users are assigned an EcoScore based on their sustainable activities and choices.
-- Daily and weekly challenges encourage users to adopt new habits and compete with friends or the community to earn EcoPoints.
+Свет от воды ещё не вошёл в комнату, а ты уже прошёл босиком по камню до пирса.  
+Пространство не требует проверки — оно дышит твоим ритмом.
 
-2. **Personalized Eco-Goals:**
+Первое движение — кофе.  
+Глоток Panama Geisha в тишине, где всё отлажено:  
+лёгкий щелчок сенсорной панели, бесшумный поворот крана (Vola).  
+Всё на своём месте, как будто жило здесь всегда.
 
-- Users can set and track personalized eco-goals, such as reducing plastic usage, conserving water, or choosing eco-friendly transportation.
-- The app provides tips and suggestions to help users achieve their goals.
+Окна от Sky-Frame мягко раздвигаются, и день входит сам.  
+Камень под ногами прогрет.  
+На кухне Valcucine — текстура поверхности как прикосновение к памяти:  
+прохладный камень, утренняя тень, движение к полке,  
+где любимая кружка — тонкостенная, с лёгким следом руки.  
+Механика дверцы работает с точностью ритуала.
 
-3. **Green Rewards Marketplace:**
+## День в ритме управления
 
-- EcoPoints earned through challenges and sustainable actions can be redeemed in a virtual Green Rewards Marketplace.
-- The marketplace offers discounts on eco-friendly products, services, and even contributions to environmental causes.
+Кабинет с видом. Всё собирается в линию, без предварительных движений.  
+Стекло смещается, голос уходит в зашифрованный звонок.  
+Пространство держит фокус, не запрашивая внимания.
 
-4. **Community Hub:**
+Один поворот — и свет (Lutron) спальни уже настраивает атмосферу.  
+Ещё шаг — и музыка (Panzeri) отступает.  
+Здесь продуман каждый миллиметр.
 
-- A community feature allows users to connect, share their eco-friendly achievements, and inspire others.
-- Users can join local eco-groups, organize clean-up events, and collaborate on sustainability projects.
+Фасады скрыты с точностью (L'Invisibile).  
+Проход в гардероб (Rimadesio) встроен в поток: лёгкое касание —  
+и открывается пространство, где каждая вещь словно парит.  
+Любимая рубашка ловит свет — ты знаешь её ткань на ощупь.
 
-5. **EcoEducator AI Assistant:**
+## Вечер, который помнят
 
-- An AI-powered assistant, EcoEducator, provides personalized eco-tips, facts, and information based on users' preferences and habits.
-- Users can chat with EcoEducator for instant advice on sustainable living.
+Сосед дирижирует ужином.  
+На крыше — слепой тест нового аромата, который ещё не вышел в свет.  
+Свет играет на поверхности бокала, и ты ловишь момент, где всё звучит верно.
 
-## Technology Stack
+На стене — работа Etel Adnan.  
+В меню — урожай, собранный в нужное время.  
+На кухне техника (Gaggenau) греет масло на тихом огне.  
+Ты взбиваешь яйцо с шафраном, подаёшь с мягким сыром и свежими травами.
 
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
+Сегодня — не ужин, а сцена.  
+Аромат плывёт, разговор движется, вечер идёт туда,  
+где тон задаёт случай.
 
-## Outcome
+Ты пришёл в точку совпадения.  
+Все детали звучат в той тональности, где каждое присутствие оправдано.
 
-EcoBuddy has successfully created a community of environmentally conscious individuals who actively participate in sustainable living practices. The app not only educates and motivates users but also provides tangible rewards for their commitment to a greener lifestyle, fostering a positive impact on the environment.
+## Завершение
 
-## Client Testimonial
+Burj Al Arab в кадре.  
+Яхты уходят вдоль дуги, как строки в партитуре.  
+Пальма Джумейра — карта, где совпадения собираются в узор.  
+Решения рождаются из касания среды.
 
-> We couldn't be happier with the results delivered by Ethan Donovan. From the initial concept discussions to the final product, their responsiveness and collaborative approach were impressive. Our startup's website now stands out, thanks to their creative input and commitment to excellence.
+## Назови свою сцену
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+Мы соберём пространство, где чашка кофе скажет больше, чем презентация.  
+Dorchester, Armani, Zaha Hadid, Ando —  
+не витрина, а точка совпадения:  
+дизайн, имя, материал, характер.
+
+<div class="flex justify-center mb-10">
+  <a 
+    href="/contact"
+    class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+    style="color: inherit;"
+  >
+    Назови свою сцену
+  </a>
+</div>
+
+---
+
+**Этот проект — живой пример авторского подхода к недвижимости Palm Jumeirah, где каждая деталь создаёт уникальную атмосферу жизни.**
