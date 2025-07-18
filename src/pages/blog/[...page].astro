@@ -1,32 +1,72 @@
 ---
-import type { GetStaticPathsOptions, Page } from 'astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Pagination from '../../components/Pagination.astro';
 import PostPreview from '../../components/PostPreview.astro';
-import Subscribe from '../../components/Subscribe.astro';
-import siteConfig from '../../data/site-config';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
+import Pagination from '../../components/Pagination.astro';
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
-    return paginate(posts, { pageSize: siteConfig.postsPerPage || 4 });
+export async function getStaticPaths({ paginate }) {
+  const blogPosts = (await getCollection('blog')).sort((a, b) =>
+    new Date(b.data.publishDate) - new Date(a.data.publishDate)
+  );
+  return paginate(blogPosts, { pageSize: 8 });
 }
 
-type Props = { page: Page<CollectionEntry<'blog'>> };
-
 const { page } = Astro.props;
-const blog = page.data;
+const blogPosts = page.data;
 ---
 
 <BaseLayout
-    title="Blog"
-    description="Embark on a journey of personal insights and experiences through my blog"
-    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
-    showHeader={false}
+  title="Живой отклик — инсайты рынка недвижимости в Дубае"
+  description="Импульсы рынка, разборы кейсов и AI-наблюдения — всё, что помогает уловить собственный ритм в пространстве Дубая."
+  showHeader={false}
 >
-    <h1 class="mb-12 text-2xl leading-tight font-serif italic sm:mb-16 sm:text-4xl">Blog Archive</h1>
-    {blog.map((post) => <PostPreview post={post} class="mb-10 sm:mb-12" />)}
-    <Pagination page={page} class="my-16 sm:my-24" />
-    <Subscribe class="my-16 sm:my-24" />
+  <div class="max-w-3xl mx-auto px-4 py-12 sm:py-16">
+    <!-- ОСНОВНОЙ H1 ЗАГОЛОВОК -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+      Живой отклик
+    </h1>
+    
+    <p class="text-base font-normal mb-8">
+      Здесь собираются импульсы рынка, разборы кейсов и всплески идей — всё, что помогает уловить собственный ритм в пространстве Дубая. Каждая запись — это маленькое поле эксперимента: AI-наблюдение, человеческий выбор, вопрос читателю. Открывай любую точку и проверяй, как звучит внутри.
+    </p>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- СПИСОК ПОСТОВ -->
+    <div class="mb-8">
+      {blogPosts.map((post) => (
+        <PostPreview post={post} class="mb-10 sm:mb-12" />
+      ))}
+      <Pagination page={page} class="my-10" />
+    </div>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- ПОДПИСКА НА ОБНОВЛЕНИЯ -->
+    <div class="border border-dashed border-black p-8 text-center">
+      <h2 class="text-xl font-serif font-semibold mb-4">
+        Подписаться на обновления
+      </h2>
+      <p class="mb-6 text-base">
+        Получай свежие кейсы и инсайты о недвижимости в ОАЭ — 1 письмо в неделю.
+      </p>
+      
+      <form action="https://formspree.io/f/movlvnnr" method="POST" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <input 
+          type="email" 
+          name="email"
+          placeholder="Твой email" 
+          class="px-4 py-2 border border-black rounded-full font-serif w-full sm:w-auto"
+          required
+        />
+        <input type="hidden" name="_subject" value="📧 Подписка на блог ivandubai.xyz" />
+        <button 
+          type="submit"
+          class="px-8 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors"
+        >
+          Подписаться
+        </button>
+      </form>
+    </div>
+  </div>
 </BaseLayout>
