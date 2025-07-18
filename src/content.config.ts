@@ -45,4 +45,19 @@ const projects = defineCollection({
     })
 });
 
-export const collections = { blog, pages, projects };
+const cases = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/cases' }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        publishDate: z.coerce.date(),
+        clientName: z.string().optional(),
+        projectType: z.string().optional(),
+        budget: z.string().optional(),
+        timeline: z.string().optional(),
+        isFeatured: z.boolean().default(false),
+        seo: seoSchema.optional()
+    })
+});
+
+export const collections = { blog, pages, projects, cases };

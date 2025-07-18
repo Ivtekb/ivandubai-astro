@@ -117,4 +117,16 @@ a[href*="/projects/"] h3,
   .group h3 {
     font-size: 1.375rem !important;
   }
+}/* Заголовки карточек кейсов - такой же размер */
+a[href*="/cases/"] h2,
+a[href*="/cases/"] h3 {
+  font-size: 1.125rem !important;
+  line-height: 1.25 !important;
+}
+
+@media (min-width: 640px) {
+  a[href*="/cases/"] h2,
+  a[href*="/cases/"] h3 {
+    font-size: 1.375rem !important;
+  }
 }
