@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Вопросы и Ответы — FAQ по недвижимости в Дубае и ОАЭ"
+  description="Живые вопросы клиентов о покупке недвижимости в Дубае: расходы, визы, ипотека, безопасность сделок. Персональные ответы с ИИ-подходом к выбору."
+  showHeader={false}
+>
+  <div class="max-w-3xl mx-auto px-4 py-12 sm:py-16">
+    
+    <!-- H1 ЗАГОЛОВОК -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+      Вопросы и Ответы
+    </h1>
+    
+    <p class="text-base font-normal mb-8 leading-relaxed">
+      <strong>Эта страница — не просто справка.</strong> Здесь собраны живые вопросы клиентов и сценарии, которые реально экономят время и деньги. Не нашёл ответа — задай свой, я отвечу лично или разверну его в новый кейс.
+    </p>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- БЛОК ВОПРОСОВ -->
+    <div class="space-y-8 sm:space-y-10">
+      
+      <!-- Вопрос 1 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          1. Какие расходы меня ожидают при покупке недвижимости в Дубае?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• При покупке у застройщика — платишь только официальную цену по прайс-листу.</li>
+          <li>• На вторичном рынке стандартная комиссия агента — <strong>2 %</strong>.</li>
+          <li>• Дополнительно: регистрационный сбор <strong>Dubai Land Department (DLD) — 4 %</strong>, ≈ 4 000 AED админ-сборы (оформление, оценка, переводы).</li>
+          <li>• «Скрытых» комиссий нет.</li>
+          <li>• <em>Запросить персональный гид по расходам</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          2. Как получить золотую визу (Golden Visa) через покупку недвижимости?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Нужно владеть объектом(-ами) на сумму от <strong>2 млн AED</strong> (≈ 545 000 USD) по оценке DLD.</li>
+          <li>• Подходит готовая и строящаяся (off-plan) недвижимость; по стройке часть суммы должна быть уже оплачена.</li>
+          <li>• Срок оформления: <strong>2–4 недели</strong>.</li>
+          <li>• Документы: паспорт, сертификат собственности, подтверждение платежей.</li>
+          <li>• <em>Подробнее о критериях</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          3. Можно ли дистанционно купить объект, находясь за границей?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Да. Сделка проходит по доверенности <strong>POA (Power of Attorney — доверенность)</strong>.</li>
+          <li>• Для доверенности, выданной вне ОАЭ, срок действия — <strong>до 2 лет</strong>, нужен оригинал.</li>
+          <li>• В POA чётко указывают права: подписывать договор, принимать/передавать чеки, работать с DLD.</li>
+          <li>• <em>Попросить чек-лист дистанционной покупки</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          4. Как работают чеки и доверенность при сделках?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Чек на имя доверенного лица возможен, только если это прописано в POA.</li>
+          <li>• Если собственник лично подписывает, чек можно выписать на него или сделать менеджерский чек.</li>
+          <li>• Все нюансы лучше согласовать с юристом.</li>
+          <li>• <em>Гайд по доверенности и чекам</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          5. Какие гарантии безопасности при покупке?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Все сделки регистрирует <strong>Dubai Land Department</strong>.</li>
+          <li>• В новостройках деньги хранятся на <strong>эскроу-счёте (escrow)</strong> до завершения этапа.</li>
+          <li>• На вторичке оплата проходит после проверки документов и регистрации.</li>
+          <li>• Есть сомнения — разумно сделать паузу и задать вопросы.</li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          6. Доступна ли ипотека (mortgage) нерезидентам?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Да, при взносе <strong>20–25 %</strong> и подтверждении дохода.</li>
+          <li>• Ставка от <strong>4 % годовых</strong>, решение — ≈ 2 недели.</li>
+          <li>• Помогу подобрать банк и собрать пакет.</li>
+          <li>• <em>Скачать чек-лист по ипотеке для нерезидентов</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 7 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          7. Можно ли сдавать объект в аренду, нужна ли лицензия?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Долгосрочная аренда — лицензия не требуется.</li>
+          <li>• Краткосрочная (посуточная) — нужна лицензия <strong>DTCM (Dubai Tourism)</strong>.</li>
+          <li>• Помогаю оформить и выбрать выгодную схему.</li>
+          <li>• <em>FAQ по аренде</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 8 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          8. Какие налоги и сборы после покупки?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Разовый DLD 4 %, комиссия агента (только вторичка), админ-сборы.</li>
+          <li>• Ежегодный налог на недвижимость отсутствует; платишь коммуналку и обслуживание.</li>
+          <li>• <em>Таблица расходов PDF</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 9 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          9. Что делать, если собственник не может присутствовать?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Используется доверенность <strong>POA</strong>, оформленная по требованиям DLD.</li>
+          <li>• Всё оформляется дистанционно через нотариуса и консульство.</li>
+          <li>• Подробно разберём на консультации.</li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 10 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          10. Как выбрать район, если я впервые в Дубае?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Определи ключевые критерии: ритм, школы, море, приватность.</li>
+          <li>• Подберём сценарии: от камерной Пальмы до динамики Downtown.</li>
+          <li>• <em>Подборка районов под твой стиль</em></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 11 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          11. Типичные ошибки инвесторов
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Спешат без анализа рынка.</li>
+          <li>• Игнорируют сервисные сборы и правила аренды.</li>
+          <li>• Не оценивают перспективу района.</li>
+          <li>• Помни: <strong>сначала сценарий — потом сделка</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 12 -->
+      <div>
+        <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+          12. Что учесть при покупке в новостройке (off-plan)?
+        </h3>
+        <ul class="text-base mb-4 leading-relaxed space-y-2">
+          <li>• Проверяй застройщика: история, сроки сдачи.</li>
+          <li>• Смотри, когда получится оформить <strong>Oqood (регистрация доли)</strong> или <strong>Title Deed (право собственности)</strong>.</li>
+          <li>• Платежи только на эскроу.</li>
+          <li>• Запроси актуальный список надёжных девелоперов.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- НЕ НАШЛИ ВОПРОС -->
+    <div class="text-center mb-10">
+      <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+        Не нашли свой вопрос?
+      </h3>
+      <p class="text-base mb-6 leading-relaxed">
+        Задайте его через форму ниже или в WhatsApp/Telegram — любой вопрос может стать новым сценарием в базе знаний.
+      </p>
+      <a 
+        href="/contact"
+        class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline inline-block"
+        style="color: inherit;"
+      >
+        Задать вопрос
+      </a>
+    </div>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- СВЯЗАННЫЕ РАЗДЕЛЫ -->
+    <div>
+      <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">
+        Связанные разделы
+      </h3>
+      <ul class="text-base space-y-2">
+        <li>• <a href="/cases" class="underline hover:no-underline">Кейсы клиентов</a></li>
+        <li>• <a href="/projects" class="underline hover:no-underline">Актуальные проекты</a></li>
+        <li>• <a href="/blog" class="underline hover:no-underline">Блог — инсайты и сценарии</a></li>
+        <li>• <em>Скачать Гид по недвижимости (PDF)</em></li>
+      </ul>
+    </div>
+
+  </div>
+</BaseLayout>
