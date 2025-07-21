@@ -3,8 +3,5 @@
     "api/telegram.js": {
       "runtime": "edge"
     }
-  },
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token"
   }
 }
