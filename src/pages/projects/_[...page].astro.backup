@@ -6,10 +6,7 @@ import Pagination from '../../components/Pagination.astro';
 
 // Для динамической маршрутизации обязательно экспортируем getStaticPaths
 export async function getStaticPaths({ paginate }) {
-  // Filter Russian projects only (exclude en/ folder)
-  const projects = (await getCollection('projects', ({ id }) => {
-    return !id.startsWith('en/');
-  })).sort((a, b) =>
+  const projects = (await getCollection('projects')).sort((a, b) =>
     new Date(b.data.date) - new Date(a.data.date)
   );
   return paginate(projects, { pageSize: 8 });
