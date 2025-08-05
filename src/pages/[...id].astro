@@ -4,12 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
     const pages = await getCollection('pages');
-    return pages.map((page) => {
-        return {
-            params: { id: page.id },
-            props: { page }
-        };
-    });
+    return pages
+        .filter(page => page.id !== 'en') // 🔧 ИСКЛЮЧАЕМ 'en' из обработки
+        .map((page) => {
+            return {
+                params: { id: page.id },
+                props: { page }
+            };
+        });
 }
 
 type Props = { page: CollectionEntry<'pages'> };

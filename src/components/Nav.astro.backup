@@ -3,26 +3,7 @@ import NavLink from './NavLink.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import siteConfig from '../data/site-config';
 
-// Простое определение языка
-const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith('/en');
-
-// Переводы для навигации
-const navTranslations = {
-  'Главная': 'Home',
-  'Моя история': 'About',
-  'Проекты': 'Projects', 
-  'Кейсы': 'Cases',
-  'Блог': 'Blog',
-  'Вопросы и Ответы': 'FAQ',
-  'Контакты': 'Contact'
-};
-
-// Подготавливаем ссылки с учетом языка
-const navLinks = (siteConfig.headerNavLinks || []).map(link => ({
-  text: isEnglish ? navTranslations[link.text] || link.text : link.text,
-  href: isEnglish ? `/en${link.href}` : link.href
-}));
+const navLinks = siteConfig.headerNavLinks || [];
 ---
 
 <nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8">

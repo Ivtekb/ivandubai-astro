@@ -1,34 +1,25 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import CasePreview from '../../components/CasePreview.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 export async function getStaticPaths() {
-    const cases = (await getCollection('cases')).sort(sortItemsByDateDesc);
-    const caseCount = cases.length;
-    return cases.map((currentCase, index) => ({
-        params: { id: currentCase.id },
-        props: {
-            case: currentCase,
-            prevCase: index + 1 !== caseCount ? cases[index + 1] : null,
-            nextCase: index !== 0 ? cases[index - 1] : null
-        }
-    }));
+    const pages = await getCollection('pages');
+    return pages.map((page) => {
+        return {
+            params: { id: page.id },
+            props: { page }
+        };
+    });
 }
 
-type Props = {
-    case: CollectionEntry<'cases'>;
-    prevCase: CollectionEntry<'cases'>;
-    nextCase: CollectionEntry<'cases'>;
-};
+type Props = { page: CollectionEntry<'pages'> };
 
-const { case: currentCase, prevCase, nextCase } = Astro.props;
-const { title, description, seo } = currentCase.data;
-const { Content } = await render(currentCase);
+const { page } = Astro.props;
+const { title, seo } = page.data;
+const { Content } = await render(page);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+<BaseLayout title={seo?.title ?? title} description={seo?.description} image={seo?.image} showHeader={false}>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
@@ -37,13 +28,4 @@ const { Content } = await render(currentCase);
             <Content />
         </div>
     </article>
-    {
-        (prevCase || nextCase) && (
-            <div class="my-16 sm:my-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Смотреть далее</h2>
-                {nextCase && <CasePreview case={nextCase} class="mb-10 sm:mb-12" headingLevel="h3" />}
-                {prevCase && <CasePreview case={prevCase} class="mb-10 sm:mb-12" headingLevel="h3" />}
-            </div>
-        )
-    }
 </BaseLayout>

@@ -1,28 +1,8 @@
 ---
 import siteConfig from '../data/site-config';
 
-// Простое определение языка
-const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith('/en');
-
-// Переводы для футера (такие же как в Nav.astro)
-const navTranslations = {
-  'Главная': 'Home',
-  'Моя история': 'About',
-  'Проекты': 'Projects', 
-  'Кейсы': 'Cases',
-  'Блог': 'Blog',
-  'Вопросы и Ответы': 'FAQ',
-  'Контакты': 'Contact'
-};
-
 const socialLinks = siteConfig.socialLinks || [];
-
-// Подготавливаем ссылки футера с учетом языка
-const navLinks = (siteConfig.footerNavLinks || []).map(link => ({
-  text: isEnglish ? navTranslations[link.text] || link.text : link.text,
-  href: isEnglish ? `/en${link.href}` : link.href
-}));
+const navLinks = siteConfig.footerNavLinks || [];
 ---
 
 <footer class="w-full max-w-3xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14">
@@ -60,7 +40,7 @@ const navLinks = (siteConfig.footerNavLinks || []).map(link => ({
             )
         }
         <p class="text-sm">
-            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href={isEnglish ? '/en/' : '/'}>{siteConfig.title}</a>. All rights reserved.
+            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
         </p>
     </div>
 </footer>
