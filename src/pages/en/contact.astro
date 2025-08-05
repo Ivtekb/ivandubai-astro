@@ -1,0 +1,63 @@
+---
+// src/pages/en/contact.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Get in Touch — Dubai Real Estate Broker"
+  description="Get in touch easily — WhatsApp, Telegram, or contact form — choose your preferred way. Dubai real estate consultations."
+>
+  <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight mb-6">
+    Get in Touch
+  </h1>
+
+  <p class="text-lg leading-relaxed text-muted-foreground mb-8 text-center">
+    Thank you for your interest — choose the channel that resonates closer to you.
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center my-8">
+    <a 
+      href="https://wa.me/971502778021"
+      target="_blank"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+      style="color: inherit;"
+    >
+      WhatsApp
+    </a>
+    <a 
+      href="https://t.me/ivandubai_signal_bot"
+      target="_blank"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+      style="color: inherit;"
+    >
+      Telegram
+    </a>
+  </div>
+
+  <hr class="mb-8" />
+
+  <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">Send a Signal</h3>
+
+  <form action="https://formspree.io/f/movlvnnr" method="POST" class="mt-4 space-y-4">
+    <input type="hidden" name="_next" value="https://ivandubai.xyz/en/contact?success=true" />
+    <input type="hidden" name="_subject" value="🏠 New inquiry from ivandubai.xyz (EN)" />
+    <input type="text" name="company_name" class="hidden" tabindex="-1" autocomplete="off" />
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <input type="text" name="name" placeholder="Name" required class="border border-black p-3 w-full font-serif" />
+      <input type="email" name="email" placeholder="Email" required class="border border-black p-3 w-full font-serif" />
+    </div>
+
+    <textarea name="message" placeholder="Message" required class="border border-black p-3 w-full h-32 font-serif"></textarea>
+
+    <button type="submit" class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors">
+      Send
+    </button>
+  </form>
+
+  <script>
+    if (window.location.search.includes('success=true')) {
+      document.querySelector('form').innerHTML = '<div class="text-center py-8"><h3 class="text-2xl font-serif mb-4">Thank you!</h3><p>Your message has been sent. I will respond within a day.</p></div>';
+    }
+  </script>
+</BaseLayout>
