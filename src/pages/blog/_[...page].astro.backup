@@ -5,10 +5,7 @@ import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 
 export async function getStaticPaths({ paginate }) {
-  // Filter Russian blog posts only (exclude en/ folder)
-  const blogPosts = (await getCollection('blog', ({ id }) => {
-    return !id.startsWith('en/');
-  })).sort((a, b) =>
+  const blogPosts = (await getCollection('blog')).sort((a, b) =>
     new Date(b.data.publishDate) - new Date(a.data.publishDate)
   );
   return paginate(blogPosts, { pageSize: 8 });
@@ -73,3 +70,12 @@ const blogPosts = page.data;
     </div>
   </div>
 </BaseLayout>
+export async function getStaticPaths({ paginate }) {
+  // Filter Russian blog posts only (exclude en/ folder)
+  const blogPosts = (await getCollection('blog', ({ id }) => {
+    return !id.startsWith('en/');
+  })).sort((a, b) =>
+    new Date(b.data.publishDate) - new Date(a.data.publishDate)
+  );
+  return paginate(blogPosts, { pageSize: 8 });
+}

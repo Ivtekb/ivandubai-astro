@@ -1,7 +1,7 @@
 ---
 title: 'Palm Jumeirah · Сценарий жизни'
 description: 'Элитная недвижимость на Palm Jumeirah в Дубае: эксклюзивные резиденции с панорамным видом на Burj Al Arab и Персидский залив. Премиальные апартаменты с частными пляжами и закрытыми входами.'
-publishDate: 'Jan 15 2024'
+publishDate: 2024-01-15
 seo:
   image:
     src: '/project-1.jpg'
