@@ -7,15 +7,9 @@ type Props = { case: CollectionEntry<'cases'>; class?: string; headingLevel?: 'h
 const { case: caseItem, class: className, headingLevel = 'h2' } = Astro.props;
 const { title, description } = caseItem.data;
 const TitleTag = headingLevel;
-
-// Smart link logic for multilingual support
-const isEnglishCase = caseItem.id.startsWith('en/');
-const caseSlug = isEnglishCase ? caseItem.id.replace('en/', '') : caseItem.id;
-const caseUrl = isEnglishCase ? `/en/cases/${caseSlug}/` : `/cases/${caseSlug}/`;
-const linkText = isEnglishCase ? 'View Case' : 'Смотреть кейс';
 ---
 
-<a class:list={['flex justify-between items-start gap-8 group', className]} href={caseUrl}>
+<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/cases/${caseItem.id}/`}>
     <div class="grow">
         <TitleTag
             class="text-lg leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-xl"
@@ -25,6 +19,6 @@ const linkText = isEnglishCase ? 'View Case' : 'Смотреть кейс';
         {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
     </div>
     <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        {linkText} <ArrowRight class="fill-current w-4 h-4" />
+        Смотреть кейс <ArrowRight class="fill-current w-4 h-4" />
     </div>
 </a>

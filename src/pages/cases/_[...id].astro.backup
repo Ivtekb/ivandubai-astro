@@ -3,24 +3,23 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-    // Fix: use 'cases' collection instead of 'pages'
-    const cases = await getCollection('cases');
-    return cases.map((caseItem) => {
+    const pages = await getCollection('pages');
+    return pages.map((page) => {
         return {
-            params: { id: caseItem.id },
-            props: { case: caseItem }
+            params: { id: page.id },
+            props: { page }
         };
     });
 }
 
-type Props = { case: CollectionEntry<'cases'> };
+type Props = { page: CollectionEntry<'pages'> };
 
-const { case: caseItem } = Astro.props;
-const { title, description, seo } = caseItem.data;
-const { Content } = await render(caseItem);
+const { page } = Astro.props;
+const { title, seo } = page.data;
+const { Content } = await render(page);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} showHeader={false}>
+<BaseLayout title={seo?.title ?? title} description={seo?.description} image={seo?.image} showHeader={false}>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>

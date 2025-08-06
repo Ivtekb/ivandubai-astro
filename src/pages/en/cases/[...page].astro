@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CasePreview from '../../../components/CasePreview.astro';
+import Pagination from '../../../components/Pagination.astro';
+
+// Dynamic routing for English cases
+export async function getStaticPaths({ paginate }) {
+  // Filter English cases only (from en/ subfolder)
+  const cases = (await getCollection('cases', ({ id }) => {
+    return id.startsWith('en/');
+  })).sort((a, b) =>
+    new Date(b.data.publishDate) - new Date(a.data.publishDate)
+  );
+  return paginate(cases, { pageSize: 8 });
+}
+
+const { page } = Astro.props;
+const casesList = page.data;
+---
+
+<BaseLayout
+  title="Dubai Real Estate Cases — Success Stories | AI-Driven Property Selection"
+  description="Live scenarios of Dubai property purchases: from Palm penthouses to investment apartments. Real cases with AI analysis, honest stories and custom solutions."
+  showHeader={false}
+>
+  <div class="max-w-3xl mx-auto px-4 py-12 sm:py-16">
+    
+    <!-- ANNOUNCEMENT BLOCK (top of page) -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+      Live Scenarios — Real Solutions
+    </h1>
+    <p class="text-base font-normal mb-2">
+      Each case has its own rhythm, focus, and choice logic. There are no templates here: we refuse the perfect to find the matching.
+    </p>
+    <p class="mb-4 text-base font-serif italic text-center">
+      From first call to keys — see how it really happens
+    </p>
+    <div class="flex justify-center mb-10">
+      <a 
+        href="/en/contact"
+        class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+        style="color: inherit;"
+      >
+        Discuss Case
+      </a>
+    </div>
+
+    <hr class="my-10 sm:my-12 border-dashed border-black" />
+
+    <!-- CASES LIST -->
+    <div id="cases-list" class="mb-12 sm:mb-16">
+      <h2 style="font-size: 1.5rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 2rem; line-height: 1.2;" class="sm:text-3xl">
+        Study Real Cases and Approaches
+      </h2>
+      
+      <!-- Dynamic cases from collection -->
+      <div class="mb-8">
+        {casesList.map((caseItem) => (
+          <CasePreview case={caseItem} class="mb-10 sm:mb-12" />
+        ))}
+        <Pagination page={page} class="my-10" />
+      </div>
+    </div>
+
+    <hr class="my-10 sm:my-12 border-dashed border-black" />
+
+    <!-- ADDITIONAL BLOCK AFTER CARDS -->
+    <div class="mb-10">
+      <h3 style="font-size: 1.125rem; font-family: ui-serif, Georgia, Cambria, serif; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2;" class="sm:text-xl">🧭 Each case is not the finale, but a route map</h3>
+      <p class="mb-4 text-base">What's your life rhythm? The scenario is formed together — tell us about yourself.</p>
+      <div class="flex justify-center">
+        <a 
+          href="/en/contact"
+          class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+          style="color: inherit;"
+        >
+          Submit Request
+        </a>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>

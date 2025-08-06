@@ -1,13 +1,15 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-    // Fix: use 'cases' collection instead of 'pages'
-    const cases = await getCollection('cases');
+    // Filter English cases only (from en/ subfolder)
+    const cases = await getCollection('cases', ({ id }) => {
+        return id.startsWith('en/');
+    });
     return cases.map((caseItem) => {
         return {
-            params: { id: caseItem.id },
+            params: { id: caseItem.id.replace('en/', '') },
             props: { case: caseItem }
         };
     });
