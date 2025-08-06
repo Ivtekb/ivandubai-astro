@@ -5,7 +5,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 export async function getStaticPaths() {
-    const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+    // Filter Russian projects only (exclude en/ folder)
+    const projects = (await getCollection('projects', ({ id }) => {
+        return !id.startsWith('en/');
+    })).sort(sortItemsByDateDesc);
     const projectCount = projects.length;
     return projects.map((project, index) => ({
         params: { id: project.id },
