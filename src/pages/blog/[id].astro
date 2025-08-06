@@ -98,3 +98,18 @@ const { Content } = await render(post);
         }
     });
 </script>
+export async function getStaticPaths() {
+    // Filter Russian blog posts only (exclude en/ folder)
+    const posts = (await getCollection('blog', ({ id }) => {
+        return !id.startsWith('en/');
+    })).sort(sortItemsByDateDesc);
+    const postCount = posts.length;
+    return posts.map((post, index) => ({
+        params: { id: post.id },
+        props: {
+            post,
+            prevPost: index + 1 !== postCount ? posts[index + 1] : null,
+            nextPost: index !== 0 ? posts[index - 1] : null
+        }
+    }));
+}

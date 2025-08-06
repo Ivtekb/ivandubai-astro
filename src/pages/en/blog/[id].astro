@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+    // Filter English blog posts only (from en/ subfolder)
+    const posts = await getCollection('blog', ({ id }) => {
+        return id.startsWith('en/');
+    });
+    return posts.map((post) => {
+        return {
+            params: { id: post.id.replace('en/', '') },
+            props: { post: post }
+        };
+    });
+}
+
+type Props = { post: CollectionEntry<'blog'> };
+
+const { post } = Astro.props;
+const { title, excerpt, seo } = post.data;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} showHeader={false}>
+    <article class="mb-16 sm:mb-24">
+        <header class="mb-8">
+            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
+        </header>
+        <div class="max-w-none prose sm:prose-lg">
+            <Content />
+        </div>
+    </article>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostPreview from '../../../components/PostPreview.astro';
+import Pagination from '../../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+  // Filter English blog posts only (from en/ subfolder)
+  const blogPosts = (await getCollection('blog', ({ id }) => {
+    return id.startsWith('en/');
+  })).sort((a, b) =>
+    new Date(b.data.publishDate) - new Date(a.data.publishDate)
+  );
+  return paginate(blogPosts, { pageSize: 8 });
+}
+
+const { page } = Astro.props;
+const blogPosts = page.data;
+---
+
+<BaseLayout
+  title="Live Response — Dubai Real Estate Market Insights"
+  description="Market impulses, case studies and AI observations — everything that helps capture your own rhythm in Dubai space."
+  showHeader={false}
+>
+  <div class="max-w-3xl mx-auto px-4 py-12 sm:py-16">
+    <!-- MAIN H1 HEADING -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+      Live Response
+    </h1>
+    
+    <p class="text-base font-normal mb-8">
+      Here market impulses, case studies and idea bursts gather — everything that helps capture your own rhythm in Dubai space. Each entry is a small field of experiment: AI observation, human choice, question to the reader. Open any point and check how it sounds inside.
+    </p>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- POSTS LIST -->
+    <div class="mb-8">
+      {blogPosts.map((post) => (
+        <PostPreview post={post} class="mb-10 sm:mb-12" />
+      ))}
+      <Pagination page={page} class="my-10" />
+    </div>
+
+    <hr class="my-10 border-dashed border-black" />
+
+    <!-- SUBSCRIPTION UPDATES -->
+    <div class="border border-dashed border-black p-8 text-center">
+      <h2 class="text-xl font-serif font-semibold mb-4">
+        Subscribe to Updates
+      </h2>
+      <p class="mb-6 text-base">
+        Get fresh cases and UAE real estate insights — 1 email per week.
+      </p>
+      
+      <form action="https://formspree.io/f/movlvnnr" method="POST" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <input 
+          type="email" 
+          name="email"
+          placeholder="Your email" 
+          class="px-4 py-2 border border-black rounded-full font-serif w-full sm:w-auto"
+          required
+        />
+        <input type="hidden" name="_subject" value="📧 Blog subscription ivandubai.xyz (EN)" />
+        <button 
+          type="submit"
+          class="px-8 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</BaseLayout>
