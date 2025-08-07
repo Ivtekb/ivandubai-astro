@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Personal Real Estate Selection in UAE — A Precise Scenario"
+  description="A detailed form for personal real estate selection in Dubai, Abu Dhabi, Ras Al Khaimah. Specify your goals, budget, and priorities to receive personalized options within 24 hours."
+  showHeader={false}
+>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+    
+    <!-- BACK BUTTON -->
+    <div class="mb-8">
+      <a 
+        href="/en"
+        class="inline-flex items-center text-sm text-gray-600 hover:text-black transition-colors"
+      >
+        ← Back to home
+      </a>
+    </div>
+
+    <!-- HEADER -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Your UAE Real Estate Scenario — Precise Selection
+      </h1>
+      <p class="text-lg mb-4">
+        <strong>You are the protagonist of your story.</strong> My task is to reveal life and investment scenarios where the route aligns with your expectations.
+      </p>
+      <p class="text-base mb-4">
+        Tell me what matters, and together we’ll find the perfect match for life or business in Dubai, Abu Dhabi, Ras Al Khaimah.
+      </p>
+      <p class="text-sm italic text-gray-600">
+        All data is strictly confidential and is used only for personal recommendations.
+      </p>
+    </div>
+
+    <!-- FORM -->
+    <form action="https://formspree.io/f/movlvnnr" method="POST" class="space-y-10">
+      
+      <!-- HIDDEN FIELDS -->
+      <input type="hidden" name="_subject" value="🎯 Personal UAE Real Estate Selection" />
+      <input type="hidden" name="language" value="en" />
+
+      <!-- 1. YOUR CURRENT FOCUS -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">1. YOUR CURRENT FOCUS <span class="text-red-500">*</span></h3>
+        <p class="text-base mb-4">I want to hear your main goal:</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="live" class="mr-3" required />
+            <span>🏠 <strong>To Live</strong> — for yourself and family</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="invest" class="mr-3" required />
+            <span>📈 <strong>To Invest</strong> — for profitability and capital growth</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="sell" class="mr-3" required />
+            <span>🔄 <strong>To Sell/Lease</strong> — already have a property in management</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="mixed" class="mr-3" required />
+            <span>🎯 <strong>Mixed</strong> — a combination of goals</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2. BUDGET ORIENTATION -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">2. BUDGET ORIENTATION <span class="text-red-500">*</span></h3>
+        <p class="text-base mb-4">What is your range? Any format is welcome:</p>
+        <p class="text-sm italic mb-4">For example: 3-4M AED, 2.5 million, from 5M</p>
+        <input 
+          type="text" 
+          name="budget" 
+          placeholder="Enter your budget..."
+          class="w-full p-3 border border-gray-300 rounded-lg font-serif"
+          required
+        />
+      </div>
+
+      <!-- 3. LIFESTYLE PRIORITY -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">3. LIFESTYLE PRIORITY</h3>
+        <p class="text-base mb-4">Is a morning by the water more important, or quick access to the city center?</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="water" class="mr-3" />
+            <span>🌊 <strong>Morning by the water</strong> — panoramic view, quiet waterfront, private access</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="center" class="mr-3" />
+            <span>🏙️ <strong>Access to the center</strong> — transportation, business districts, dynamism</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="balance" class="mr-3" />
+            <span>⚖️ <strong>Balance</strong> — a golden mean between water and the center</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 4. SPATIAL RHYTHM -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-6">4. SPATIAL RHYTHM</h3>
+        <p class="text-base mb-6">What keeps you focused and energized?</p>
+        
+        <!-- Morning anchor -->
+        <div class="mb-6">
+          <p class="font-semibold mb-3">Morning anchor:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="water_horizon" class="mr-3" />
+              <span>🌅 Water and horizon</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="city_panorama" class="mr-3" />
+              <span>🏙️ City panorama</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="garden" class="mr-3" />
+              <span>🌿 Garden and greenery</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="balcony" class="mr-3" />
+              <span>🪟 Wide balcony</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Privacy level -->
+        <div class="mb-6">
+          <p class="font-semibold mb-3">Privacy level:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="high" class="mr-3" />
+              <span>🔒 <strong>High</strong> — separate quiet zones</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="moderate" class="mr-3" />
+              <span>⚖️ <strong>Moderate</strong> — a balance of openness and seclusion</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="open" class="mr-3" />
+              <span>🌐 <strong>Open space</strong> — social energy</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Environment energy -->
+        <div>
+          <p class="font-semibold mb-3">Environment energy:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="quiet" class="mr-3" />
+              <span>🤫 Quiet and peace</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="cafe_activity" class="mr-3" />
+              <span>☕ Cafe and activity nearby</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="business_dynamic" class="mr-3" />
+              <span>⚡ Business dynamics</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PLANNING HORIZON -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">5. PLANNING HORIZON</h3>
+        <p class="text-base mb-4">What pace of decision-making is comfortable for you?</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="1_month" class="mr-3" />
+            <span><strong>1 month</strong> — ready for a quick decision</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="3_months" class="mr-3" />
+            <span><strong>3 months</strong> — active search and selection</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="6_months" class="mr-3" />
+            <span><strong>6 months</strong> — systematic market research</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="6_plus_months" class="mr-3" />
+            <span><strong>More than 6 months</strong> — long-term planning</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. SPECIFYING DETAILS -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">6. SPECIFYING DETAILS</h3>
+        <p class="text-base mb-6 italic">Fill in only the blocks relevant to your goal</p>
+        
+        <!-- For living -->
+        <div class="mb-6 p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">For living:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Number of quiet zones (bedrooms):</label>
+              <input type="number" name="bedrooms" min="1" max="10" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Terrace/balcony:</label>
+              <select name="terrace" class="p-2 border border-gray-300 rounded">
+                <option value="">Select...</option>
+                <option value="critical">Critical</option>
+                <option value="desirable">Desirable</option>
+                <option value="not_important">Not important</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Parking:</label>
+              <select name="parking" class="p-2 border border-gray-300 rounded">
+                <option value="">Select...</option>
+                <option value="required">Required</option>
+                <option value="preferred">Preferred</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- For investments -->
+        <div class="mb-6 p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">For investments:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Target yield (% per annum):</label>
+              <input type="text" name="target_yield" placeholder="For example: 7-10%" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Holding period (years):</label>
+              <input type="number" name="holding_period" min="1" max="20" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Off-plan projects:</label>
+              <select name="offplan" class="p-2 border border-gray-300 rounded">
+                <option value="">Select...</option>
+                <option value="consider">Consider</option>
+                <option value="ready_only">Ready properties only</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Short-term rental (Airbnb):</label>
+              <select name="short_rental" class="p-2 border border-gray-300 rounded">
+                <option value="">Select...</option>
+                <option value="planning">Planning</option>
+                <option value="long_term">Long-term rental</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- For selling/leasing -->
+        <div class="p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">For selling/leasing:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Property type:</label>
+              <select name="property_type" class="p-2 border border-gray-300 rounded">
+                <option value="">Select...</option>
+                <option value="villa">Villa</option>
+                <option value="apartment">Apartment</option>
+                <option value="townhouse">Townhouse</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Current status:</label>
+              <input type="text" name="current_status" placeholder="Vacant / Leased until..." class="p-2 border border-gray-300 rounded w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. HOW TO CONTACT -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">7. HOW TO CONTACT</h3>
+        <p class="text-base mb-4">Leave your contact for personal recommendations:</p>
+        <div class="space-y-4">
+          <div>
+            <label class="block mb-2 font-semibold">Your Name: <span class="text-red-500">*</span></label>
+            <input type="text" name="name" required class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold">Phone: <span class="text-red-500">*</span></label>
+            <input type="tel" name="phone" required placeholder="+971..." class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold">Email: <span class="text-red-500">*</span></label>
+            <input type="email" name="email" required placeholder="your@email.com" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <p class="font-semibold mb-3">Preferred contact channel:</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="whatsapp_same" class="mr-3" />
+                <span>📱 WhatsApp (same number)</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="whatsapp_different" class="mr-3" />
+                <span>📱 WhatsApp (different number)</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="phone" class="mr-3" />
+                <span>📞 Phone call</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="email" class="mr-3" />
+                <span>📧 Email</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="telegram" class="mr-3" />
+                <span>✈️ Telegram</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block mb-2">WhatsApp number (if different from main):</label>
+            <input type="tel" name="whatsapp_phone" placeholder="+971..." class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2">Telegram (if selected):</label>
+            <input type="text" name="telegram" placeholder="@username" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2">Preferred time to contact:</label>
+            <input type="text" name="contact_time" placeholder="For example: morning 9-11, evening after 18:00" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. YOUR STORY -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">8. YOUR STORY</h3>
+        <p class="font-semibold mb-4">What is most important to you in this choice?</p>
+        <p class="text-sm italic mb-4">Tell me about your expectations, special requirements, or dreams — this will help us find the perfect match</p>
+        <textarea 
+          name="story" 
+          rows="6"
+          placeholder="Share your thoughts, plans, special requests..."
+          class="w-full p-4 border border-gray-300 rounded-lg font-serif resize-vertical"
+        ></textarea>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="text-center">
+        <p class="text-sm italic mb-6">
+          Ready to submit your request? After sending, you will receive personalized options within 24 hours.
+        </p>
+        <button 
+          type="submit"
+          class="px-12 py-4 rounded-full border border-black font-serif italic text-xl hover:bg-black hover:text-white transition-colors"
+        >
+          SUBMIT REQUEST
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</BaseLayout>
