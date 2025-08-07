@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ivandubai.xyz/sitemap-index.xml
+
+# Important pages
+Allow: /
+Allow: /en/
+Allow: /projects/
+Allow: /en/projects/
+Allow: /cases/
+Allow: /en/cases/
+Allow: /blog/
+Allow: /en/blog/
+Allow: /faq/
+Allow: /en/faq/
+Allow: /contact/
+Allow: /en/contact/

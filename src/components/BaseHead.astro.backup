@@ -13,8 +13,6 @@ export type Props = {
     author?: string;
     publishedTime?: string;
     modifiedTime?: string;
-    // NEW: i18n support
-    lang?: 'ru' | 'en';
 };
 
 const { 
@@ -24,9 +22,7 @@ const {
     keywords,
     author = 'Ivan Tyrtyshnyy',
     publishedTime,
-    modifiedTime,
-    // NEW: language detection
-    lang = Astro.url.pathname.startsWith('/en/') ? 'en' : 'ru'
+    modifiedTime
 } = Astro.props;
 
 const title = Astro.props.title ?? siteConfig.title;
@@ -46,37 +42,6 @@ function formatCanonicalURL(url: string | URL) {
     }
     return path.replace(/\/?$/, '/');
 }
-
-// NEW: Generate hreflang URLs
-function generateHreflangUrls(currentPath: string) {
-    const baseUrl = 'https://ivandubai.xyz';
-    
-    // Remove language prefix and trailing slash for path matching
-    const cleanPath = currentPath.replace(/^\/en\//, '/').replace(/\/$/, '') || '/';
-    
-    const hreflangUrls = [
-        {
-            lang: 'ru',
-            url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
-        },
-        {
-            lang: 'en', 
-            url: baseUrl + '/en' + (cleanPath === '/' ? '/' : cleanPath + '/')
-        },
-        {
-            lang: 'x-default',
-            url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
-        }
-    ];
-    
-    return hreflangUrls;
-}
-
-const currentPath = Astro.url.pathname;
-const hreflangUrls = generateHreflangUrls(currentPath);
-
-// NEW: Dynamic locale based on language
-const ogLocale = lang === 'en' ? 'en_US' : 'ru_RU';
 
 // Structured data for better SEO
 const jsonLd = {
@@ -107,11 +72,6 @@ const jsonLd = {
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
 
-<!-- NEW: hreflang attributes for multilingual SEO -->
-{hreflangUrls.map(({ lang: hrefLang, url }) => (
-    <link rel="alternate" hreflang={hrefLang} href={url} />
-))}
-
 <!-- Page Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
 <meta name="description" content={description} />
@@ -128,8 +88,7 @@ const jsonLd = {
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:site_name" content={siteConfig.title} />
-<!-- NEW: Dynamic locale based on language -->
-<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale" content="ru_RU" />
 {resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
 {resolvedImage?.alt && <meta property="og:image:alt" content={resolvedImage.alt} />}
 {resolvedImage?.src && <meta property="og:image:width" content="1200" />}
