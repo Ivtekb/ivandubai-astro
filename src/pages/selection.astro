@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Персональный подбор недвижимости в ОАЭ — точный сценарий"
+  description="Детальная форма для персонального подбора недвижимости в Дубае, Абу-Даби, Рас-эль-Хайме. Укажите цели, бюджет, приоритеты — получите персональные варианты в течение 24 часов."
+  showHeader={false}
+>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+    
+    <!-- КНОПКА НАЗАД -->
+    <div class="mb-8">
+      <a 
+        href="/"
+        class="inline-flex items-center text-sm text-gray-600 hover:text-black transition-colors"
+      >
+        ← Вернуться на главную
+      </a>
+    </div>
+
+    <!-- ЗАГОЛОВОК -->
+    <div class="mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Твой сценарий недвижимости в ОАЭ — точный подбор
+      </h1>
+      <p class="text-lg mb-4">
+        <strong>Ты — главный герой своей истории.</strong> Моя задача — раскрыть сценарии жизни и инвестиций, где маршрут совпадает с твоими ожиданиями.
+      </p>
+      <p class="text-base mb-4">
+        Расскажи, что важно, и вместе найдём точку совпадения для жизни или бизнеса в Дубае, Абу-Даби, Рас-эль-Хайме.
+      </p>
+      <p class="text-sm italic text-gray-600">
+        Все данные строго конфиденциальны и используются только для персональных рекомендаций.
+      </p>
+    </div>
+
+    <!-- ФОРМА -->
+    <form action="https://formspree.io/f/movlvnnr" method="POST" class="space-y-10">
+      
+      <!-- СКРЫТЫЕ ПОЛЯ -->
+      <input type="hidden" name="_subject" value="🎯 Персональный подбор недвижимости ОАЭ" />
+      <input type="hidden" name="language" value="ru" />
+
+      <!-- 1. ТЕКУЩИЙ ФОКУС -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">1. ТВОЙ ТЕКУЩИЙ ФОКУС <span class="text-red-500">*</span></h3>
+        <p class="text-base mb-4">Хочу услышать главную цель:</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="live" class="mr-3" required />
+            <span>🏠 <strong>Жить</strong> — для себя и семьи</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="invest" class="mr-3" required />
+            <span>📈 <strong>Инвестировать</strong> — доходность и рост капитала</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="sell" class="mr-3" required />
+            <span>🔄 <strong>Продать/Сдать</strong> — уже есть объект в управлении</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="focus" value="mixed" class="mr-3" required />
+            <span>🎯 <strong>Смешанный</strong> — комбинация целей</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2. БЮДЖЕТ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">2. ОРИЕНТИР ПО БЮДЖЕТУ <span class="text-red-500">*</span></h3>
+        <p class="text-base mb-4">Каков твой диапазон? Любой формат приветствуется:</p>
+        <p class="text-sm italic mb-4">Например: 3-4M AED, 2.5 миллиона, от 5М</p>
+        <input 
+          type="text" 
+          name="budget" 
+          placeholder="Введи свой бюджет..."
+          class="w-full p-3 border border-gray-300 rounded-lg font-serif"
+          required
+        />
+      </div>
+
+      <!-- 3. РИТМ ЖИЗНИ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">3. ПРИОРИТЕТ РИТМА ЖИЗНИ</h3>
+        <p class="text-base mb-4">Важнее утро у воды или скорость доступа к центру?</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="water" class="mr-3" />
+            <span>🌊 <strong>Утро у воды</strong> — панорама, тишина фронта, приватный заход</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="center" class="mr-3" />
+            <span>🏙️ <strong>Доступ к центру</strong> — транспорт, деловые районы, динамика</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="lifestyle_priority" value="balance" class="mr-3" />
+            <span>⚖️ <strong>Баланс</strong> — золотая середина между водой и центром</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 4. ПРОСТРАНСТВЕННЫЙ РИТМ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-6">4. ПРОСТРАНСТВЕННЫЙ РИТМ</h3>
+        <p class="text-base mb-6">Что держит фокус и заряжает энергией?</p>
+        
+        <!-- Утренний якорь -->
+        <div class="mb-6">
+          <p class="font-semibold mb-3">Утренний якорь:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="water_horizon" class="mr-3" />
+              <span>🌅 Вода и горизонт</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="city_panorama" class="mr-3" />
+              <span>🏙️ Панорама города</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="garden" class="mr-3" />
+              <span>🌿 Сад и зелень</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="morning_anchor" value="balcony" class="mr-3" />
+              <span>🪟 Широкий балкон</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Уровень приватности -->
+        <div class="mb-6">
+          <p class="font-semibold mb-3">Уровень приватности:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="high" class="mr-3" />
+              <span>🔒 <strong>Высокая</strong> — отдельные тихие зоны</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="moderate" class="mr-3" />
+              <span>⚖️ <strong>Умеренная</strong> — баланс открытости и уединения</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="privacy_level" value="open" class="mr-3" />
+              <span>🌐 <strong>Открытое пространство</strong> — социальная энергия</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Энергия окружения -->
+        <div>
+          <p class="font-semibold mb-3">Энергия окружения:</p>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="quiet" class="mr-3" />
+              <span>🤫 Тишина и покой</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="cafe_activity" class="mr-3" />
+              <span>☕ Кафе и активность рядом</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="environment_energy" value="business_dynamic" class="mr-3" />
+              <span>⚡ Деловая динамика</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. ГОРИЗОНТ ПЛАНИРОВАНИЯ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">5. ГОРИЗОНТ ПЛАНИРОВАНИЯ</h3>
+        <p class="text-base mb-4">Какой темп принятия решения комфортен?</p>
+        <div class="space-y-3">
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="1_month" class="mr-3" />
+            <span><strong>1 месяц</strong> — готов к быстрому решению</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="3_months" class="mr-3" />
+            <span><strong>3 месяца</strong> — активный поиск и выбор</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="6_months" class="mr-3" />
+            <span><strong>6 месяцев</strong> — планомерное изучение рынка</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="timeline" value="6_plus_months" class="mr-3" />
+            <span><strong>Больше 6 месяцев</strong> — долгосрочное планирование</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. УТОЧНЯЮЩИЕ ДЕТАЛИ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">6. УТОЧНЯЮЩИЕ ДЕТАЛИ</h3>
+        <p class="text-base mb-6 italic">Заполни только релевантные блоки для твоей цели</p>
+        
+        <!-- Для жизни -->
+        <div class="mb-6 p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">Для жизни:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Количество тихих зон (спален):</label>
+              <input type="number" name="bedrooms" min="1" max="10" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Терраса/балкон:</label>
+              <select name="terrace" class="p-2 border border-gray-300 rounded">
+                <option value="">Выберите...</option>
+                <option value="critical">Критично</option>
+                <option value="desirable">Желательно</option>
+                <option value="not_important">Не важно</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Парковка:</label>
+              <select name="parking" class="p-2 border border-gray-300 rounded">
+                <option value="">Выберите...</option>
+                <option value="required">Обязательно</option>
+                <option value="preferred">По возможности</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Для инвестиций -->
+        <div class="mb-6 p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">Для инвестиций:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Целевая доходность (% годовых):</label>
+              <input type="text" name="target_yield" placeholder="Например: 7-10%" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Горизонт удержания (лет):</label>
+              <input type="number" name="holding_period" min="1" max="20" class="p-2 border border-gray-300 rounded" />
+            </div>
+            <div>
+              <label class="block mb-2">Off-plan проекты:</label>
+              <select name="offplan" class="p-2 border border-gray-300 rounded">
+                <option value="">Выберите...</option>
+                <option value="consider">Рассматриваю</option>
+                <option value="ready_only">Только готовые объекты</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Короткая аренда (Airbnb):</label>
+              <select name="short_rental" class="p-2 border border-gray-300 rounded">
+                <option value="">Выберите...</option>
+                <option value="planning">Планирую</option>
+                <option value="long_term">Долгосрочная аренда</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Для продажи/сдачи -->
+        <div class="p-4 border border-gray-200 rounded-lg">
+          <p class="font-semibold mb-4">Для продажи/сдачи:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="block mb-2">Тип объекта:</label>
+              <select name="property_type" class="p-2 border border-gray-300 rounded">
+                <option value="">Выберите...</option>
+                <option value="villa">Вилла</option>
+                <option value="apartment">Апартаменты</option>
+                <option value="townhouse">Таунхаус</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-2">Текущий статус:</label>
+              <input type="text" name="current_status" placeholder="Свободен / Арендован до..." class="p-2 border border-gray-300 rounded w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. КАК СВЯЗАТЬСЯ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">7. КАК СВЯЗАТЬСЯ</h3>
+        <p class="text-base mb-4">Оставь контакт для персональных рекомендаций:</p>
+        <div class="space-y-4">
+          <div>
+            <label class="block mb-2 font-semibold">Твоё имя: <span class="text-red-500">*</span></label>
+            <input type="text" name="name" required class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold">Телефон: <span class="text-red-500">*</span></label>
+            <input type="tel" name="phone" required placeholder="+971..." class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2 font-semibold">Email: <span class="text-red-500">*</span></label>
+            <input type="email" name="email" required placeholder="your@email.com" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <p class="font-semibold mb-3">Предпочтительный канал связи:</p>
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="whatsapp_same" class="mr-3" />
+                <span>📱 WhatsApp (тот же номер)</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="whatsapp_different" class="mr-3" />
+                <span>📱 WhatsApp (другой номер)</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="phone" class="mr-3" />
+                <span>📞 Голосовой звонок</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="email" class="mr-3" />
+                <span>📧 Email</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="contact_method" value="telegram" class="mr-3" />
+                <span>✈️ Telegram</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block mb-2">WhatsApp номер (если отличается от основного):</label>
+            <input type="tel" name="whatsapp_phone" placeholder="+971..." class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2">Telegram (если выбран):</label>
+            <input type="text" name="telegram" placeholder="@username" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+          <div>
+            <label class="block mb-2">Удобное время связи:</label>
+            <input type="text" name="contact_time" placeholder="Например: утром 9-11, вечером после 18:00" class="w-full p-3 border border-gray-300 rounded-lg font-serif" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. ТВОЯ ИСТОРИЯ -->
+      <div>
+        <h3 class="text-xl font-serif font-semibold mb-4">8. ТВОЯ ИСТОРИЯ</h3>
+        <p class="font-semibold mb-4">Что для тебя самое важное в этом выборе?</p>
+        <p class="text-sm italic mb-4">Расскажи о своих ожиданиях, особых требованиях или мечтах — это поможет найти идеальное совпадение</p>
+        <textarea 
+          name="story" 
+          rows="6"
+          placeholder="Поделись своими мыслями, планами, особыми пожеланиями..."
+          class="w-full p-4 border border-gray-300 rounded-lg font-serif resize-vertical"
+        ></textarea>
+      </div>
+
+      <!-- ОТПРАВКА -->
+      <div class="text-center">
+        <p class="text-sm italic mb-6">
+          Готов зафиксировать запрос? После отправки получишь персональные варианты в течение 24 часов.
+        </p>
+        <button 
+          type="submit"
+          class="px-12 py-4 rounded-full border border-black font-serif italic text-xl hover:bg-black hover:text-white transition-colors"
+        >
+          ОТПРАВИТЬ ЗАПРОС
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</BaseLayout>
