@@ -1,5 +1,5 @@
 ---
-// src/components/YandexMetrika.astro
+// src/components/YandexMetrika.astro - ИСПРАВЛЕННАЯ ВЕРСИЯ
 // Определяем язык из URL
 const isEnglish = Astro.url.pathname.includes('/en/');
 const currentLang = isEnglish ? 'en' : 'ru';
@@ -26,13 +26,13 @@ const METRIKA_ID = '103737764';
         trackLinks: true,
         // Добавляем параметр языка
         params: {
-            language: currentLang
+            language: window.location.pathname.includes('/en/') ? 'en' : 'ru'
         }
     });
     
     // Отмечаем язык страницы
     ym(103737764, 'userParams', {
-        language: currentLang
+        language: window.location.pathname.includes('/en/') ? 'en' : 'ru'
     });
 </script>
 <noscript>
@@ -42,28 +42,74 @@ const METRIKA_ID = '103737764';
 </noscript>
 <!-- /Yandex.Metrika counter -->
 
-<!-- Минимальное отслеживание событий -->
-<script define:vars={{ currentLang }}>
+<!-- Отслеживание событий - ИСПРАВЛЕННАЯ ВЕРСИЯ -->
+<script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-    // Переключение языка
-    const langSwitchers = document.querySelectorAll('a[href*="/en/"], a[href*="/ru/"]');
-    langSwitchers.forEach(link => {
+    // Определяем язык из URL в браузере
+    var currentLang = window.location.pathname.includes('/en/') ? 'en' : 'ru';
+    
+    // 1. Переключение языка
+    var langSwitchers = document.querySelectorAll('a[href*="/en/"], a[href*="/ru/"]');
+    langSwitchers.forEach(function(link) {
         link.addEventListener('click', function() {
-            const targetLang = this.href.includes('/en/') ? 'en' : 'ru';
+            var targetLang = this.href.includes('/en/') ? 'en' : 'ru';
             if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', `lang_switch_${currentLang}_to_${targetLang}`);
+                ym(103737764, 'reachGoal', 'lang_switch_' + currentLang + '_to_' + targetLang);
+                console.log('Language switch event:', currentLang, '->', targetLang);
             }
         });
     });
 
-    // Telegram контакты
-    const telegramLinks = document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]');
-    telegramLinks.forEach(link => {
+    // 2. Telegram контакты
+    var telegramLinks = document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]');
+    telegramLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', `telegram_${currentLang}`);
+                ym(103737764, 'reachGoal', 'telegram_' + currentLang);
+                console.log('Telegram contact event:', currentLang);
             }
         });
     });
+
+    // 3. Email и WhatsApp контакты
+    var contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href*="whatsapp"], a[href*="wa.me"]');
+    contactLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            var contactType = 'email';
+            if (this.href.includes('whatsapp') || this.href.includes('wa.me')) {
+                contactType = 'whatsapp';
+            }
+            if (typeof ym !== 'undefined') {
+                ym(103737764, 'reachGoal', contactType + '_' + currentLang);
+                console.log('Contact event:', contactType, currentLang);
+            }
+        });
+    });
+
+    // 4. Просмотр проектов
+    var projectLinks = document.querySelectorAll('a[href*="/projects/"]');
+    projectLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (typeof ym !== 'undefined') {
+                ym(103737764, 'reachGoal', 'project_view_' + currentLang);
+                console.log('Project view event:', currentLang);
+            }
+        });
+    });
+
+    // 5. Просмотр кейсов
+    var caseLinks = document.querySelectorAll('a[href*="/cases/"]');
+    caseLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (typeof ym !== 'undefined') {
+                ym(103737764, 'reachGoal', 'case_view_' + currentLang);
+                console.log('Case view event:', currentLang);
+            }
+        });
+    });
+
+    // Отладочная информация
+    console.log('YandexMetrika initialized for language:', currentLang);
+    console.log('ym function available:', typeof ym !== 'undefined');
 });
 </script>
