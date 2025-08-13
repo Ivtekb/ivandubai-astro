@@ -1,115 +1,316 @@
 ---
-// src/components/YandexMetrika.astro - ИСПРАВЛЕННАЯ ВЕРСИЯ
-// Определяем язык из URL
-const isEnglish = Astro.url.pathname.includes('/en/');
+// src/components/YandexMetrika.astro - ПРОФЕССИОНАЛЬНАЯ ВЕРСИЯ
+// Определяем язык из URL на серверной стороне
+const pathname = Astro.url.pathname;
+const isEnglish = pathname.startsWith('/en/') || pathname === '/en';
 const currentLang = isEnglish ? 'en' : 'ru';
 
-// Ваш существующий ID счетчика
-const METRIKA_ID = '103737764';
+// Конфигурация метрики
+const METRIKA_ID = 103737764;
+const DEBUG_MODE = import.meta.env.DEV; // true только в dev режиме
 ---
 
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103737764', 'ym');
+<script type="text/javascript" is:inline>
+(function(m,e,t,r,i,k,a){
+    // Предотвращаем двойную загрузку
+    if (m[i]) return;
     
+    m[i] = m[i] || function(){
+        (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    
+    // Проверяем наличие скрипта
+    for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) return;
+    }
+    
+    k = e.createElement(t);
+    a = e.getElementsByTagName(t)[0];
+    k.async = 1;
+    k.src = r;
+    
+    // Обработка ошибок загрузки
+    k.onerror = function() {
+        console.warn('Yandex.Metrika script failed to load');
+    };
+    
+    a.parentNode.insertBefore(k, a);
+})(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + 103737764, 'ym');
+
+// Инициализация с обработкой ошибок
+try {
     ym(103737764, 'init', {
-        ssr: true, 
-        webvisor: true, 
-        clickmap: true, 
-        ecommerce: "dataLayer", 
-        accurateTrackBounce: true, 
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
         trackLinks: true,
-        // Добавляем параметр языка
+        accurateTrackBounce: true,
+        ecommerce: "dataLayer",
         params: {
-            language: window.location.pathname.includes('/en/') ? 'en' : 'ru'
+            language: window.location.pathname.startsWith('/en') ? 'en' : 'ru',
+            page_type: 'main',
+            user_agent: navigator.userAgent.includes('Mobile') ? 'mobile' : 'desktop'
         }
     });
     
-    // Отмечаем язык страницы
+    // Установка пользовательских параметров
     ym(103737764, 'userParams', {
-        language: window.location.pathname.includes('/en/') ? 'en' : 'ru'
+        language: window.location.pathname.startsWith('/en') ? 'en' : 'ru',
+        site_version: '2025.1'
     });
+    
+} catch (error) {
+    console.warn('Yandex.Metrika initialization failed:', error);
+}
 </script>
+
+<!-- Альтернативный noscript счетчик -->
 <noscript>
     <div>
-        <img src="https://mc.yandex.ru/watch/103737764" style="position:absolute; left:-9999px;" alt="" />
+        <img src={`https://mc.yandex.ru/watch/${METRIKA_ID}`} 
+             style="position:absolute; left:-9999px;" 
+             alt="Yandex.Metrika" 
+             width="1" 
+             height="1" />
     </div>
 </noscript>
-<!-- /Yandex.Metrika counter -->
 
-<!-- Отслеживание событий - ИСПРАВЛЕННАЯ ВЕРСИЯ -->
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-    // Определяем язык из URL в браузере
-    var currentLang = window.location.pathname.includes('/en/') ? 'en' : 'ru';
+<!-- Профессиональная система отслеживания событий -->
+<script type="text/javascript" is:inline define:vars={{ currentLang, DEBUG_MODE }}>
+(function() {
+    'use strict';
     
-    // 1. Переключение языка
-    var langSwitchers = document.querySelectorAll('a[href*="/en/"], a[href*="/ru/"]');
-    langSwitchers.forEach(function(link) {
-        link.addEventListener('click', function() {
-            var targetLang = this.href.includes('/en/') ? 'en' : 'ru';
+    // Конфигурация
+    const CONFIG = {
+        metrikaId: 103737764,
+        currentLang: currentLang,
+        debug: DEBUG_MODE,
+        retryAttempts: 3,
+        retryDelay: 1000
+    };
+    
+    // Утилиты
+    const Utils = {
+        log: function(message, data) {
+            if (CONFIG.debug) {
+                console.log('[YM]', message, data || '');
+            }
+        },
+        
+        error: function(message, error) {
+            if (CONFIG.debug) {
+                console.error('[YM]', message, error || '');
+            }
+        },
+        
+        debounce: function(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = function() {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        },
+        
+        waitForYm: function(callback, attempts = 0) {
             if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', 'lang_switch_' + currentLang + '_to_' + targetLang);
-                console.log('Language switch event:', currentLang, '->', targetLang);
+                callback();
+            } else if (attempts < CONFIG.retryAttempts) {
+                setTimeout(() => {
+                    Utils.waitForYm(callback, attempts + 1);
+                }, CONFIG.retryDelay);
+            } else {
+                Utils.error('Yandex.Metrika not available after retries');
+            }
+        }
+    };
+    
+    // Система отслеживания событий
+    const EventTracker = {
+        sendGoal: function(goalName, params = {}) {
+            Utils.waitForYm(() => {
+                try {
+                    ym(CONFIG.metrikaId, 'reachGoal', goalName, params);
+                    Utils.log('Goal sent:', goalName, params);
+                } catch (error) {
+                    Utils.error('Failed to send goal:', error);
+                }
+            });
+        },
+        
+        sendParams: function(params) {
+            Utils.waitForYm(() => {
+                try {
+                    ym(CONFIG.metrikaId, 'params', params);
+                    Utils.log('Params sent:', params);
+                } catch (error) {
+                    Utils.error('Failed to send params:', error);
+                }
+            });
+        },
+        
+        trackClick: function(element, goalName, additionalParams = {}) {
+            element.addEventListener('click', function(event) {
+                const params = {
+                    language: CONFIG.currentLang,
+                    element_text: this.textContent?.trim().substring(0, 50) || '',
+                    element_href: this.href || '',
+                    timestamp: Date.now(),
+                    ...additionalParams
+                };
+                
+                EventTracker.sendGoal(goalName, params);
+            });
+        }
+    };
+    
+    // Инициализация отслеживания
+    function initTracking() {
+        Utils.log('Initializing event tracking for language:', CONFIG.currentLang);
+        
+        // 1. Переключение языков
+        const langSwitchers = document.querySelectorAll('a[href*="/en/"], a[href*="/ru/"]');
+        langSwitchers.forEach(link => {
+            EventTracker.trackClick(link, 'language_switch', {
+                from_language: CONFIG.currentLang,
+                to_language: link.href.includes('/en/') ? 'en' : 'ru',
+                switch_type: 'header_menu'
+            });
+        });
+        
+        // 2. Навигация по проектам
+        const projectLinks = document.querySelectorAll('a[href*="/projects/"]');
+        projectLinks.forEach(link => {
+            EventTracker.trackClick(link, `project_view_${CONFIG.currentLang}`, {
+                project_url: link.href,
+                source_page: window.location.pathname
+            });
+        });
+        
+        // 3. Навигация по кейсам
+        const caseLinks = document.querySelectorAll('a[href*="/cases/"]');
+        caseLinks.forEach(link => {
+            EventTracker.trackClick(link, `case_view_${CONFIG.currentLang}`, {
+                case_url: link.href,
+                source_page: window.location.pathname
+            });
+        });
+        
+        // 4. Контакты - Telegram
+        const telegramLinks = document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]');
+        telegramLinks.forEach(link => {
+            EventTracker.trackClick(link, `telegram_contact_${CONFIG.currentLang}`, {
+                contact_source: 'telegram',
+                telegram_url: link.href
+            });
+        });
+        
+        // 5. Контакты - Email
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+            EventTracker.trackClick(link, `email_contact_${CONFIG.currentLang}`, {
+                contact_source: 'email',
+                email_address: link.href.replace('mailto:', '')
+            });
+        });
+        
+        // 6. Контакты - WhatsApp
+        const whatsappLinks = document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]');
+        whatsappLinks.forEach(link => {
+            EventTracker.trackClick(link, `whatsapp_contact_${CONFIG.currentLang}`, {
+                contact_source: 'whatsapp',
+                whatsapp_url: link.href
+            });
+        });
+        
+        // 7. Внешние ссылки
+        const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="ivandubai.xyz"])');
+        externalLinks.forEach(link => {
+            EventTracker.trackClick(link, `external_link_${CONFIG.currentLang}`, {
+                external_url: link.href,
+                link_domain: new URL(link.href).hostname
+            });
+        });
+        
+        // 8. Отслеживание скролла (с debounce)
+        let scrollDepth = 0;
+        const trackScroll = Utils.debounce(() => {
+            const percent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            if (percent > scrollDepth && percent % 25 === 0 && percent > 0) {
+                scrollDepth = percent;
+                EventTracker.sendGoal(`scroll_depth_${percent}_${CONFIG.currentLang}`, {
+                    scroll_percent: percent,
+                    page_url: window.location.pathname
+                });
+            }
+        }, 500);
+        
+        window.addEventListener('scroll', trackScroll, { passive: true });
+        
+        // 9. Время на странице
+        const startTime = Date.now();
+        const timeIntervals = [10, 30, 60, 120, 300]; // секунды
+        
+        timeIntervals.forEach(seconds => {
+            setTimeout(() => {
+                EventTracker.sendGoal(`time_on_page_${seconds}s_${CONFIG.currentLang}`, {
+                    time_seconds: seconds,
+                    page_url: window.location.pathname
+                });
+            }, seconds * 1000);
+        });
+        
+        // 10. Отслеживание ухода со страницы
+        window.addEventListener('beforeunload', () => {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            if (timeSpent > 5) { // Минимум 5 секунд
+                EventTracker.sendGoal(`page_exit_${CONFIG.currentLang}`, {
+                    time_spent: timeSpent,
+                    page_url: window.location.pathname
+                }, true); // Синхронно
             }
         });
-    });
+        
+        Utils.log('Event tracking initialized successfully');
+    }
+    
+    // Запуск после загрузки DOM
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTracking);
+    } else {
+        initTracking();
+    }
+    
+    // Экспорт для отладки
+    if (CONFIG.debug) {
+        window.YMTracker = {
+            config: CONFIG,
+            utils: Utils,
+            tracker: EventTracker
+        };
+    }
+    
+})();
+</script>
 
-    // 2. Telegram контакты
-    var telegramLinks = document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]');
-    telegramLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', 'telegram_' + currentLang);
-                console.log('Telegram contact event:', currentLang);
+<!-- Дополнительный скрипт для SPA навигации (если используется) -->
+<script type="text/javascript" is:inline>
+// Отслеживание виртуальных переходов для SPA
+document.addEventListener('astro:page-load', function() {
+    if (typeof ym !== 'undefined') {
+        ym(103737764, 'hit', window.location.href, {
+            title: document.title,
+            params: {
+                language: window.location.pathname.startsWith('/en') ? 'en' : 'ru',
+                virtual_page: true
             }
         });
-    });
-
-    // 3. Email и WhatsApp контакты
-    var contactLinks = document.querySelectorAll('a[href^="mailto:"], a[href*="whatsapp"], a[href*="wa.me"]');
-    contactLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            var contactType = 'email';
-            if (this.href.includes('whatsapp') || this.href.includes('wa.me')) {
-                contactType = 'whatsapp';
-            }
-            if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', contactType + '_' + currentLang);
-                console.log('Contact event:', contactType, currentLang);
-            }
-        });
-    });
-
-    // 4. Просмотр проектов
-    var projectLinks = document.querySelectorAll('a[href*="/projects/"]');
-    projectLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', 'project_view_' + currentLang);
-                console.log('Project view event:', currentLang);
-            }
-        });
-    });
-
-    // 5. Просмотр кейсов
-    var caseLinks = document.querySelectorAll('a[href*="/cases/"]');
-    caseLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            if (typeof ym !== 'undefined') {
-                ym(103737764, 'reachGoal', 'case_view_' + currentLang);
-                console.log('Case view event:', currentLang);
-            }
-        });
-    });
-
-    // Отладочная информация
-    console.log('YandexMetrika initialized for language:', currentLang);
-    console.log('ym function available:', typeof ym !== 'undefined');
+    }
 });
 </script>
