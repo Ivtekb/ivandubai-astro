@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://ivandubai.xyz/sitemap-index.xml
-
 # Important pages
 Allow: /
 Allow: /en/
@@ -17,3 +14,21 @@ Allow: /faq/
 Allow: /en/faq/
 Allow: /contact/
 Allow: /en/contact/
+
+# Block aggressive crawlers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Crawl delay for all bots
+Crawl-delay: 3
+
+# Sitemaps
+Sitemap: https://ivandubai.xyz/sitemap-index.xml
+Sitemap: https://ivandubai.xyz/sitemap.xml
+Sitemap: https://ivandubai.xyz/sitemap-en.xml
