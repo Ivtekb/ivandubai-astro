@@ -1,19 +1,19 @@
 const siteConfig = {
     website: 'https://ivandubai.xyz',
-    title: 'Ivan Tyrtyshnyy | from Dubai',
+    title: 'Ivan Tyrtyshnyi | from Dubai',
     subtitle: 'Недвижимость ОАЭ вне шаблонов. Интеллектуальные решения.',
     description: 'Персональный бренд Ivan from Dubai: недвижимость в ОАЭ, авторский подход к инвестициям, сопровождение с ИИ, живые кейсы успешных сделок. Эксклюзивные проекты в Дубае.',
     keywords: 'недвижимость ОАЭ, недвижимость Дубай, инвестиции в недвижимость, покупка квартиры Дубай, Ivan from Dubai, консультант по недвижимости, off-plan проекты, новостройки ОАЭ',
-    author: 'Ivan Tyrtyshnyy',
+    author: 'Ivan Tyrtyshnyi',
     locale: 'ru_RU',
     image: {
         src: '/hero.jpeg',
-        alt: 'Ivan Tyrtyshnyy - консультант по недвижимости в Дубае на фоне небоскребов'
+        alt: 'Ivan Tyrtyshnyi - консультант по недвижимости в Дубае на фоне небоскребов'
     },
     // SEO enhancements
     openGraph: {
         type: 'website',
-        siteName: 'Ivan Tyrtyshnyy | from Dubai',
+        siteName: 'Ivan Tyrtyshnyi | from Dubai',
         locale: 'ru_RU'
     },
     twitter: {
@@ -31,7 +31,7 @@ const siteConfig = {
     structuredData: {
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: 'Ivan Tyrtyshnyy',
+        name: 'Ivan Tyrtyshnyi',
         jobTitle: 'Консультант по недвижимости в ОАЭ',
         description: 'Персональный бренд Ivan from Dubai: недвижимость в ОАЭ, авторский подход к инвестициям, сопровождение с ИИ, живые кейсы успешных сделок.',
         url: 'https://ivandubai.xyz',
@@ -81,7 +81,7 @@ const siteConfig = {
         text: 'Моя задача — помочь тебе найти то, что подходит именно под твой стиль жизни, даже если это значит отказаться от некоторых вариантов.',
         image: {
             src: '/hero.jpeg',
-            alt: 'Ivan Tyrtyshnyy - персональный консультант по недвижимости в Дубае'
+            alt: 'Ivan Tyrtyshnyi - персональный консультант по недвижимости в Дубае'
         },
         actions: [
             { text: 'Получить подборку', href: '/#projects' },

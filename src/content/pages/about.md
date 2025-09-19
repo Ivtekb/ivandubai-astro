@@ -6,7 +6,7 @@ image:
   alt: 'Иван Тыртышный — сертифицированный брокер по недвижимости в Дубае, DLD №48861'
 pageType: 'article'
 keywords: 'Иван Тыртышный, сертифицированный брокер Дубай, DLD 48861, Knightsbridge Properties, недвижимость ОАЭ, инвестиции Дубай, персональный консультант недвижимость'
-author: 'Ivan Tyrtyshnyy'
+author: 'Ivan Tyrtyshnyi'
 publishedTime: '2024-01-15T00:00:00Z'
 modifiedTime: '2024-12-01T00:00:00Z'
 hero:

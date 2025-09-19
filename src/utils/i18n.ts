@@ -40,7 +40,7 @@ export const translations = {
       contact: 'Get in Touch'
     },
     meta: {
-      siteName: 'Ivan Tyrtyshnyy | Dubai Real Estate',
+      siteName: 'Ivan Tyrtyshnyi | Dubai Real Estate',
       defaultDescription: 'Certified Dubai real estate broker. DLD #48861.'
     }
   }
