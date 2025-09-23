@@ -1,21 +1,41 @@
 ---
 title: 'Краткосрочная аренда в Дубае: что нужно знать инвестору'
-excerpt: 'Как оформить режим, что проверять в правилах здания и как сходится доходность по районам. Короткий ориентир для покупки под краткосрок.'
+excerpt: 'Как оформить Holiday Home, проверить правила дома и посчитать реальную доходность по районам.' # ≤150
 publishDate: '2025-09-22'
+lang: 'ru'
+slug: 'short-term-rentals-dubai-2025'
+canonical: 'https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025'
+hreflang:
+  - href: 'https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025'
+    lang: 'ru'
+  - href: 'https://www.ivandubai.xyz/en/blog/short-term-rentals-dubai-2025'
+    lang: 'en'
 tags:
   - недвижимость
   - Дубай
   - краткосрочная аренда
   - инвестиции
 seo:
-  title: 'Краткосрочная аренда в Дубае: что нужно знать инвестору'
-  description: 'Как оформить режим Holiday Home, что проверять в правилах здания и как сходится доходность по районам Business Bay, JVC, Dubai South.'
-  image:
-    src: '/post-2.jpg'
-    alt: 'Краткосрочная аренда в Дубае - ключ-карта и Business Bay'
+  title: 'Краткосрочная аренда в Дубае: что надо учесть инвестору'
+  description: 'Holiday Home, правила OA/HOA, сборы и коридоры доходности по Business Bay, JVC и Dubai South.' # ≤150
+image:
+  src: '/post-2.jpg'
+  alt: 'Человек поднимается по лестнице в интерьере; чёрно-белая фотография'
+og:
+  title: 'Short-term в Дубае: быстрый ориентир для инвестора'
+  description: 'Лицензия, house rules и реальная доходность: что важно до сделки.'
+  image: '/post-2.jpg'
+  imageAlt: 'Ключ-карта и панорама Business Bay'
+twitter:
+  card: 'summary_large_image'
+  title: 'Краткосрочная аренда в Дубае: что важно до сделки'
+  description: 'Holiday Home, OA/HOA и доходность: короткий гид.'
+  image: '/post-2.jpg'
 ---
 
-![Краткосрочная аренда в Дубае - ключ-карта и Business Bay](/post-2.jpg)
+![Человек поднимается по лестнице в интерьере; ч/б кадр](/post-2.jpg)
+*Регистрация Holiday Home и правила дома — отправная точка перед расчётами.*
+
 
 **Короткий ориентир.** Как оформить режим, что проверять в правилах здания и как сходится доходность по районам.
 
@@ -30,8 +50,8 @@ seo:
 
 ## 2. Районы: характер спроса и «входной билет»
 
-**Business Bay.** Деловой и туристический поток, загрузка (occupancy) ровнее в течение года.
-**JVC.** Семейные поездки, выраженная сезонность (зима сильнее лета).
+**Business Bay.** Деловой и туристический поток, загрузка (occupancy) ровнее в течение года.  
+**JVC.** Семейные поездки, выраженная сезонность (зима сильнее лета).  
 **Dubai South.** Спрос «волнами» вокруг выставок и событий.
 
 **Диапазоны покупки и рабочая доходность**
@@ -51,36 +71,59 @@ seo:
 * **Уборка и расходные материалы**
 * **Амортизация интерьера** — ориентир **~10%** валовой выручки в год
 
-Математика в одну строку — удобно скопировать:
+Математика в одну строку — удобно скопировать:  
 `ADR − комиссия площадки − Tourism Dirham − управление (15–25%) − уборка/расходники − амортизация (~10% валовой выручки) = чистая`
 
 ## 4. Практический пример (case): студия JVC ~600 тыс. AED
 
-**Ожидание владельца:** валовая выручка ~**4 500 AED/мес**.
-**Факт первого года:** лето ~**2 800**, зима ~**5 200**, пауза на косметику. После комиссий/сборов/управления — **~6,5%** годовых вместо целевых «до 9%».
+**Ожидание владельца:** валовая выручка ~**4 500 AED/мес**.  
+**Факт первого года:** лето ~**2 800**, зима ~**5 200**, пауза на косметику. После комиссий/сборов/управления — **~6,5%** годовых вместо целевых «до 9%».  
 **Вывод:** решают дисциплина цены, качество **объявления (listing)** и отзывчивость.
 
 ## 5. Когда краткосрок даёт смысл
 
-* Юридически «чистый» объект: подтверждён режим Holiday Home, проверены **house rules**.
-* Посчитана **точка безубыточности** по ставке и загрузке; понятны «пороговые» месяцы.
+* Юридически «чистый» объект: подтверждён режим Holiday Home, проверены **house rules**.  
+* Посчитана **точка безубыточности** по ставке и загрузке; понятны «пороговые» месяцы.  
 * Готовность уделять **2–3 часа в неделю**: цена, ответы гостям, график уборки и мелкий ремонт.
 
 ## 6. Что сделать до покупки
 
-1. **Режим.** До задатка получить у OA/управляющей компании **house rules / Residents Guide** и подтвердить допустимость краткосрочного размещения.
-2. **Модель дохода.** Посчитать три сценария **низкий/базовый/высокий (Low/Base/High)** по **ADR** и загрузке, заложить все расходы из «структуры брони».
+1. **Режим.** До задатка получить у OA/управляющей компании **house rules / Residents Guide** и подтвердить допустимость краткосрочного размещения.  
+2. **Модель дохода.** Посчитать три сценария **низкий/базовый/высокий (Low/Base/High)** по **ADR** и загрузке, заложить все расходы из «структуры брони».  
 3. **Операция.** Определиться: самостоятельное управление или **управляющая компания (operator)**. Зафиксировать уровень сервиса **(Service Level Agreement, SLA)**: скорость ответа, стандарты уборки, требования к фото и описанию.
 
 ---
 
-<small>**Источники (дата доступа: 22.09.2025)**
-* **DET — Register to operate Holiday Homes** (процедура регистрации) — dubaidet.gov.ae. Dubai Department of Economy & Tourism
-* **DET — Apply for a Holiday Home Permit** (требования, FAQ) — dubaidet.gov.ae. Dubai Department of Economy & Tourism
-* **Holiday Homes FAQ (DET):** «Do I need to pay 10% Dubai Municipality fees? — No…» (Holiday Homes units). hhpermits.det.gov.ae
-* **Tourism Dirham для Holiday Homes:** Standard **AED 10**, Deluxe **AED 15** за спальню/ночь — сводки по рынку и управленцев. Houst
-* **Airbnb fees (текущая модель):** Host ~**3%**, Guest **~14,1–16,5%**. Airbnb
-* **Airbnb single-fee (анонс):** host ~**15,5%**, guest **0%** (внедрение по регионам). Beyond Pricing</small>
+<details>
+  <summary><strong>Key Facts</strong></summary>
+
+- Режим: Holiday Home (DET), подтверждение допуска в конкретном доме (OA/HOA).
+- Диапазон входа: Business Bay 750–850k AED (студия), JVC 550–650k, Dubai South 400–500k.
+- Рабочие коридоры: студии 5–9%, 1-комнатные 4–8% (по районам и кейсам).
+- Cost-stack: ADR − комиссия платформы − Tourism Dirham − управление (15–25%) − уборка − амортизация (~10%) = чистая.
+- Операция: 2–3 часа в неделю (цены/сообщения/уборка/мелкие работы).
+</details>
+
+<details>
+  <summary><strong>Glossary</strong></summary>
+
+- Holiday Home — режим краткосрочного размещения (DET).  
+- OA/HOA — совет/ассоциация собственников.  
+- ADR — средняя ставка за ночь (Average Daily Rate).  
+- Tourism Dirham — фиксированный городской сбор за занятые ночи.  
+- SLA — соглашение об уровне сервиса (Service Level Agreement).
+</details>
+
+---
+
+<small>**Источники (дата доступа: 22.09.2025)**  
+* **DET — Register to operate Holiday Homes** (процедура регистрации) — dubaidet.gov.ae. Dubai Department of Economy & Tourism  
+* **DET — Apply for a Holiday Home Permit** (требования, FAQ) — dubaidet.gov.ae. Dubai Department of Economy & Tourism  
+* **Holiday Homes FAQ (DET):** «Do I need to pay 10% Dubai Municipality fees? — No…» (Holiday Homes units). hhpermits.det.gov.ae  
+* **Tourism Dirham для Holiday Homes:** Standard **AED 10**, Deluxe **AED 15** за спальню/ночь — сводки по рынку и управленцев. Houst  
+* **Airbnb fees (текущая модель):** Host ~**3%**, Guest **~14,1–16,5%**. Airbnb  
+* **Airbnb single-fee (анонс):** host ~**15,5%**, guest **0%** (внедрение по регионам). Beyond Pricing
+</small>
 
 ---
 
@@ -88,18 +131,35 @@ seo:
 
 > **Готовы ли вы уделять 2–3 часа в неделю управлению краткосрочной арендой ради потенциальной прибавки к доходности?**
 
-Напиши отклик в <a href="https://t.me/ivandubai_signal_bot" target="_blank" class="px-4 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors no-underline" style="color: inherit;">Telegram‑бот</a> — проанализируем твой случай с учётом всех факторов.
+Напиши отклик в <a href="https://t.me/ivandubai_signal_bot" target="_blank" class="px-4 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors no-underline" style="color: inherit;">Telegram-бот</a> — проанализируем твой случай с учётом всех факторов.
 
 ---
 
 **Это может быть интересно:**  
-<a href="/cases">Кейсы</a> | <a href="/projects">Проекты</a> | <a href="/contact">Контакты</a>
+<a href="/cases">Кейсы</a> | <a href="/projects">Проекты</a>
 
 ---
 
 **Find your next resonance / Найди отклик:**  
 <a href="https://medium.com/@ivtekb" target="_blank">Medium</a> | <a href="https://substack.com/@ivanfromdubai" target="_blank">Substack</a> | <a href="https://www.linkedin.com/in/ivanfromdubai" target="_blank">LinkedIn</a>  
 — each link is an entry point, not an endpoint.
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Краткосрочная аренда в Дубае: что нужно знать инвестору",
+  "inLanguage": "ru",
+  "datePublished": "2025-09-22",
+  "dateModified": "2025-09-22",
+  "author": { "@type": "Person", "name": "Ivan Tyrtyshnyi" },
+  "publisher": { "@type": "Organization", "name": "Ivan from Dubai" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025" },
+  "image": { "@type": "ImageObject", "url": "https://www.ivandubai.xyz/post-2.jpg", "width": 1920, "height": 1080 },
+  "description": "Holiday Home, правила OA/HOA, сборы и коридоры доходности по Business Bay, JVC и Dubai South."
+}
+</script>
 
 ---
 
