@@ -1,15 +1,7 @@
 ---
 title: 'Short-Term Rentals in Dubai: What Investors Should Know'
-excerpt: 'Set up Holiday Home, verify building rules, and model realistic returns by district.' # ≤150
+excerpt: 'Set up Holiday Home, verify building rules, and model realistic returns by district.'
 publishDate: '2025-09-22'
-lang: 'en'
-slug: 'short-term-rentals-dubai-2025'
-canonical: 'https://www.ivandubai.xyz/en/blog/short-term-rentals-dubai-2025'
-hreflang:
-  - href: 'https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025'
-    lang: 'ru'
-  - href: 'https://www.ivandubai.xyz/en/blog/short-term-rentals-dubai-2025'
-    lang: 'en'
 tags:
   - real estate
   - Dubai
@@ -17,20 +9,10 @@ tags:
   - investing
 seo:
   title: 'Dubai Short-Term Rentals: What to Check as an Investor'
-  description: 'Holiday Home, OA/HOA rules, fees, and return corridors across Business Bay, JVC, and Dubai South.' # ≤150
-image:
-  src: '/post-2.jpg'
-  alt: 'Man walking up an interior staircase; black-and-white photo'
-og:
-  title: 'Short-term rentals in Dubai: quick orientation for investors'
-  description: 'Licensing, house rules and realistic returns: what matters before the deal.'
-  image: '/post-2.jpg'
-  imageAlt: 'Keycard and Business Bay panorama'
-twitter:
-  card: 'summary_large_image'
-  title: 'Dubai Short-Term Rentals: What to Check Before Buying'
-  description: 'Holiday Home, OA/HOA and returns: quick guide.'
-  image: '/post-2.jpg'
+  description: 'Holiday Home, OA/HOA rules, fees, and return corridors across Business Bay, JVC, and Dubai South.'
+  image:
+    src: '/post-2.jpg'
+    alt: 'Man walking up an interior staircase; black-and-white photo'
 ---
 
 ![Man walking up an interior staircase; black-and-white photo](/post-2.jpg)
@@ -142,23 +124,6 @@ Leave a note via the <a href="https://t.me/ivandubai_signal_bot" target="_blank"
 **Find your next resonance:**  
 <a href="https://medium.com/@ivtekb" target="_blank">Medium</a> | <a href="https://substack.com/@ivanfromdubai" target="_blank">Substack</a> | <a href="https://www.linkedin.com/in/ivanfromdubai" target="_blank">LinkedIn</a>  
 — each link is an entry point, not an endpoint.
-
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Short-Term Rentals in Dubai: What Investors Should Know",
-  "inLanguage": "en",
-  "datePublished": "2025-09-22",
-  "dateModified": "2025-09-22",
-  "author": { "@type": "Person", "name": "Ivan Tyrtyshnyi" },
-  "publisher": { "@type": "Organization", "name": "Ivan from Dubai" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ivandubai.xyz/en/blog/short-term-rentals-dubai-2025" },
-  "image": { "@type": "ImageObject", "url": "https://www.ivandubai.xyz/post-2.jpg", "width": 1920, "height": 1080 },
-  "description": "Holiday Home, OA/HOA rules, fees, and return corridors across Business Bay, JVC, and Dubai South."
-}
-</script>
 
 ---
 
