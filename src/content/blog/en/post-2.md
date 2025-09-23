@@ -1,6 +1,6 @@
 ---
 title: 'Short-Term Rentals in Dubai: What Investors Should Know'
-excerpt: 'How to set up the Holiday Home regime, what to check in building rules, and how returns actually add up across districts.'
+excerpt: 'Set up a Holiday Home, verify building rules, and model realistic returns by district.'
 publishDate: '2025-09-22'
 tags:
   - real estate
@@ -8,31 +8,32 @@ tags:
   - short-term rentals
   - investing
 seo:
-  title: 'Short-Term Rentals in Dubai: What Investors Should Know'
-  description: 'How to set up a Holiday Home, what to verify with OA/HOA, and how returns look across Business Bay, JVC, and Dubai South.'
+  title: 'Dubai Short-Term Rentals: What to Check as an Investor'
+  description: 'Holiday Home, OA/HOA rules, fees, and return corridors across Business Bay, JVC, and Dubai South.'
   image:
     src: '/post-2.jpg'
-    alt: 'Short-term rental in Dubai — key card and Business Bay skyline'
+    alt: 'Man walking up an interior staircase; black-and-white photo'
 ---
 
-![Short-term rental in Dubai — key card and Business Bay skyline](/post-2.jpg)
+![Man walking up an interior staircase; black-and-white photo](/post-2.jpg)
+*Confirm the Holiday Home regime and building rules before any modelling.*
 
-**Quick orientation.** How to set up the regime, what to verify in building rules, and how returns really add up by district.
+**Quick orientation.** How to set up the regime, what to check in building rules, and how returns really add up across districts.
 
 ## 1. Set up the short-term regime (Holiday Home)
 
 * In Dubai, short-term rentals operate via registering your **apartment as a Holiday Home** with the **Dubai Economy & Tourism (DET)**.
-* The owner registers the unit and records guest details — essentially like a small hotel.
+* The owner registers the unit and records guest data—essentially like a small hotel.
 * If you manage **9+ units**, you’ll need a professional **trade licence** with the activity for **Vacation/Holiday Homes**.
-* Some buildings’ Owners Associations **(OA/HOA)** restrict short-term stays or require approval. Before you place a deposit, request the **house rules / Residents Guide** from the community manager.
+* Some buildings’ Owners Associations **(OA/HOA)** restrict short-term stays or require approval. Before placing a deposit, request the **house rules / Residents Guide** from the community manager.
 
-> **Important.** Not every building allows short-term rentals. Confirm the regime first — then run the numbers.
+> **Important.** Not every building allows short-term rentals. Confirm the regime first—then run the numbers.
 
 ## 2. Districts: demand profile and entry ticket
 
-**Business Bay.** Mix of business and leisure; **occupancy** is relatively steady through the year.  
+**Business Bay.** Mix of business and leisure; **occupancy** stays relatively steady through the year.  
 **JVC.** Family trips; pronounced seasonality (winter stronger than summer).  
-**Dubai South.** Event-driven spikes around expos and fairs.
+**Dubai South.** Event-driven spikes around expos and trade fairs.
 
 **Typical purchase ranges and working return corridors**
 
@@ -51,7 +52,7 @@ seo:
 * **Cleaning and consumables**  
 * **Interior wear & tear (amortisation)** — working guide **~10%** of gross per year
 
-Math in one line — easy to copy:
+Math in one line—easy to copy:  
 `ADR − platform fee − Tourism Dirham − management (15–25%) − cleaning/consumables − amortisation (~10% of gross) = net`
 
 ## 4. Practical case: JVC studio ~AED 600k
@@ -79,8 +80,9 @@ Math in one line — easy to copy:
 * **DET — Apply for a Holiday Home Permit** (requirements, FAQ) — Dubai Department of Economy & Tourism  
 * **Holiday Homes FAQ (DET):** “Do I need to pay 10% Dubai Municipality fees? — No …” (Holiday Homes units)  
 * **Tourism Dirham for Holiday Homes:** Standard **AED 10**, Deluxe **AED 15** per bedroom/night — industry summaries (Houst)  
-* **Airbnb fees (current model):** Host ~**3%**, Guest **~14.1–16.5%**  
-* **Airbnb single-fee (announced):** host **~15.5%**, guest **0%** (phased by region)</small>
+* **Airbnb fees (current model):** Host **~3%**, Guest **~14.1–16.5%**  
+* **Airbnb single-fee (announced):** host **~15.5%**, guest **0%** (regional rollout)
+</small>
 
 ---
 
@@ -88,12 +90,12 @@ Math in one line — easy to copy:
 
 > **Would you invest 2–3 hours a week into short-term management for a potential lift in returns?**
 
-Leave a note via <a href="https://t.me/ivandubai_signal_bot" target="_blank" class="px-4 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors no-underline" style="color: inherit;">Telegram bot</a> — we’ll model your case with all factors in view.
+Leave a note via the <a href="https://t.me/ivandubai_signal_bot" target="_blank" class="px-4 py-2 rounded-full border border-black font-serif italic hover:bg-black hover:text-white transition-colors no-underline" style="color: inherit;">Telegram bot</a> — we’ll model your case with all factors in view.
 
 ---
 
 **You might also like:**  
-<a href="/en/cases">Cases</a> | <a href="/en/projects">Projects</a> | <a href="/contact">Contact</a>
+<a href="/en/cases">Cases</a> | <a href="/en/projects">Projects</a>
 
 ---
 
@@ -103,4 +105,4 @@ Leave a note via <a href="https://t.me/ivandubai_signal_bot" target="_blank" cla
 
 ---
 
-<small><strong>Disclaimer.</strong> This material is for information only and does not constitute investment, legal, or tax advice. Holiday Home (DET) rules, OA/HOA requirements, platform terms (Airbnb, etc.), and DLD/RERA regulations change over time; all figures and examples are indicative as of 22.09.2025 and do not guarantee future returns. Before any deal, confirm: the regime’s permissibility for the specific building (house rules/OA decision); current DET/DLD/RERA requirements and fees, Tourism Dirham, and platform commissions; discuss tax implications with a qualified advisor.</small>
+<small><strong>Disclaimer.</strong> This material is for information only and does not constitute investment, legal, or tax advice. Holiday Home (DET) rules, OA/HOA requirements, platform terms (Airbnb, etc.), and DLD/RERA regulations change; all figures and examples are indicative as of 22.09.2025 and do not guarantee future returns. Before any deal, confirm: the regime’s permissibility for the specific building (house rules/OA decision); current DET/DLD/RERA requirements and fees, Tourism Dirham, and platform commissions; discuss tax implications with a qualified advisor.</small>
