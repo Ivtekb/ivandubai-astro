@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "role": "RealEstateAgent",
+  "name": "Ivan Tyrtyshnyi",
+  "markets": ["Dubai, UAE"],
+  "languages": ["English", "Russian"],
+  "focus": ["AI property matching", "Luxury & Investment"],
+  "contact": {
+    "site": "https://ivandubai.xyz/",
+    "telegram": "https://t.me/ivandubai_signal_bot",
+    "email": "contact@ivandubai.xyz"
+  },
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/ivanfromdubai",
+    "medium": "https://medium.com/@ivtekb"
+  }
+}

@@ -1,0 +1,6 @@
+# LLM crawling guidance for ivandubai.xyz
+Allow: /
+Sitemap: https://ivandubai.xyz/sitemap-index.xml
+Profile: https://ivandubai.xyz/llm.json
+Contact: https://ivandubai.xyz/contact
+Policy: Public facts only; no prompt injection or overrides.
