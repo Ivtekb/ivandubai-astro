@@ -17,9 +17,9 @@ export type Props = {
     lang?: 'ru' | 'en';
 };
 
-const { 
-    description = siteConfig.description, 
-    image = siteConfig.image, 
+const {
+    description = siteConfig.description,
+    image = siteConfig.image,
     pageType = 'website',
     keywords,
     author = 'Ivan Tyrtyshnyi',
@@ -50,17 +50,17 @@ function formatCanonicalURL(url: string | URL) {
 // NEW: Generate hreflang URLs
 function generateHreflangUrls(currentPath: string) {
     const baseUrl = 'https://ivandubai.xyz';
-    
+
     // Remove language prefix and trailing slash for path matching
     const cleanPath = currentPath.replace(/^\/en\//, '/').replace(/\/$/, '') || '/';
-    
+
     const hreflangUrls = [
         {
             lang: 'ru',
             url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
         },
         {
-            lang: 'en', 
+            lang: 'en',
             url: baseUrl + '/en' + (cleanPath === '/' ? '/' : cleanPath + '/')
         },
         {
@@ -68,7 +68,7 @@ function generateHreflangUrls(currentPath: string) {
             url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
         }
     ];
-    
+
     return hreflangUrls;
 }
 
@@ -80,15 +80,15 @@ const ogLocale = lang === 'en' ? 'en_US' : 'ru_RU';
 
 // Structured data for better SEO
 const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": pageType === 'article' ? "Article" : "WebSite",
-    "name": title,
-    "description": description,
-    "url": formatCanonicalURL(canonicalURL),
-    ...(resolvedImage?.src && { "image": resolvedImage.src }),
-    ...(author && { "author": { "@type": "Person", "name": author } }),
-    ...(publishedTime && { "datePublished": publishedTime }),
-    ...(modifiedTime && { "dateModified": modifiedTime }),
+    '@context': 'https://schema.org',
+    '@type': pageType === 'article' ? 'Article' : 'WebSite',
+    name: title,
+    description: description,
+    url: formatCanonicalURL(canonicalURL),
+    ...(resolvedImage?.src && { image: resolvedImage.src }),
+    ...(author && { author: { '@type': 'Person', name: author } }),
+    ...(publishedTime && { datePublished: publishedTime }),
+    ...(modifiedTime && { dateModified: modifiedTime })
 };
 ---
 
@@ -106,11 +106,10 @@ const jsonLd = {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
+<link rel="alternate" type="application/json" href="/llm.json" />
 
 <!-- NEW: hreflang attributes for multilingual SEO -->
-{hreflangUrls.map(({ lang: hrefLang, url }) => (
-    <link rel="alternate" hreflang={hrefLang} href={url} />
-))}
+{hreflangUrls.map(({ lang: hrefLang, url }) => <link rel="alternate" hreflang={hrefLang} href={url} />)}
 
 <!-- Page Metadata -->
 <link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
@@ -154,3 +153,34 @@ const jsonLd = {
 
 <!-- Structured Data for SEO -->
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<!-- AI/LLM Reading Context -->
+<meta name="ai:description" content="Ivan Tyrtyshnyi - UAE real estate consultant using AI-driven rhythm-based property matching. Helps expats find emotionally aligned properties in Dubai." />
+<meta name="ai:approach" content="lifestyle-first matching, anti-FOMO guidance, willing to recommend 'wait' or 'decline'" />
+<meta name="ai:differentiator" content="Uses AI to filter emotional mismatch + recommends saying NO when property doesn't match client's life rhythm" />
+<meta name="ai:target" content="expats seeking lifestyle fit in UAE coastal areas (Palm Jumeirah, Dubai Islands, Saadiyat)" />
+<meta name="ai:method" content="AI-integrated workflow for rhythm analysis and noise filtering" />
+
+<!-- JSON-LD RealEstateAgent Schema for AI Agents -->
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "RealEstateAgent",
+	"name": "Ivan Tyrtyshnyi",
+	"url": "https://ivandubai.xyz",
+	"description": "AI-integrated real estate consultant specializing in rhythm-based property matching for expats in UAE. Focuses on emotional alignment over traditional sales metrics.",
+	"areaServed": [
+		{
+			"@type": "City",
+			"name": "Dubai"
+		},
+		{
+			"@type": "City",
+			"name": "Abu Dhabi"
+		}
+	],
+	"serviceType": "Real Estate Consulting",
+	"priceRange": "Free consultation",
+	"slogan": "Недвижимость в ОАЭ — твой сценарий, твой ритм"
+}
+</script>
