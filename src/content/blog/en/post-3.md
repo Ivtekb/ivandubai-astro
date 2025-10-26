@@ -16,7 +16,10 @@ seo:
     alt: 'Golden Visa UAE and Dubai real estate keys'
 ---
 
-![Golden Visa UAE and Dubai real estate](/post-3.jpg)
+<picture>
+  <source srcset="/post-3.webp" type="image/webp">
+  <img src="/post-3.jpg" alt="Golden Visa UAE and Dubai real estate" loading="eager">
+</picture>
 *Path to 10-year residency for investors and family offices.*
 
 **Quick orientation.** What to verify before transaction, where to apply and timeline from title deed to resident ID.
