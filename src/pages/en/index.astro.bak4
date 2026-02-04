@@ -1,0 +1,135 @@
+---
+// src/pages/en/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import siteConfig from '../../data/site-config';
+---
+
+<BaseLayout description="Certified Dubai real estate broker DLD #48861. Personal approach, AI tools, exclusive properties." image={siteConfig.image}>
+
+  <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight mb-6">
+    UAE Real Estate — your scenario, your rhythm
+  </h1>
+
+  <img class="w-full mb-8" src="/hero.jpeg" loading="lazy" decoding="async" alt="Ivan Tyrtyshnyi - personal real estate consultant in Dubai" />
+
+  <p class="text-lg leading-relaxed text-muted-foreground mb-8 text-center">
+    My task is to help you find what fits exactly your lifestyle, even if it means declining some options.
+  </p>
+
+  <div class="flex flex-wrap gap-4 justify-center mb-12">
+    <a 
+      href="/en/#projects"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+    >
+      Get Selection
+    </a>
+    <a 
+      href="/en/#contact"
+      class="px-8 py-3 rounded-full border border-black font-serif italic text-lg hover:bg-black hover:text-white transition-colors no-underline"
+    >
+      Ask Question
+    </a>
+  </div>
+
+  <h2 class="text-xl font-bold mb-4">About Me</h2>
+  <p class="mb-2">
+    I'm Ivan, your UAE real estate navigator.<br/>
+    I work not by template, but by meaning: for me it's important that space aligns with your values and goals.
+  </p>
+  <p class="mb-2 italic text-gray-700">
+    Sometimes the right choice is to take a pause.<br/>
+    You're here for yourself, not for the realtor.
+  </p>
+  <p class="mb-8">
+    AI helps filter noise and select options that truly fit your scenario.
+  </p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Projects by Emirates</h2>
+  <ul class="list-disc pl-5 mb-2">
+    <li>
+      <span class="font-semibold">Dubai:</span>
+      <ul class="list-disc pl-5">
+        <li>Palm Jumeirah: Villas, Penthouses, Apartments</li>
+        <li>Dubai Islands: Waterfront Apartments</li>
+        <li>Downtown: Elite Apartments</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Abu Dhabi:</span>
+      <ul class="list-disc pl-5">
+        <li>Saadiyat Island: Villas, Residences</li>
+        <li>Yas Island: Family Homes</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Ras Al Khaimah:</span>
+      <ul class="list-disc pl-5">
+        <li>Al Marjan: Villas, Investment Apartments</li>
+      </ul>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/en/projects" class="!text-black !underline hover:!text-black font-normal">View all projects →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Cases</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">Palm Penthouse</span> — found not by price, but by life rhythm.<br/>
+      <span class="text-gray-700">AI helped see what aligns with client's personal scenario.</span>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Dubai Villa</span> — honestly recommended to decline.<br/>
+      <span class="text-gray-700">Insight: property didn't match feelings and atmosphere — search continues.</span>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/en/cases" class="!text-black !underline hover:!text-black font-normal">View all cases →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Innovation & AI</h2>
+<p class="mb-2">
+  AI helps filter information noise, find lifestyle matches and advise honestly when it's better to wait or decline.
+</p>
+<p class="mb-8"><a href="/en/blog/post-1" class="!text-black !underline hover:!text-black font-normal">Learn more about the approach →</a></p>
+
+<hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Blog</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">How AI helped avoid impulsive purchase</span><br/>
+      A story of choice where the main thing is not numbers, but your rhythm.<br/>
+      How is this story useful to you?
+      <a href="#" class="!text-black !underline hover:!text-black font-normal">read article</a>
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Dubai's Pulse: why feelings matter more than location</span><br/>
+      Market analysis for those who choose for life.<br/>
+      How to avoid typical mistakes?
+      <a href="#" class="!text-black !underline hover:!text-black font-normal">read article</a>
+    </li>
+  </ul>
+  <p class="mb-8"><a href="/en/blog" class="!text-black !underline hover:!text-black font-normal">Read all articles →</a></p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">FAQ — Frequent Questions</h2>
+  <ul class="list-disc pl-5 mb-4">
+    <li>
+      <span class="font-semibold">How much does consultation cost?</span><br/>
+      Free. You pay only if we actually find your option.
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">I haven't decided what I want yet. Can we just discuss?</span><br/>
+      Absolutely! Sometimes it's more important to pause and ask the right questions.
+    </li>
+    <li class="mt-2">
+      <span class="font-semibold">Do you work only with Dubai?</span><br/>
+      Focus is UAE coast, but open to different scenarios.
+    </li>
+  </ul>
+  <p class="mb-16"><a href="/en/faq" class="!text-black !underline hover:!text-black font-normal">View all questions →</a></p>
+</BaseLayout>

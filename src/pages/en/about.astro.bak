@@ -1,0 +1,96 @@
+---
+// src/pages/en/about.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="My Story — Ivan Tyrtyshnyi | Dubai Real Estate"
+  description="Personal story of certified DLD #48861 broker in Dubai: real investment experience, mistakes, successes, and an AI-powered approach to UAE real estate."
+>
+  <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight mb-6">
+    My Story — Ivan Tyrtyshnyi | Dubai Real Estate
+  </h1>
+
+  <img class="w-full mb-8" src="/about.jpeg" loading="lazy" decoding="async" alt="Ivan Tyrtyshnyi — certified Dubai real estate broker, DLD #48861" />
+
+  <h2 class="text-2xl sm:text-3xl font-serif font-semibold mb-8">
+    My story: Dubai real estate through personal experience
+  </h2>
+
+  <p class="mb-6">
+    I'm Ivan Tyrtyshnyi, certified broker (DLD #48861), associated with Knightsbridge Properties.
+  </p>
+
+  <p class="mb-6">
+    Dubai became my home in 2014. Since then, I've traveled the path from investor with my own money to participant in UAE real estate litigation. Invested a six-figure dollar sum, lost — and got part of it back.
+  </p>
+
+  <p class="mb-8">
+    This isn't advertising failures, but experience that can't be bought in any intensive or business course.
+  </p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Why my experience saves clients years and money</h2>
+
+  <p class="mb-6">
+    Formats and trends change, but the value of personal story only grows. Everything that was "survival school" became a filter: I separate the essential from the noise, saving years for those who seek Dubai real estate and are used to thinking with their own heads.
+  </p>
+
+  <p class="mb-8">
+    I work not for trends, but because I genuinely enjoy the process: researching, arguing, laughing at absurdity, and assembling scenarios for people who find templates boring.
+  </p>
+
+  <hr class="mb-8" />
+
+  <blockquote class="border-l-4 border-gray-300 pl-6 mb-8 italic text-gray-700">
+    <p class="mb-2"><strong>No copy-paste, no promises, no spam.</strong></p>
+    <p>I work only with those who love asking questions, arguing, and being ironic. For the rest — the real estate market remains huge.</p>
+  </blockquote>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Your story is not a template: individual guidance</h2>
+
+  <p class="mb-6">
+    Instead of algorithms — a route built for a specific client request.
+  </p>
+
+  <p class="mb-6">
+    Each case has its own pace, its own rhythm, its own filter — and always a couple of my ironic comments included.
+  </p>
+
+  <p class="mb-8">
+    I'm oriented toward long-term results, not quick deals. My task is for the client to feel confident both after the first deal and several years later.
+  </p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">AI in Dubai real estate work — not a trend, but a tool</h2>
+
+  <p class="mb-6">
+    Today artificial intelligence for me is not a fashionable accessory, but a natural filter.
+  </p>
+
+  <p class="mb-8">
+    I completed training on Dubai Future Foundation's initiative: now AI is integrated into the work process. I search, filter, accelerate decision-making — I see what escapes manual search, shortening the distance between idea and result for clients investing in UAE real estate.
+  </p>
+
+  <hr class="mb-8" />
+
+  <h2 class="text-xl font-bold mb-4">Still too serious?</h2>
+
+  <p class="mb-8 italic">
+    In business, I've eaten more than one dog. Now I recommend taking falafel — it's easier to digest.
+  </p>
+
+  <hr class="mb-8" />
+
+  <p class="mb-8">
+    More about projects and approaches — see <a href="/en/projects/" class="!text-black !underline hover:!text-black font-normal">the "Projects" section</a>
+  </p>
+
+  <p class="mb-16 italic">
+    If all this seemed too serious — welcome to the first meeting: I don't promise magic, but I guarantee a good mood.
+  </p>
+</BaseLayout>
