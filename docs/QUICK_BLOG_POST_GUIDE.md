@@ -1,90 +1,149 @@
-cd ~/Projects/ivandubai-astro && mkdir -p docs && cat > docs/QUICK_BLOG_POST_GUIDE.md << 'EOF'
 # БЫСТРОЕ ДОБАВЛЕНИЕ ПОСТА (1 минута)
 
 ## Контекст
-Этот гайд для добавления постов в **английскую** версию блога.
+Этот гайд для добавления постов в **английскую** версию блога ivandubai.xyz.
 Для русской версии — аналогично, но пути `src/content/blog/ru/`
 
-## Алгоритм (6 команд)
+---
 
-### 1. Создать файл поста
+## Алгоритм (6 шагов)
+
+### Шаг 1: Определить номер поста
+```bash
+cd ~/Projects/ivandubai-astro
+ls src/content/blog/en/post-*.md 2>/dev/null | wc -l
+# Если 0 → используем post-1.md
+# Если 1 → post-2.md и т.д.
+```
+
+### Шаг 2: Создать файл поста
 ```bash
 touch src/content/blog/en/post-N.md
 ```
+Замени `N` на номер (например, `post-5.md`)
 
-### 2. Скопировать структуру из последнего поста
+---
+
+### Шаг 3: Скопировать структуру из рабочего поста
 ```bash
 cp src/content/blog/en/post-4.md src/content/blog/en/post-N.md
 ```
 
-### 3. Заменить мета-данные (title, excerpt, publishDate, tags, seo)
+---
+
+### Шаг 4: Заменить контент
 ```bash
 cat > src/content/blog/en/post-N.md << 'EOF'
 ---
-title: 'НОВЫЙ ЗАГОЛОВОК'
-excerpt: 'Краткое описание поста'
-publishDate: 'YYYY-MM-DD'
+title: 'ТВОЙ ЗАГОЛОВОК'
+excerpt: 'Краткое описание (1-2 предложения)'
+publishDate: '2026-02-22'
 tags:
   - tag1
   - tag2
   - Dubai
 seo:
-  title: 'SEO заголовок'
-  description: 'SEO описание для Google'
+  title: 'SEO заголовок (50-60 символов)'
+  description: 'SEO описание (150-160 символов)'
   image:
     src: '/post-N.jpg'
-    alt: 'Описание картинки'
+    alt: 'Описание картинки для SEO'
 ---
 
 <picture>
-  <img src="/post-N.jpg" alt="Alt текст" loading="eager">
+  <img src="/post-N.jpg" alt="Описание картинки" loading="eager">
 </picture>
-*Подпись под картинкой курсивом*
+*Подпись под картинкой курсивом.*
 
-**Quick orientation.** Первый абзац жирным.
+**Quick orientation.** Первый абзац bold.
 
 ---
 
-## Основной контент
+## Первый заголовок
 
-Текст поста...
+Основной текст...
 
 EOF
 ```
 
-### 4. Добавить картинку в public/
+**Важно:**
+- Замени `post-N.jpg` на фактический номер
+- Дата в формате `YYYY-MM-DD`
+- Теги **БЕЗ кавычек**: `- Dubai` а не `- 'Dubai'`
+
+---
+
+### Шаг 5: Добавить картинку
 ```bash
-# Перетащить post-N.jpg в public/ через Finder
+# Вариант 1: Через Finder
+# Перетащи картинку в папку public/ и переименуй в post-N.jpg
+
+# Вариант 2: Через терминал
+cp ~/Downloads/your-image.jpg public/post-N.jpg
 ```
 
-### 5. Проверить локально
+**Проверка:**
+```bash
+ls -la public/post-N.jpg
+```
+
+---
+
+### Шаг 6: Проверить локально
 ```bash
 npm run dev
-# localhost:4321/en/blog/post-N/
+```
+Открой: `http://localhost:4321/en/blog/post-N/`
+
+**Если картинка не загружается:**
+- Проверь `ls -la public/post-N.jpg`
+- Жёсткая перезагрузка: `Cmd+Shift+R`
+- Если есть строка с webp — удали её
+
+---
+
+### Шаг 7: Деплой
+```bash
+git add .
+git commit -m "feat: add post-N КРАТКОЕ_ОПИСАНИЕ"
+git push origin main
 ```
 
-### 6. Деплой
-```bash
-git add . && git commit -m "feat: add post-N" && git push origin main
-```
+Vercel автоматически задеплоит на `ivandubai.xyz/en/blog/post-N/`
+
+---
 
 ## Критические моменты
 
-✅ НЕ используй webp если файла нет
-✅ Дата publishDate актуальная (2026)
-✅ Теги БЕЗ кавычек
-✅ Картинка post-N.jpg в /public/
-✅ Alt текст соответствует картинке
+✅ Картинка обязательна: `post-N.jpg` в `/public/`  
+✅ Только .jpg (НЕ webp если файла нет)  
+✅ Теги БЕЗ кавычек  
+✅ Дата актуальная (2026)  
+✅ Нумерация последовательная (post-5, post-6...)
 
-## Проблемы
+---
 
-**Картинка не загружается:**
-- `ls -la public/post-N.jpg`
-- Удали webp строку
-- `rm -rf .astro && npm run dev`
+## Проблемы и решения
 
-**Пост не появляется:**
-- Проверь YAML синтаксис
-- Теги БЕЗ кавычек
-- Дата формат YYYY-MM-DD
-EOF
+**Картинка не отображается:**
+```bash
+ls -la public/post-N.jpg  # Проверь файл
+rm -rf .astro && npm run dev  # Очисти кэш
+```
+
+**Пост не появляется в списке:**
+- Проверь YAML синтаксис (отступы 2 пробела)
+- Теги без кавычек
+- Перезапусти: `Ctrl+C` → `npm run dev`
+
+**Dev сервер не запускается:**
+```bash
+rm -rf node_modules .astro
+npm install
+npm run dev
+```
+
+---
+
+## Время выполнения
+⏱️ **1-2 минуты** при готовом тексте и картинке
