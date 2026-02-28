@@ -53,6 +53,9 @@ tags:
 seo:
   title: 'SEO заголовок (50-60 символов)'
   description: 'SEO описание (150-160 символов)'
+  image:
+    src: '/post-N.jpg'
+    alt: 'Описание картинки для OG превью в соцсетях'
 image:
   src: '/post-N.jpg'
   alt: 'Описание картинки для SEO'
@@ -90,7 +93,8 @@ INNEREOF
 - hreflang: обе ссылки (ru и en)
 - lang: 'ru' обязательно
 - Теги БЕЗ кавычек
-- image: вне seo: (отдельный объект)
+- image: вне seo: (отдельный объект) — для отображения на сайте
+- seo.image: ОБЯЗАТЕЛЬНО — это картинка для OG превью в Facebook/LinkedIn/Telegram
 
 ---
 
@@ -116,9 +120,7 @@ npm run dev
 
 ### Шаг 7: Деплой
 ```bash
-git add .
-git commit -m "feat: add post-N RU"
-git push origin main
+git add . && git commit -m "feat: add post-N RU" && git push origin main
 ```
 
 ---
@@ -130,7 +132,8 @@ git push origin main
 ❗ slug: транслит латиницей
 ❗ canonical: без /en/
 ❗ hreflang: массив с двумя ссылками
-❗ image: отдельный объект (не внутри seo)
+❗ image: отдельный объект (не внутри seo) — для отображения на сайте
+❗ seo.image: ОБЯЗАТЕЛЬНО — картинка OG для соцсетей (Facebook, LinkedIn, Telegram)
 ❗ og: Open Graph теги обязательны
 ❗ twitter: Twitter Cards обязательны
 
@@ -149,6 +152,10 @@ git push origin main
 - Файл в src/content/blog/ (не в /en/)
 - lang: 'ru' присутствует
 - image: вне seo:
+
+**Картинка не подтягивается в превью соцсетей:**
+- seo.image.src прописан внутри seo: блока
+- После деплоя сбросить кэш: https://developers.facebook.com/tools/debug/
 
 ---
 
