@@ -127,4 +127,4 @@ That's why, when [advising clients in Dubai](/en/contact), I start with comparab
 - ValuStrat — *[Dubai VPI Residential Values, September 2026](https://valustrat.com/products/dubai-vpi-residential-values-september-2026)*; *[Dubai Real Estate Review Q3 2026](https://valustrat.com/products/dubai-real-estate-review-q3-2026)*
 - Savills — *[Dubai Residential Market in Minutes Q3 2026](https://www.savills.com/research_articles/255800/395342-0)*
 
-*Market commentary by Ivan Tyrtyshnyy, real estate broker, Knightsbridge Properties. For information only. Not financial or investment advice.*
+*For information only. Not financial or investment advice.*
