@@ -11,9 +11,10 @@ export type Props = HeadProps & { showHeader?: boolean };
 
 const { showHeader = true, ...rest } = Astro.props;
 const head = { ...siteConfig, ...rest };
+const lang = /^\/en(?:\/|$)/.test(Astro.url.pathname) ? 'en' : 'ru';
 ---
 <!doctype html>
-<html lang="en" class="antialiased break-words">
+<html lang={lang} class="antialiased break-words">
     <head>
         <BaseHead {...head} />
         <script>
