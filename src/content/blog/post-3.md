@@ -226,7 +226,7 @@ twitter:
 - **Координация** с девелопером, банком и DLD / Investors Hub
 - **Пост-сделочные процессы:** запуск аренды, сервис, отчётность
 
-Хочешь разбор под свой сценарий? → [Telegram-бот](https://t.me/ivandubai_signal_bot) или [Контакты](/contacts)
+Хочешь разбор под свой сценарий? → [Telegram-бот](https://t.me/ivandubai_signal_bot) или [Контакты](/contact/)
 
 ---
 
