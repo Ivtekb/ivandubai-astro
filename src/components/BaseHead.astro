@@ -81,11 +81,44 @@ for (let i = 0; i < collections.length; i++) {
     }
 }
 
+// B-01b: editorially verified translated articles with different slugs.
+// Never infer translations from similar titles or the order of publication.
+const explicitTranslationPairs = new Map<string, string>([
+    ['/blog/short-term-rentals-dubai-2025/', '/en/blog/post-2/'],
+    ['/blog/golden-visa-uae-real-estate-2025/', '/en/blog/post-3/'],
+    ['/blog/dubai-2026-market-maturity/', '/en/blog/post-5/'],
+    ['/blog/etihad-rail-2026-railway-arbitrage/', '/en/blog/post-6/'],
+    ['/blog/price-of-fear-capital-institutions/', '/en/blog/post-7/'],
+    ['/blog/dubai-law-4-2026-subarenda/', '/en/blog/post-9/'],
+    ['/blog/ai-uae-amazon-aws-fintech/', '/en/blog/post-10/'],
+    ['/blog/dubai-5-3-mlrd-920-mlrd-rezervov/', '/en/blog/post-11/'],
+    ['/blog/korrekciya-rynka-oae-2026-strukturnaya-ustojchivost/', '/en/blog/post-12/'],
+    ['/blog/dubai-maritime-city-investicii-2026/', '/en/blog/post-13/'],
+    ['/blog/dubai-2026-arendatory-ipoteka/', '/en/blog/post-14/'],
+    ['/blog/dubai-viza-rezidenstvo-2026-novye-pravila/', '/en/blog/post-15/'],
+    ['/blog/dubai-upal-na-50-dannye-dld-2026/', '/en/blog/post-16/'],
+    ['/blog/hotel-apartment-vs-residential-dubai-2026/', '/en/blog/post-17/'],
+    ['/blog/ofis-dubai-2026-konec-virtualnogo-stola/', '/en/blog/post-18/'],
+    ['/blog/tyazhelaya-promyshlennost-logistika-oae-2026-2028/', '/en/blog/post-19/'],
+    ['/blog/dubai-rynok-nedvizhimosti-korrekciya-sprosa-iyun-2026/', '/en/blog/post-20/'],
+    ['/blog/blackstone-difc-dubai-novyj-cikl-rynka-nedvizhimosti/', '/en/blog/post-21/'],
+    ['/blog/kommercheskaya-promyshlennaya-nedvizhimost-dubai-q2-2026/', '/en/blog/post-22/'],
+    ['/blog/dubai-958-mlrd-aed-ultra-prime-gotovaya-vtorichka-avgust-2026/', '/en/blog/post-23/'],
+    ['/blog/industrialnaya-nedvizhimost-oae-180-mlrd-aed-goszakazov/', '/en/blog/post-24/'],
+    ['/blog/nedvizhimost-dubaya-matematika-puzyrya-2026/', '/en/blog/post-25/'],
+    ['/blog/zaveshchanie-v-oae-dengi-nedvizhimost-opeka-detej/', '/en/blog/post-26/']
+]);
+const englishToRussian = new Map(
+    Array.from(explicitTranslationPairs, ([ru, en]) => [en, ru])
+);
+
 function generateHreflangUrls(currentPath: string) {
     const baseUrl = 'https://ivandubai.xyz'; // B-02 normalizes the origin separately.
     const normalized = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
-    const ruPath = normalized.replace(/^\/en(?=\/)/, '') || '/';
-    const enPath = ruPath === '/' ? '/en/' : `/en${ruPath}`;
+    const ruPath = englishToRussian.get(normalized)
+        ?? (normalized.replace(/^\/en(?=\/)/, '') || '/');
+    const enPath = explicitTranslationPairs.get(ruPath)
+        ?? (ruPath === '/' ? '/en/' : `/en${ruPath}`);
 
     if (!availableRoutes.has(ruPath) || !availableRoutes.has(enPath)) return [];
 
