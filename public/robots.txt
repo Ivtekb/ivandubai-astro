@@ -30,5 +30,3 @@ Crawl-delay: 3
 
 # Sitemaps
 Sitemap: https://www.ivandubai.xyz/sitemap-index.xml
-Sitemap: https://www.ivandubai.xyz/sitemap.xml
-Sitemap: https://www.ivandubai.xyz/sitemap-en.xml
