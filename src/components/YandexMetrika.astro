@@ -302,15 +302,28 @@ try {
 <!-- Дополнительный скрипт для SPA навигации (если используется) -->
 <script type="text/javascript" is:inline>
 // Отслеживание виртуальных переходов для SPA
-document.addEventListener('astro:page-load', function() {
-    if (typeof ym !== 'undefined') {
-        ym(103737764, 'hit', window.location.href, {
-            title: document.title,
-            params: {
-                language: window.location.pathname.startsWith('/en') ? 'en' : 'ru',
-                virtual_page: true
-            }
-        });
-    }
-});
+(function() {
+    const guardKey = '__ym103737764AstroPageLoadGuard';
+    const state = document[guardKey] || (document[guardKey] = { firstPageLoad: true });
+
+    if (state.listenerRegistered) return;
+    state.listenerRegistered = true;
+
+    document.addEventListener('astro:page-load', function() {
+        if (state.firstPageLoad) {
+            state.firstPageLoad = false;
+            return;
+        }
+
+        if (typeof ym !== 'undefined') {
+            ym(103737764, 'hit', window.location.href, {
+                title: document.title,
+                params: {
+                    language: window.location.pathname.startsWith('/en') ? 'en' : 'ru',
+                    virtual_page: true
+                }
+            });
+        }
+    });
+})();
 </script>
