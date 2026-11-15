@@ -1,5 +1,5 @@
 const siteConfig = {
-    website: 'https://ivandubai.xyz',
+    website: 'https://www.ivandubai.xyz',
     title: 'Ivan Tyrtyshnyi | from Dubai',
     subtitle: 'Недвижимость ОАЭ вне шаблонов. Интеллектуальные решения.',
     description: 'Персональный бренд Ivan from Dubai: недвижимость в ОАЭ, авторский подход к инвестициям, сопровождение с ИИ, живые кейсы успешных сделок. Эксклюзивные проекты в Дубае.',
@@ -34,7 +34,7 @@ const siteConfig = {
         name: 'Ivan Tyrtyshnyi',
         jobTitle: 'Консультант по недвижимости в ОАЭ',
         description: 'Персональный бренд Ivan from Dubai: недвижимость в ОАЭ, авторский подход к инвестициям, сопровождение с ИИ, живые кейсы успешных сделок.',
-        url: 'https://ivandubai.xyz',
+        url: 'https://www.ivandubai.xyz',
         sameAs: [
             'https://vk.com/ivanfromdubai',
             'https://www.instagram.com/ivan_fromdubai',
