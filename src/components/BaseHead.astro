@@ -2,6 +2,7 @@
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import newsreaderWoff2 from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
 import siteConfig from '../data/site-config';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 export type Props = {
@@ -47,29 +48,52 @@ function formatCanonicalURL(url: string | URL) {
     return path.replace(/\/?$/, '/');
 }
 
-// NEW: Generate hreflang URLs
-function generateHreflangUrls(currentPath: string) {
-    const baseUrl = 'https://ivandubai.xyz';
+// B-01a: only emit hreflang for paths generated in BOTH languages.
+// Different RU/EN article slugs require explicit editorial mapping (B-01b).
+const pairedStaticPaths = ['/', '/about/', '/blog/', '/cases/', '/contact/', '/faq/', '/projects/', '/selection/'];
+const availableRoutes = new Set<string>();
+for (const path of pairedStaticPaths) {
+    availableRoutes.add(path);
+    availableRoutes.add(path === '/' ? '/en/' : `/en${path}`);
+}
 
-    // Remove language prefix and trailing slash for path matching
-    const cleanPath = currentPath.replace(/^\/en\//, '/').replace(/\/$/, '') || '/';
+const collections = await Promise.all([
+    getCollection('blog'),
+    getCollection('cases'),
+    getCollection('projects')
+]);
+const sections = ['blog', 'cases', 'projects'] as const;
 
-    const hreflangUrls = [
-        {
-            lang: 'ru',
-            url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
-        },
-        {
-            lang: 'en',
-            url: baseUrl + '/en' + (cleanPath === '/' ? '/' : cleanPath + '/')
-        },
-        {
-            lang: 'x-default',
-            url: baseUrl + (cleanPath === '/' ? '/' : cleanPath + '/')
+for (let i = 0; i < collections.length; i++) {
+    const section = sections[i];
+    const entries = collections[i];
+    for (const entry of entries) {
+        const english = entry.id.startsWith('en/');
+        const id = english ? entry.id.slice(3) : entry.id;
+        availableRoutes.add(`${english ? '/en' : ''}/${section}/${id}/`);
+    }
+    // All three listing routes paginate at 8 entries per page.
+    for (const english of [false, true]) {
+        const count = entries.filter(({ id }) => id.startsWith('en/') === english).length;
+        for (let page = 2; page <= Math.ceil(count / 8); page++) {
+            availableRoutes.add(`${english ? '/en' : ''}/${section}/${page}/`);
         }
-    ];
+    }
+}
 
-    return hreflangUrls;
+function generateHreflangUrls(currentPath: string) {
+    const baseUrl = 'https://ivandubai.xyz'; // B-02 normalizes the origin separately.
+    const normalized = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+    const ruPath = normalized.replace(/^\/en(?=\/)/, '') || '/';
+    const enPath = ruPath === '/' ? '/en/' : `/en${ruPath}`;
+
+    if (!availableRoutes.has(ruPath) || !availableRoutes.has(enPath)) return [];
+
+    return [
+        { lang: 'ru', url: baseUrl + ruPath },
+        { lang: 'en', url: baseUrl + enPath },
+        { lang: 'x-default', url: baseUrl + ruPath }
+    ];
 }
 
 const currentPath = Astro.url.pathname;
