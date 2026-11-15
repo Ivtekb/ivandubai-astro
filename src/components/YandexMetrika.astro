@@ -42,6 +42,7 @@ const DEBUG_MODE = import.meta.env.DEV; // true только в dev режиме
 // Инициализация с обработкой ошибок
 try {
     ym(103737764, 'init', {
+        defer: true,
         ssr: true,
         webvisor: true,
         clickmap: true,
