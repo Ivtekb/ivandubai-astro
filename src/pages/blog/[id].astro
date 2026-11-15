@@ -6,7 +6,6 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Subscribe from '../../components/Subscribe.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
-import { slugify } from '../../utils/common-utils';
 
 export async function getStaticPaths() {
     // Filter Russian blog posts only (exclude en/ folder)
@@ -58,9 +57,9 @@ const { Content } = await render(post);
                 tags.length > 0 && (
                     <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
                         {tags.map((tag) => (
-                            <a class="text-main hover:underline" href={`/tags/${slugify(tag)}`}>
+                            <span class="text-main">
                                 #{tag}
-                            </a>
+                            </span>
                         ))}
                     </div>
                 )
