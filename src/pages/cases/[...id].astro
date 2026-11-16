@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
     // Fix: use 'cases' collection instead of 'pages'
-    const cases = await getCollection('cases');
+    const cases = await getCollection('cases', ({ id }) => !id.startsWith('en/'));
     return cases.map((caseItem) => {
         return {
             params: { id: caseItem.id },
