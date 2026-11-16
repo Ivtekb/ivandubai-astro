@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/cases/en/case-1",  "destination": "/en/cases/case-1/", "statusCode": 301 },
+    { "source": "/cases/en/case-1/", "destination": "/en/cases/case-1/", "statusCode": 301 }
+  ]
+}
