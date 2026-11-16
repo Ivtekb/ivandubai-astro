@@ -146,10 +146,7 @@ Price-to-rent ratio показывает, сколько лет валового
   "inLanguage": "ru",
   "image": "https://www.ivandubai.xyz/post-25.jpg",
   "mainEntityOfPage": "https://www.ivandubai.xyz/blog/nedvizhimost-dubaya-matematika-puzyrya-2026/",
-  "author": {
-    "@type": "Person",
-    "name": "Ivan Tyrtyshnyi"
-  },
+  "author": {"@id":"https://www.ivandubai.xyz/#person"},
   "publisher": {
     "@type": "Organization",
     "name": "Ivan Dubai",

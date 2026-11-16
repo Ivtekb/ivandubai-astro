@@ -157,10 +157,7 @@ twitter:
   "inLanguage": "ru",
   "image": "https://www.ivandubai.xyz/post-24.jpg",
   "mainEntityOfPage": "https://www.ivandubai.xyz/blog/industrialnaya-nedvizhimost-oae-180-mlrd-aed-goszakazov/",
-  "author": {
-    "@type": "Person",
-    "name": "Ivan Tyrtyshnyi"
-  },
+  "author": {"@id":"https://www.ivandubai.xyz/#person"},
   "publisher": {
     "@type": "Organization",
     "name": "Ivan Dubai",

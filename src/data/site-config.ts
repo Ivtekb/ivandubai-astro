@@ -29,29 +29,40 @@ const siteConfig = {
     },
     // Structured data
     structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Ivan Tyrtyshnyi',
-        jobTitle: 'Консультант по недвижимости в ОАЭ',
-        description: 'Персональный бренд Ivan from Dubai: недвижимость в ОАЭ, авторский подход к инвестициям, сопровождение с ИИ, живые кейсы успешных сделок.',
-        url: 'https://www.ivandubai.xyz',
-        sameAs: [
-            'https://vk.com/ivanfromdubai',
-            'https://www.instagram.com/ivan_fromdubai',
-            'https://www.facebook.com/IvanGFP'
-        ],
-        address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Dubai',
-            addressCountry: 'AE'
-        },
-        knowsAbout: [
-            'Недвижимость в ОАЭ',
-            'Инвестиции в недвижимость',
-            'Покупка недвижимости в Дубае',
-            'Off-plan проекты',
-            'Консультирование по недвижимости'
-        ]
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.ivandubai.xyz/#person",
+      "name": "Ivan Tyrtyshnyi",
+      "alternateName": "Иван Тыртышный",
+      "jobTitle": "Real Estate Broker",
+      "url": "https://www.ivandubai.xyz/",
+      "image": "https://www.ivandubai.xyz/about.jpeg",
+      "workLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" }
+      },
+      "worksFor": {
+        "@type": "RealEstateAgent",
+        "name": "Knightsbridge Properties",
+        "identifier": { "@type": "PropertyValue", "propertyID": "ORN", "value": "22004" }
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Broker Registration Number (BRN)",
+        "credentialCategory": "license",
+        "identifier": "48861",
+        "recognizedBy": {
+          "@type": "GovernmentOrganization",
+          "name": "Dubai Land Department",
+          "url": "https://dubailand.gov.ae/"
+        }
+      },
+      "sameAs": [
+        "https://www.propertyfinder.ae/en/agent/ivan-tyrtyshnyi-171170",
+        "https://www.linkedin.com/in/ivanfromdubai/",
+        "https://www.instagram.com/ivan_fromdubai",
+        "https://maps.google.com/?cid=5197998022612562366"
+      ]
     },
     headerNavLinks: [
         { text: 'Главная', href: '/' },

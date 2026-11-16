@@ -153,7 +153,7 @@ twitter:
   "inLanguage": "ru",
   "datePublished": "2025-09-22",
   "dateModified": "2025-09-22",
-  "author": { "@type": "Person", "name": "Ivan Tyrtyshnyi" },
+  "author": {"@id":"https://www.ivandubai.xyz/#person"},
   "publisher": { "@type": "Organization", "name": "Ivan from Dubai" },
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025" },
   "image": { "@type": "ImageObject", "url": "https://www.ivandubai.xyz/post-2.jpg", "width": 1920, "height": 1080 },

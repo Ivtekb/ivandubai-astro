@@ -143,7 +143,7 @@ const jsonLd = {
     description: description,
     url: formatCanonicalURL(canonicalURL),
     ...(resolvedImage?.src && { image: resolvedImage.src }),
-    ...(author && { author: { '@type': 'Person', name: author } }),
+    ...(author && { author: { '@id': 'https://www.ivandubai.xyz/#person' } }),
     ...(publishedTime && { datePublished: publishedTime }),
     ...(modifiedTime && { dateModified: modifiedTime })
 };
@@ -219,25 +219,4 @@ const jsonLd = {
 <meta name="ai:method" content="AI-integrated workflow for rhythm analysis and noise filtering" />
 
 <!-- JSON-LD RealEstateAgent Schema for AI Agents -->
-<script type="application/ld+json">
-{
-	"@context": "https://schema.org",
-	"@type": "RealEstateAgent",
-	"name": "Ivan Tyrtyshnyi",
-	"url": "https://www.ivandubai.xyz",
-	"description": "AI-integrated real estate consultant specializing in rhythm-based property matching for expats in UAE. Focuses on emotional alignment over traditional sales metrics.",
-	"areaServed": [
-		{
-			"@type": "City",
-			"name": "Dubai"
-		},
-		{
-			"@type": "City",
-			"name": "Abu Dhabi"
-		}
-	],
-	"serviceType": "Real Estate Consulting",
-	"priceRange": "Free consultation",
-	"slogan": "Недвижимость в ОАЭ — твой сценарий, твой ритм"
-}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(siteConfig.structuredData)} />
