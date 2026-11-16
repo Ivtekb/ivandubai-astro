@@ -146,10 +146,7 @@ Off-plan перешел к двум расчетным сценариям:
   "inLanguage": "ru",
   "image": "https://www.ivandubai.xyz/post-23.jpg",
   "mainEntityOfPage": "https://www.ivandubai.xyz/blog/dubai-958-mlrd-aed-ultra-prime-gotovaya-vtorichka-avgust-2026/",
-  "author": {
-    "@type": "Person",
-    "name": "Ivan Tyrtyshnyi"
-  },
+  "author": {"@id":"https://www.ivandubai.xyz/#person"},
   "publisher": {
     "@type": "Organization",
     "name": "Ivan Dubai",
