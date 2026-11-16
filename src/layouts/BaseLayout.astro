@@ -23,6 +23,35 @@ const lang = /^\/en(?:\/|$)/.test(Astro.url.pathname) ? 'en' : 'ru';
             }
         </script>
         <ClientRouter />
+
+        <!-- CR-003: Metricool Website Analytics, production host only. -->
+        <script is:inline>
+            (function () {
+                if (location.hostname !== 'www.ivandubai.xyz' && location.hostname !== 'ivandubai.xyz') return;
+
+                const key = '__metricoolWebsiteTracker8108796';
+                if (window[key]) return;
+                const state = { lastTrackedPage: null };
+                window[key] = state;
+
+                function trackPage() {
+                    if (typeof window.beTracker?.t !== 'function') return;
+                    // Deduplicate the initial load and ignore hash-only navigation.
+                    const page = location.origin + location.pathname + location.search;
+                    if (state.lastTrackedPage === page) return;
+                    window.beTracker.t({ hash: 'c64ca76e249d44977e8a69858f297d6b' });
+                    state.lastTrackedPage = page;
+                }
+
+                document.addEventListener('astro:page-load', trackPage);
+
+                const trackerScript = document.createElement('script');
+                trackerScript.async = true;
+                trackerScript.src = 'https://tracker.metricool.com/resources/be.js';
+                trackerScript.onload = trackPage;
+                document.head.appendChild(trackerScript);
+            })();
+        </script>
     </head>
     <body class="bg-main text-main">
         <div class="flex flex-col min-h-screen px-4 md:px-8">
