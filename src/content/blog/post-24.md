@@ -146,35 +146,6 @@ twitter:
   <button type="submit" style="background:#000;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;">Отправить запрос</button>
 </form>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Индустриальная недвижимость в ОАЭ: как 180 млрд AED госзаказов превращаются в заводы и склады",
-  "description": "Программа Make it in the Emirates открыла 180+ млрд AED гарантированных заказов, а NIRF и EDB дают финансирование. Главный вопрос для инвестора: где размещать заводы, склады и инфраструктуру роста.",
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
-  "inLanguage": "ru",
-  "image": "https://www.ivandubai.xyz/post-24.jpg",
-  "mainEntityOfPage": "https://www.ivandubai.xyz/blog/industrialnaya-nedvizhimost-oae-180-mlrd-aed-goszakazov/",
-  "author": {"@id":"https://www.ivandubai.xyz/#person"},
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ivan Dubai",
-    "url": "https://www.ivandubai.xyz"
-  },
-  "about": [
-    "UAE industrial real estate",
-    "Make it in the Emirates",
-    "Musataha",
-    "warehouses",
-    "industrial land",
-    "Dubai Industrial City",
-    "KEZAD"
-  ]
-}
-</script>
-
 ---
 
 *Материал носит исключительно информационный характер и не является индивидуальной инвестиционной рекомендацией. Permit: 5798161*

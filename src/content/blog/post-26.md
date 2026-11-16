@@ -161,33 +161,6 @@ twitter:
   <button type="submit" style="background:#000;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;">Отправить запрос</button>
 </form>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Что будет с деньгами, недвижимостью и детьми в ОАЭ без завещания",
-  "description": "Что происходит без завещания в ОАЭ: ограничения банковских счетов, наследование недвижимости, опека над детьми и варианты регистрации для экспатов.",
-  "datePublished": "2026-10-22",
-  "dateModified": "2026-10-22",
-  "inLanguage": "ru",
-  "image": "https://www.ivandubai.xyz/post-26.jpg",
-  "mainEntityOfPage": "https://www.ivandubai.xyz/blog/zaveshchanie-v-oae-dengi-nedvizhimost-opeka-detej/",
-  "author": {"@id":"https://www.ivandubai.xyz/#person"},
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ivan Dubai",
-    "url": "https://www.ivandubai.xyz"
-  },
-  "about": [
-    "UAE wills for expatriates",
-    "inheritance in the UAE",
-    "DIFC Courts Wills Service",
-    "child guardianship",
-    "Dubai property inheritance"
-  ]
-}
-</script>
-
 ---
 
 *Материал носит исключительно информационный характер, не является юридической или индивидуальной инвестиционной консультацией. Правила, процедуры и пошлины необходимо уточнять у соответствующего суда или квалифицированного юриста в ОАЭ. Permit: 5798161*

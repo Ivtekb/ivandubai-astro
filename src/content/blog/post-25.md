@@ -135,33 +135,6 @@ Price-to-rent ratio показывает, сколько лет валового
   <button type="submit" style="background:#000;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;">Отправить запрос</button>
 </form>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Недвижимость Дубая: математика «пузыря» в 2026 году",
-  "description": "UBS относит Дубай к рынкам с повышенным риском пузыря. Разбираем реальные цены, аренду, доступность жилья и соотношение цены к арендному доходу.",
-  "datePublished": "2026-09-27",
-  "dateModified": "2026-09-27",
-  "inLanguage": "ru",
-  "image": "https://www.ivandubai.xyz/post-25.jpg",
-  "mainEntityOfPage": "https://www.ivandubai.xyz/blog/nedvizhimost-dubaya-matematika-puzyrya-2026/",
-  "author": {"@id":"https://www.ivandubai.xyz/#person"},
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ivan Dubai",
-    "url": "https://www.ivandubai.xyz"
-  },
-  "about": [
-    "Dubai real estate market",
-    "UBS Global Real Estate Bubble Index",
-    "property affordability",
-    "price-to-rent ratio",
-    "Dubai property investment"
-  ]
-}
-</script>
-
 ---
 
 *Материал носит исключительно информационный характер и не является индивидуальной инвестиционной рекомендацией. Permit: 5798161*
