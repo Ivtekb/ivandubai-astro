@@ -20,7 +20,7 @@ const { title, description, seo } = caseItem.data;
 const { Content } = await render(caseItem);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} showHeader={false}>
+<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" publishedTime={caseItem.data.publishDate.toISOString()} showHeader={false}>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
