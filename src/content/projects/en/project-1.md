@@ -12,6 +12,8 @@ seo:
 
 **Eastern Crescent**
 
+*An editorial lifestyle scenario for Palm Jumeirah. The brands, views and amenities mentioned are illustrative. Actual specifications and access arrangements are verified for each individual property.*
+
 ## Discovery
 
 The Eastern Crescent of the Palm — a territory where the gaze doesn't rush, but flows.  
@@ -22,8 +24,8 @@ and the water line matches the rhythm of breathing.
 > In 20 minutes you open the balcony, and the city pauses.  
 > Yachts below glide like on a thread of time.
 
-Here, rarity is tangible. Each residence is like aged wine:  
-private beach, gated entrances, land that has long held special meaning.
+Rarity takes different forms here: views, privacy, architecture and proximity to the water.  
+Beach access, entry arrangements and other amenities must be checked for each specific building.
 
 ## Morning Without Words
 
