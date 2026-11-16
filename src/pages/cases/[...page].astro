@@ -6,7 +6,7 @@ import Pagination from '../../components/Pagination.astro';
 
 // Для динамической маршрутизации обязательно экспортируем getStaticPaths
 export async function getStaticPaths({ paginate }) {
-  const cases = (await getCollection('cases')).sort((a, b) =>
+  const cases = (await getCollection('cases', ({ id }) => !id.startsWith('en/'))).sort((a, b) =>
     new Date(b.data.publishDate) - new Date(a.data.publishDate)
   );
   return paginate(cases, { pageSize: 8 });
