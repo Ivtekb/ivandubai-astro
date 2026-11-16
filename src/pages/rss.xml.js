@@ -12,7 +12,9 @@ export async function GET(context) {
         items: posts.map((item) => ({
             title: item.data.title,
             description: item.data.excerpt,
-            link: `/blog/${item.id}/`,
+            link: item.id.startsWith('en/')
+                ? `/en/blog/${item.id.slice(3)}/`
+                : `/blog/${item.id}/`,
             pubDate: item.data.publishDate.setUTCHours(0)
         }))
     });
