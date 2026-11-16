@@ -144,23 +144,6 @@ twitter:
 <a href="https://medium.com/@ivtekb" target="_blank">Medium</a> | <a href="https://substack.com/@ivanfromdubai" target="_blank">Substack</a> | <a href="https://www.linkedin.com/in/ivanfromdubai" target="_blank">LinkedIn</a>  
 — each link is an entry point, not an endpoint.
 
-<!-- JSON-LD: Article -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Краткосрочная аренда в Дубае: что нужно знать инвестору",
-  "inLanguage": "ru",
-  "datePublished": "2025-09-22",
-  "dateModified": "2025-09-22",
-  "author": {"@id":"https://www.ivandubai.xyz/#person"},
-  "publisher": { "@type": "Organization", "name": "Ivan from Dubai" },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.ivandubai.xyz/blog/short-term-rentals-dubai-2025" },
-  "image": { "@type": "ImageObject", "url": "https://www.ivandubai.xyz/post-2.jpg", "width": 1920, "height": 1080 },
-  "description": "Holiday Home, правила OA/HOA, сборы и коридоры доходности по Business Bay, JVC и Dubai South."
-}
-</script>
-
 ---
 
 <small><strong>Дисклеймер.</strong> Материал носит информационный характер и не является инвестиционной, юридической или налоговой рекомендацией. Правила режима Holiday Home (DET), требования OA/HOA, условия площадок (Airbnb и др.), а также нормы DLD/RERA меняются; все цифры и примеры даны как ориентир на 22.09.2025 и не гарантируют будущую доходность. Перед сделкой проверьте: допустимость режима в конкретном здании (house rules/решение OA), действующие требования/пошлины DET/DLD/RERA, Tourism Dirham и комиссии площадок; обсудите налоговые последствия с профильным консультантом.</small>

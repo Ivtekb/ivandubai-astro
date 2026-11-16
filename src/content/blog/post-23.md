@@ -135,33 +135,6 @@ Off-plan перешел к двум расчетным сценариям:
   <button type="submit" style="background:#000;color:#fff;padding:0.75rem 2rem;border:none;border-radius:4px;cursor:pointer;font-size:1rem;">Отправить запрос</button>
 </form>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Анатомия объема в 9,58 млрд AED: почему капитал уходит в трофейный ультра-прайм и готовую вторичку",
-  "description": "Сделки DLD за 10-14 августа 2026 года показывают разделение рынка Дубая: капитал идет в трофейный off-plan на воде и готовую вторичку с подтвержденным кэшфлоу.",
-  "datePublished": "2026-08-18",
-  "dateModified": "2026-08-18",
-  "inLanguage": "ru",
-  "image": "https://www.ivandubai.xyz/post-23.jpg",
-  "mainEntityOfPage": "https://www.ivandubai.xyz/blog/dubai-958-mlrd-aed-ultra-prime-gotovaya-vtorichka-avgust-2026/",
-  "author": {"@id":"https://www.ivandubai.xyz/#person"},
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ivan Dubai",
-    "url": "https://www.ivandubai.xyz"
-  },
-  "about": [
-    "Dubai real estate",
-    "ultra-prime property",
-    "secondary market",
-    "off-plan property",
-    "Dubai Land Department"
-  ]
-}
-</script>
-
 ---
 
 *Данный материал носит информационный характер и не является индивидуальной инвестиционной рекомендацией. Permit: 5798161*

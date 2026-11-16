@@ -138,8 +138,9 @@ const ogLocale = lang === 'en' ? 'en_US' : 'ru_RU';
 // Structured data for better SEO
 const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': pageType === 'article' ? 'Article' : 'WebSite',
+    '@type': pageType === 'article' ? 'Article' : 'WebPage',
     name: title,
+    ...(pageType === 'article' && { headline: title }),
     description: description,
     url: formatCanonicalURL(canonicalURL),
     ...(resolvedImage?.src && { image: resolvedImage.src }),
@@ -218,5 +219,5 @@ const jsonLd = {
 <meta name="ai:target" content="expats seeking lifestyle fit in UAE coastal areas (Palm Jumeirah, Dubai Islands, Saadiyat)" />
 <meta name="ai:method" content="AI-integrated workflow for rhythm analysis and noise filtering" />
 
-<!-- JSON-LD RealEstateAgent Schema for AI Agents -->
+<!-- Canonical Person identity for author linkage -->
 <script type="application/ld+json" set:html={JSON.stringify(siteConfig.structuredData)} />
