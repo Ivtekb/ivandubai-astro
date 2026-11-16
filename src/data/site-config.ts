@@ -84,7 +84,7 @@ const siteConfig = {
         { text: 'Правовая информация', href: '/terms' }
     ],
     socialLinks: [
-        { text: 'VK', href: 'https://vk.com/ivanfromdubai' },
+        { text: 'X', href: 'https://x.com/IvanFromDubai' },
         { text: 'Instagram', href: 'https://www.instagram.com/ivan_fromdubai' },
         { text: 'Facebook', href: 'https://www.facebook.com/IvanGFP' }
     ],
