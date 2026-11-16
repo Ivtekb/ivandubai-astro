@@ -69,7 +69,8 @@ const siteConfig = {
         { text: 'Кейсы', href: '/cases' },
         { text: 'Блог', href: '/blog' },
         { text: 'Вопросы и Ответы', href: '/faq' },
-        { text: 'Контакты', href: '/contact' }
+        { text: 'Контакты', href: '/contact' },
+        { text: 'Правовая информация', href: '/terms' }
     ],
     socialLinks: [
         { text: 'VK', href: 'https://vk.com/ivanfromdubai' },
