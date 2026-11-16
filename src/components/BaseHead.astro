@@ -50,7 +50,7 @@ function formatCanonicalURL(url: string | URL) {
 
 // B-01a: only emit hreflang for paths generated in BOTH languages.
 // Different RU/EN article slugs require explicit editorial mapping (B-01b).
-const pairedStaticPaths = ['/', '/about/', '/blog/', '/cases/', '/contact/', '/faq/', '/projects/', '/selection/'];
+const pairedStaticPaths = ['/', '/about/', '/blog/', '/cases/', '/contact/', '/faq/', '/projects/', '/selection/', '/terms/'];
 const availableRoutes = new Set<string>();
 for (const path of pairedStaticPaths) {
     availableRoutes.add(path);

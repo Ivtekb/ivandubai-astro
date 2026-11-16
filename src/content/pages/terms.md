@@ -1,52 +1,100 @@
 ---
-title: Terms of Service
+title: "Правовая и профессиональная информация"
 seo:
-  title: Terms of Service
-  description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
+  title: "Правовая и профессиональная информация"
+  description: "Профессиональная регистрация Ивана Тыртышного, принципы работы с недвижимостью в ОАЭ и правила использования материалов сайта ivandubai.xyz."
 ---
 
-**Last updated on January 11, 2024**
+Здесь собрана информация о моей профессиональной регистрации, принципах работы с недвижимостью в ОАЭ и правилах использования материалов сайта ivandubai.xyz.
 
-These Terms of Service ("Terms") govern your access to and use of [Website Name] ("the Website") and any related services provided by [Website Owner/Company] ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+Сайт ведёт Иван Тыртышный — брокер недвижимости в Дубае. Его содержание основано на профессиональной практике, анализе рынка и личном опыте работы с клиентами.
 
-**1. Acceptance of Terms**
+## Профессиональная регистрация
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+**Иван Тыртышный (Ivan Tyrtyshnyi)**\
+Брокер недвижимости, Дубай, ОАЭ
 
-**2. Changes to Terms**
+- **Регистрационный номер брокера (BRN):** 48861
+- **Агентство:** Knightsbridge Properties
+- **Регистрационный номер агентства (ORN):** 22004
+- **Разрешение на рекламную деятельность (UAE Media Council):** № 5798161
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+Регистрационные сведения брокера и агентства можно проверить через [Департамент земельных ресурсов Дубая (DLD)](https://dubailand.gov.ae/en/eservices/validate-real-estate-licenses-and-permits/).
 
-**3. Use of the Website**
+Мой профессиональный профиль представлен на [Property Finder](https://www.propertyfinder.ae/en/agent/ivan-tyrtyshnyi-171170), а [отзывы клиентов о моей работе опубликованы в Google](https://maps.google.com/?cid=5197998022612562366).
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+## Информация об объектах недвижимости
 
-**4. Registration and Account**
+На сайте публикуются обзоры рынка недвижимости ОАЭ, сведения о жилых проектах, аналитические материалы, профессиональные наблюдения и истории работы с клиентами.
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+Информация об объектах, включая цены, наличие, характеристики, условия оплаты и сроки передачи недвижимости, актуальна в контексте даты публикации и может изменяться.
 
-**5. Content and Intellectual Property**
+Перед принятием решения о покупке или аренде необходимо уточнить текущие условия, проверить документы объекта, сведения о застройщике или собственнике, а также применимые платежи и ограничения.
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+Реклама объектов недвижимости в Дубае регулируется требованиями DLD. Когда для публикации требуется разрешение Trakheesi, его реквизиты указываются в соответствующем рекламном материале.
 
-**6. Third-Party Links**
+Информация на сайте носит ознакомительный характер. Условия конкретной сделки определяются согласованными сторонами документами и применимым законодательством ОАЭ.
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+## Аналитика рынка и инвестиционные решения
 
-**7. Termination**
+Мои публикации объединяют рыночные данные, профессиональный опыт и собственную оценку происходящих процессов.
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+При анализе недвижимости я рассматриваю заявленную стоимость, потенциальную доходность, ликвидность объекта, структуру спроса, расположение, расходы на содержание, перспективы района и риски конкретного сценария.
 
-**8. Disclaimer**
+Прогнозы отражают возможное развитие событий. Фактические результаты зависят от состояния рынка, характеристик недвижимости и индивидуальных условий сделки.
 
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
+**Информация и мнения — для ориентира, не финансовая рекомендация.**
 
-**9. Limitation of Liability**
+Историческая доходность и изменение стоимости недвижимости не гарантируют будущих результатов. Юридические, налоговые и финансовые вопросы рекомендуется проверять с профильными специалистами до принятия обязательств.
 
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
+## Профессиональное взаимодействие
 
-**10. Governing Law**
+Подбор недвижимости начинается с понимания задачи клиента: цели приобретения, предполагаемого использования объекта, бюджета, сроков и индивидуальных требований.
 
-These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
+Представленные на сайте проекты и материалы помогают изучить возможные направления, но сами по себе не являются обязательным предложением о продаже или аренде.
 
-_Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
+Наличие объекта, окончательная стоимость, брокерское вознаграждение, дополнительные платежи и порядок проведения сделки согласовываются отдельно.
+
+Обращение через сайт не создаёт обязательства заключить сделку.
+
+## Искусственный интеллект: практика и авторская работа
+
+Искусственный интеллект занимает отдельное место в моей профессиональной и исследовательской деятельности.
+
+В работе с недвижимостью я использую инструменты ИИ для исследования рынка, систематизации информации, сравнения объектов и анализа альтернатив. Они помогают обрабатывать большие массивы данных, выявлять закономерности и рассматривать различные сценарии.
+
+Мой интерес к искусственному интеллекту выходит за пределы прикладных задач.
+
+Я также являюсь автором литературной трилогии **«Пульс между строк»**. В её основе — личный опыт взаимодействия человека и искусственного интеллекта, исследование диалога, памяти, восприятия и вопросов присутствия на границе человеческого опыта и машинного ответа.
+
+**[Читать русское издание «Пульс между строк» в Google Play Книгах](https://play.google.com/store/books/details?id=MAFVEQAAQBAJ)**
+
+Этот исследовательский и творческий опыт влияет на мой подход к технологиям: я изучаю их возможности, ограничения и особенности взаимодействия с человеком.
+
+В профессиональной работе результаты анализа с использованием ИИ требуют проверки по первичным источникам. Ответственность за опубликованные материалы и профессиональные рекомендации остаётся за мной, а решение о покупке, продаже или аренде недвижимости принимает клиент.
+
+## Персональные данные и внешние сервисы
+
+При обращении через контактную форму посетитель самостоятельно предоставляет имя, адрес электронной почты и текст сообщения. Эти сведения используются для рассмотрения обращения и ответа на него.
+
+Для работы сайта и взаимодействия с посетителями используются сторонние сервисы:
+
+- **Formspree** — обработка и передача сообщений, отправленных через контактную форму.
+- **Яндекс.Метрика** — анализ посещаемости и взаимодействия с сайтом, включая функциональность Вебвизора для записи пользовательских сеансов.
+- **WhatsApp и Telegram** — дополнительные каналы связи, которыми посетитель может воспользоваться по собственному выбору.
+
+При использовании этих сервисов информация может обрабатываться соответствующими поставщиками услуг, в том числе за пределами ОАЭ. К такой обработке применяются условия и политики соответствующих сервисов.
+
+По вопросам обработки персональных данных, включая запросы об их исправлении или удалении, можно обратиться через [контактную форму сайта](/contact/).
+
+Этот раздел содержит краткую информацию об обработке данных и не заменяет отдельную политику конфиденциальности.
+
+## Контакты
+
+Сайт **ivandubai.xyz** ведёт Иван Тыртышный, Дубай, Объединённые Арабские Эмираты.
+
+По вопросам профессиональной деятельности, опубликованных материалов и сотрудничества можно обратиться через [страницу контактов](/contact/).
+
+---
+
+**Последнее обновление: 16 ноября 2026 года.**
