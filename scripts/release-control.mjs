@@ -1,6 +1,7 @@
 export const DEFAULT_PRODUCTION_VERIFY_TIMEOUT_MS = 480000;
 export function productionVerifyTimeout(value = process.env.PRODUCTION_VERIFY_TIMEOUT_MS) {
-  return Number(value || DEFAULT_PRODUCTION_VERIFY_TIMEOUT_MS);
+  const parsed = Number(value || DEFAULT_PRODUCTION_VERIFY_TIMEOUT_MS);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : DEFAULT_PRODUCTION_VERIFY_TIMEOUT_MS;
 }
 
 export function guardedMergeArgs(prNumber, verifiedSha, localSha, remoteSha) {

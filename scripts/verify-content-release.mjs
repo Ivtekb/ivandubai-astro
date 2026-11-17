@@ -109,13 +109,16 @@ function checkPage(file) {
 }
 try {
   const diff=execFileSync('git',['diff','--name-status','--no-renames',baseSha,'HEAD'],{encoding:'utf8'});
-  const added=[],assets=[],unrelated=[],mutated=[];
+  const added=[],assets=[],unrelated=[],protectedChanged=[];
   for(const line of diff.trim().split('\n').filter(Boolean)){
     const [status,file]=line.split('\t');
     if(/^src\/content\/(blog|cases)\//.test(file)){
-      if(status==='A')added.push(file);else mutated.push(file);
+      if(status==='A')added.push(file);
+      else protectedChanged.push(file);
     }else if(/^public\/[a-zA-Z0-9_.-]+\.(jpg|jpeg|png|webp|avif)$/i.test(file)&&status==='A'){
       assets.push(file);
+    }else if((/^src\/content\//.test(file)||/^public\//.test(file))&&status!=='A'){
+      protectedChanged.push(file);
     }else unrelated.push(file);
   }
   const b=files(baseDir),c=files(currentDir);
@@ -124,7 +127,7 @@ try {
   ).sort();
   const pages=added.map(checkPage).filter(Boolean);
   const technical=!added.length;
-  if(mutated.length)err('Previously published content changed: '+mutated.join(', '));
+  if(protectedChanged.length)err('Protected published file changed — explicit Owner approval required: '+protectedChanged.join(', '));
   if(!technical&&unrelated.length)err('Content PR contains unrelated source changes: '+unrelated.join(', '));
   if(added.length){
     const allowed=(p)=>p==='index.html'||p==='en/index.html'||p==='rss.xml'||
