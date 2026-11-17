@@ -3,12 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CasePreview from '../../components/CasePreview.astro';
 import Pagination from '../../components/Pagination.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 // Для динамической маршрутизации обязательно экспортируем getStaticPaths
 export async function getStaticPaths({ paginate }) {
-  const cases = (await getCollection('cases', ({ id }) => !id.startsWith('en/'))).sort((a, b) =>
-    new Date(b.data.publishDate) - new Date(a.data.publishDate)
-  );
+  const cases = (await getCollection('cases', ({ id }) => !id.startsWith('en/'))).sort(sortItemsByDateDesc);
   return paginate(cases, { pageSize: 8 });
 }
 
