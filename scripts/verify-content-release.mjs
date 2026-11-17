@@ -43,6 +43,8 @@ function checkPage(file) {
   const built=join(currentDir,route,'index.html');
   if(!existsSync(built)){err('Missing built route: '+route);return null;}
   const source=read(file),html=read(built);
+  if(/<\s*script\b|\bonerror\s*=|\bonload\s*=|javascript:/i.test(source))
+    err('New Markdown contains unsafe active HTML/URL: '+file);
   const front=source.startsWith('---\n')?source.slice(4,source.indexOf('\n---\n',4)): '';
   const image=front.match(/\n\s*image:\s*\n\s*src:\s*["']([^"']+)["']/)?.[1];
   if(!image||!/^\/[a-zA-Z0-9_.-]+\.(jpg|jpeg|png|webp|avif)$/i.test(image)){

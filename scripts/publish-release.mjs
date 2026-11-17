@@ -114,7 +114,8 @@ if(!qa||qa.conclusion!=='success')stop('Required verify_content_pr check not suc
 let status;
 try{status=JSON.parse(gh(['api','repos/Ivtekb/ivandubai-astro/commits/'+sha+'/status']));}
 catch(e){stop('Cannot inspect preview: '+String(e.message).slice(0,150));}
-if(status.state!=='success')stop('Vercel Preview status not SUCCESS.');
+if(status.state!=='success'||!status.statuses?.some(x=>x.context==='Vercel'&&x.state==='success'))
+  stop('Vercel Preview status not SUCCESS.');
 runGit(['fetch','origin','main']);
 if(runGit(['rev-parse','origin/main'])!==baseline)
   stop('main advanced since build; refresh branch and re-run automatic QA (no merge).');
