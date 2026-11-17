@@ -1,4 +1,6 @@
 # Codex publishing operations — ivandubai.xyz
+
+**Default owner workflow:** image already uploaded + final text + **«ПУБЛИКУЙ»** in one of the four Codex chats. Read [CODEX_ONE_MESSAGE_PUBLISHING.md](CODEX_ONE_MESSAGE_PUBLISHING.md); handle preflight, SEO packaging, PR, deployment and checks without requesting extra Owner steps. A draft request is different; it never authorizes publication.
 Status: repository-local instructions, derived from live source at main `a9c949adee8120912202ea5000025e042b6c311a` (2026-11-17). **Dynamic reference, not a permanent pin.** Always check the *current* main before acting.
 
 ## Authority, sources, and roles
@@ -30,20 +32,20 @@ When adding content, keep approved `publishDate` exact; add `updatedDate` only w
 
 ## Preflight — mandatory every request
 
-- `git status --short` + `git fetch origin main` + `git rev-parse origin/main` + `git rev-parse HEAD`; create clean branch/worktree on latest `origin/main`. If absent network or outdated branch, STOP before writing.
-- Confirm role, specific new material ID, language, paired/solo publication, exact Owner-approved text and assets, proposed `publishDate`, image, SEO metadata, existing file/route collisions.
+- Locate correct `Ivtekb/ivandubai-astro` checkout first. If Codex opened an unrelated empty working directory, find the real checkout or bootstrap a fresh isolated clone as described in `docs/CODEX_ONE_MESSAGE_PUBLISHING.md`; don't tell Owner to manage Git unless blocked by permissions. Then `git status --short` + `git fetch origin main` + `git rev-parse origin/main` + `git rev-parse HEAD`; create a clean branch/worktree on latest `origin/main`.
+- Confirm role, new material ID, language, image, actual approved material and collision checks. The Owner's explicit PUBLISH request with final text + image is the approval for that exact copy and faithful SEO packaging; don't demand a second approval. If it says DRAFT, never publish.
 - Read `docs/SEO_AI_PUBLICATION_CHECKLIST.md` and current relevant route/preview components, content schema and `BaseHead`; check 1–2 recent good articles/cases in same language, but do not blindly copy historical frontmatter or embedded scripts.
-- Report PRE-FLIGHT (SHA, instructions loaded, file paths, generated URL, editorial GO/no GO, whether translation Map requires a reviewed code change, tests planned). Draft may continue without publish GO; file-writing/publishing must not.
+- Perform PRE-FLIGHT silently; document SHA, loaded instructions, files, URL, approved PUBLISH scope, mapping and tests in PR. Communicate only an actual blocker and final public link, avoiding unnecessary owner-facing technical reports.
 
 ## Two-stage publishing workflow
 
-**Stage A — editorial (not in production):** draft/shape the Owner's supplied new material, sources, SEO/title/excerpt, semantic headings and extractable context per `docs/SEO_AI_PUBLICATION_CHECKLIST.md`, hero/alt, linked Blog/Case/Project/Contacts, CTA and brief source/date notes. Use RU as master, EN adaptation by meaning. Treat each final RU and EN page as a separately approveable artifact. Existing published content remains untouched. Stop when awaiting Owner GO for the precise copy.
+**Stage A — editorial:** for a DRAFT request, prepare for Owner approval. For an explicit PUBLISH request with final text and image, final body copy is already approved: preserve it; derive only faithful technical metadata and mechanical Markdown formatting per `docs/CODEX_ONE_MESSAGE_PUBLISHING.md`. EN adaptation requires its own approved version. Do not append editorial copy/CTAs or rewrite existing material.
 
-**Stage B — technical (after editorial GO):** create a separate branch from latest main and add only approved Markdown/media plus any separately approved small technical mapping. Do not use `git add .` blindly. Do not commit/push to main or change existing published copy. If route/translation mapping/frontmatter logic needs modification, send precise technical plan to Claude before implementing; perform one independent Claude technical preview review and a production check after merge. Owner's content approval is a distinct gate.
+**Stage B — technical (after explicit PUBLISH or approved final draft):** create a separate branch from latest main and add only approved Markdown/media plus any separately approved small technical mapping. Do not use `git add .` blindly. Do not commit/push to main or change existing published copy. If route/translation mapping/frontmatter logic needs modification, send precise technical plan to Claude before implementing; perform one independent Claude technical preview review and a production check after merge. Owner's content approval is a distinct gate.
 
 Run `npm ci`; `TZ=UTC npm run build` on CLEAN baseline and branch. Compare `dist/` exact expected/actual changes. For new articles, expect possible changes in list/pagination, RSS, sitemap, article output, local previews, assets, and hreflang; **do not use an assumed fixed count**. Investigate unexpected changed HTML, missing pages, 404s or non-deterministic sort before merge. Confirm current HTML output count, valid frontmatter, the entire `docs/SEO_AI_PUBLICATION_CHECKLIST.md` against rendered HTML (headings, approved editorial meaning, localized title/description, OG image, Article/Person graph and dates, canonical and reciprocal actual hreflang, relevant internal links, image/alt and crawler access), Yandex/Metricool and Formspree CTA. Create PR with file list, SHA, preflight, tests, owner approval reference, rollback plan; Claude review according to Owner Protocol.
 
-Post-release verify live exact route and metadata, proper language list, RSS/sitemap, analytics markers, link and media status; register accepted release in #16. No auto-deploy of unapproved content.
+Post-release verify live exact route and metadata, proper language list, RSS/sitemap, analytics markers, link and media status; register accepted release in #16. Do not deploy unapproved content. An explicit PUBLISH request containing final content and image is the Owner authorization to deploy that exact material after technical gates; no redundant content review requested.
 
 ## Do not repeat old failure modes
 

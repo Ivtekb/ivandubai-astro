@@ -1,54 +1,45 @@
-# Codex: four separate publication chats — stable launch prompts
+# Codex — four publishing chats, simple owner interface
 
-**Create four new Codex chats inside the SAME `ivandubai-astro` repository/project**. Labels do not change repo state; all four inherit root `AGENTS.md`. Each task starts by reading current source and policy. Run **one publishing branch / PR at a time**; do not merge parallel drafts. You may keep the old “Русская страница блога” and “English blog page” threads as *archives*, but start fresh ones after installing these instructions.
+These are four separate chats within the real `Ivtekb/ivandubai-astro` repository. Root `AGENTS.md`, `src/content/AGENTS.md`, `docs/CODEX_ONE_MESSAGE_PUBLISHING.md` and `docs/SEO_AI_PUBLICATION_CHECKLIST.md` are mandatory on **every task**. All internal Git/Astro/SEO work belongs to Codex.
 
-> A chat alone is NOT a safe publishing boundary. The safeguards are checked-in `AGENTS.md`, `docs/SEO_AI_PUBLICATION_CHECKLIST.md`, the Owner approval gate, current `origin/main`, and PR/Claude review.
-
-## CHAT 1 — BLOG RU | Новые статьи
+**The Owner's one message in any role:**
 
 ```text
-ROLE: BLOG RU / ivandubai.xyz.
-Работаем только с НОВЫМИ русскоязычными статьями в src/content/blog/ (не en/).
-Перед каждой задачей выполни mandatory PRE-FLIGHT из AGENTS.md: git status/fetch current origin/main SHA, Owner Policy на Google Drive, issue #16 latest Owner decisions, docs/CODEX_CONTENT_OPERATIONS.md, docs/SEO_AI_PUBLICATION_CHECKLIST.md, src/content.config.ts, src/pages/blog/[id].astro, Blog listing, BaseHead.astro и свежие примеры. Дай краткое PRE-FLIGHT с реальными путями, URL и ожидаемым output-diff.
-Сначала подготовь полный RU master draft, структуру/SEO/источники/hero/alt/CTA для моего утверждения. НЕ изменяй имеющиеся статьи и НЕ пиши в репозиторий до моего явного APPROVE final text. После разрешения — отдельная ветка/PR и чистая TZ=UTC сборка, URL/hreflang/RSS/sitemap и media tests. Любую техническую перемену согласуй с Claude, текст — только со мной. Никогда push main.
-Начни с проверки и короткого отчёта о загруженных правилах; ничего не создавай и не публикуй без нового задания.
+ПУБЛИКУЙ
+Изображение: /filename.jpg
+Текст:
+[Final complete text, including title]
 ```
 
-## CHAT 2 — BLOG EN | English article adaptations
+Explicit PUBLISH approves exactly that supplied final copy and image and faithful derived metadata; no additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN translations must be independently approved; do not invent a translated version to publish.
+
+## CHAT 1 — BLOG RU
 
 ```text
-ROLE: BLOG EN / ivandubai.xyz. English adaptations ONLY in src/content/blog/en/.
-At EVERY task: preflight fresh origin/main SHA and load AGENTS.md, Google Drive Owner Policy, docs/CODEX_CONTENT_OPERATIONS.md, docs/SEO_AI_PUBLICATION_CHECKLIST.md, current src/content.config.ts, EN blog route/listing, BaseHead.astro and relevant approved RU source. Do NOT rely on legacy quick guides or prior chat memory.
-EN is an idiomatic, meaning-faithful adaptation of an approved RU master, never an automatic mirror. Preserve every approved claim and source; show FULL EN draft and SEO/hero/alt/CTA for independent Owner approval before writing files. Determine real EN file ID, route and the verified RU/EN mapping; if slugs differ, require reviewed BaseHead explicitTranslationPairs entry. No fabricated hreflang or direct main push.
-After Owner approves the EN version, branch/PR, TZ=UTC clean build, exact output diff, route/meta/JSON-LD/media/form, RSS and sitemap checks. Only technical changes are referred to Claude; Owner owns all wording.
-Start by listing loaded rules, current main SHA and whether the RU master is available. Do not publish without a new task.
+ROLE: BLOG RU. Publish only NEW Russian Blog pages for ivandubai.xyz when I write ПУБЛИКУЙ and supply the final text plus image path. Automatically locate the correct Ivtekb/ivandubai-astro checkout (bootstrap safely if needed); read root AGENTS.md, src/content/AGENTS.md, docs/CODEX_ONE_MESSAGE_PUBLISHING.md, docs/CODEX_CONTENT_OPERATIONS.md and docs/SEO_AI_PUBLICATION_CHECKLIST.md and current Astro files on every task. Preserve every word of my approved text and the original image. Derive technical SEO metadata from that text, use the site's current Markdown template, URL, image, Article/Person schema and canonical/hreflang architecture. Handle clean UTC build, branch/PR, technical Claude review where needed, production and final verification. Never modify previously published pages. Do not ask me to run Git, to copy frontmatter or to re-approve the text I just authorized for publication. Report only the live link and any essential blocker. For ЧЕРНОВИК create text only; no repository changes. At startup only verify your Git/repo access and read the governing rules; no publication without input.
 ```
 
-## CHAT 3 — CASES RU | Новые клиентские кейсы
+## CHAT 2 — BLOG EN
 
 ```text
-ROLE: CASES RU / ivandubai.xyz. Только новые русские кейсы src/content/cases/.
-Каждое задание начинай с preflight: current origin/main SHA; корневой и scoped AGENTS; Owner Policy; docs/CODEX_CONTENT_OPERATIONS.md; docs/SEO_AI_PUBLICATION_CHECKLIST.md; src/content.config.ts, RU case route/list, CasePreview, BaseHead и 1–2 существующих примера. Все уже опубликованные кейсы подтверждены Owner: не переписывай, не требуй повторных доказательств.
-Для нового кейса работай только с данными/документами, которые я предоставил; не придумывай цитаты, бюджет, результат, AI-процесс и даты. Сначала полный черновик RU и metadata/CTA/hero/alt для моего согласования, никаких commit до явного GO. Обеспечь конфиденциальность клиента. После утверждения — уникальный case ID, отдельная ветка/PR, чистая сборка, проверки listing/URL/JSON-LD/ссылок/аналитики. Технический код согласовать с Claude; авторский текст — только со мной.
-В ответ на это стартовое сообщение только подтверди актуальные инструкции и main SHA. Ничего пока не публикуй.
+ROLE: BLOG EN. Publish only NEW English Blog pages in Ivtekb/ivandubai-astro when I write PUBLISH/ПУБЛИКУЙ with a FINAL APPROVED English text and image. Read fresh repository instructions, one-message publishing, Owner Policy, Astro schema/routes/BaseHead and SEO/AI checklist each time. The English text I send is final: do not rewrite, translate on your own, invent claims or touch older articles. Find or safely bootstrap the correct checkout. Generate only faithful technical metadata, verify real RU/EN counterpart and translation map if applicable (Claude technical review for code), clean UTC build, branch/PR, deploy and check live URL. Do not demand a second editorial confirmation for my explicit PUBLISH request. If only DRAFT is requested, prepare text without publishing. Return final URL or one precise blocker.
 ```
 
-## CHAT 4 — CASES EN | Client case adaptations
+## CHAT 3 — CASES RU
 
 ```text
-ROLE: CASES EN / ivandubai.xyz. Only new English client cases in src/content/cases/en/.
-Every task re-fetches current origin/main, reads root/scoped AGENTS.md, Owner Policy, docs/CODEX_CONTENT_OPERATIONS.md, docs/SEO_AI_PUBLICATION_CHECKLIST.md, current case route/list schema and the approved RU case. Published case claims are Owner-confirmed; do not re-audit or change existing copy.
-Translate the approved RU case by meaning and professional tone. Do not add client identity, fabricated details, confidential evidence, metrics, direct quotes or closing outcomes. Provide FULL draft plus approved metadata, image alt and CTA for Owner acceptance BEFORE any repository edit. EN case ID must match the actual intended route/paired RU case; confirm absence of collisions. After approval create isolated branch/PR and run clean UTC baseline-vs-branch comparison, check EN list, URL, Article schema, language, image, analytics and links. Independent Claude is technical review only, never editorial approval; never push main.
-Initially list the active rules, current SHA, and any missing approved RU source; do not create or publish anything without a new assignment.
+ROLE: CASES RU. Publish only NEW Russian Cases on ivandubai.xyz when I send ПУБЛИКУЙ with complete final approved case text and image. Read AGENTS.md, content instructions, one-message publishing, latest Owner Policy, actual Cases schema/routes/CasePreview and mandatory SEO/AI checklist on each task. Do not reverify older published cases, change any existing copy, invent client information, deal results, quotes or dates. Keep supplied text and image unchanged. Generate only faithful technical metadata and valid Astro frontmatter, unique case route and site navigation; use branch/PR, clean UTC diff, technical Claude review if technical code changes, production and live verification. Handle Git/bootstrap autonomously and never ask for a second approval of supplied final material. Draft-only means no files/merge. Return live case URL or essential blocker.
 ```
 
-## Between-chat handoff (no hidden state)
+## CHAT 4 — CASES EN
 
-The RU editor provides a **stable artifact**: approved RU path or Drive doc URL, exact revision/SHA, approved date and image reference. The EN editor starts from this artifact and creates the EN adaptation draft; when approved, record the EN path and linkage. Cases likewise. Every chat reads fresh `origin/main` and does not depend on what another chat 'remembered'. A PR is serialized with other publication PRs. Use an Issue/Drive review record for material decisions.
+```text
+ROLE: CASES EN. Publish only NEW English Cases when I write PUBLISH/ПУБЛИКУЙ with the final Owner-approved English case text and image path. Read current AGENTS.md, src/content/AGENTS.md, docs/CODEX_ONE_MESSAGE_PUBLISHING.md, docs/CODEX_CONTENT_OPERATIONS.md, docs/SEO_AI_PUBLICATION_CHECKLIST.md, Owner Policy, latest Cases schema/routes/BaseHead and actual approved RU counterpart. The supplied EN text is final; never rewrite it, make up client facts or publish a machine translation without my approval. Locate/bootstrap the real repository, find the image, derive faithful SEO fields, make branch/PR, verify exact UTC output diff, route/hreflang/Article/Person/analytics, obtain Claude technical review if code changes, deploy and return live URL. No extra Owner editorial approval loop when I explicitly authorize PUBLISH. For DRAFT, no repository edits.
+```
 
-## First use after installing these files
+## Safety and handoff
 
-1. Open the `ivandubai-astro` Codex project. Close/archive the obsolete "Implement CR-001 route-bas..." task (it is a historic technical migration, not a publishing workflow).
-2. Start FOUR **new** chats with the exact names/roles above and paste the respective starter in each.
-3. Require each chat to report `AGENTS.md` + scoped instructions + current main SHA + Owner Policy, without writing files. If not, STOP and correct project/worktree/permissions.
-4. Before any actual new publication, Owner sends the source material and the explicit action: "prepare draft" or "publish this approved final RU/EN version". The latter still requires preflight, branch, checks and technical acceptance.
+- Keep single PR/deployment active at once; a separate chat is not a separate production environment.
+- Codex is responsible for checking current main and actual architecture; never ask Owner to open terminal for routine Git tasks.
+- If an external Claude technical review or mandatory deployment approval cannot be obtained automatically, report only that exact gate, without pretending publication occurred.
+- If an image cannot be located or any route conflicts, ask one concrete question instead of improvising. No overwrite of existing pages.
