@@ -32,7 +32,7 @@ When adding content, keep approved `publishDate` exact; add `updatedDate` only w
 
 - `git status --short` + `git fetch origin main` + `git rev-parse origin/main` + `git rev-parse HEAD`; create clean branch/worktree on latest `origin/main`. If absent network or outdated branch, STOP before writing.
 - Confirm role, specific new material ID, language, paired/solo publication, exact Owner-approved text and assets, proposed `publishDate`, image, SEO metadata, existing file/route collisions.
-- Read current relevant route/preview components, content schema and `BaseHead`; check 1–2 recent good articles/cases in same language, but do not blindly copy historical frontmatter or inline scripts.
+- Read current relevant route/preview components, content schema and `BaseHead`; check 1–2 recent good articles/cases in same language, but do not blindly copy historical frontmatter or embedded scripts.
 - Report PRE-FLIGHT (SHA, instructions loaded, file paths, generated URL, editorial GO/no GO, whether translation Map requires a reviewed code change, tests planned). Draft may continue without publish GO; file-writing/publishing must not.
 
 ## Two-stage publishing workflow
@@ -50,7 +50,7 @@ Post-release verify live exact route and metadata, proper language list, RSS/sit
 - Never `git push origin main` from an old quick-start recipe.
 - Never name next file by `ls ... | wc -l`; number gaps, duplicates and .bak files exist.
 - Never assume `slug`, `canonical` or `hreflang` frontmatter controls site routing. Inspect the actual code.
-- Never insert inline BlogPosting JSON-LD as a 'SEO improvement'; global `BaseHead` already handles `Article`.
+- Never insert embedded BlogPosting JSON-LD as a 'SEO improvement'; global `BaseHead` already handles `Article`.
 - Never treat a technical Claude ACCEPT as approval of author copy; never silently alter a published case or author metaphor.
 - Never upload private client evidence to GitHub, open PR comments or publicly shared Drive.
 - If docs/repo/policy disagree, do not pick the convenient one: identify the conflict and escalate as a *technical documentation mismatch*.
