@@ -5,6 +5,7 @@
 import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
+import { guardedMergeArgs } from './release-control.mjs';
 const args=process.argv.slice(2);
 const flag=(key)=>args.includes(key);
 const opt=(key)=>{const i=args.indexOf(key);return i<0?null:args[i+1];};
@@ -119,7 +120,14 @@ if(status.state!=='success'||!status.statuses?.some(x=>x.context==='Vercel'&&x.s
 runGit(['fetch','origin','main']);
 if(runGit(['rev-parse','origin/main'])!==baseline)
   stop('main advanced since build; refresh branch and re-run automatic QA (no merge).');
-gh(['pr','merge',String(prNumber),'--merge']);
+const localHead=runGit(['rev-parse','HEAD']);
+let remoteHead;
+try { remoteHead=JSON.parse(gh(['pr','view',String(prNumber),'--json','headRefOid'])).headRefOid; }
+catch(e){stop('Cannot verify PR HEAD before merge: '+String(e.message).slice(0,150));}
+let mergeArgs;
+try { mergeArgs=guardedMergeArgs(String(prNumber),sha,localHead,remoteHead); }
+catch(e){stop(String(e.message||e));}
+gh(mergeArgs);
 const merged=JSON.parse(gh(['pr','view',String(prNumber),'--json','state,mergeCommit']));
 if(merged.state!=='MERGED'||!merged.mergeCommit?.oid)stop('Cannot confirm PR merged.');
 const mergeSha=merged.mergeCommit.oid;

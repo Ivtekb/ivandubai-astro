@@ -118,14 +118,14 @@ try {
       assets.push(file);
     }else unrelated.push(file);
   }
-  if(mutated.length)err('Previously published content changed: '+mutated.join(', '));
-  if(added.length&&unrelated.length)err('Content PR contains unrelated source changes: '+unrelated.join(', '));
   const b=files(baseDir),c=files(currentDir);
   const changes=[...new Set([...b.keys(),...c.keys()])].filter(x=>
     !b.has(x)||!c.has(x)||!readFileSync(b.get(x)).equals(readFileSync(c.get(x)))
   ).sort();
   const pages=added.map(checkPage).filter(Boolean);
-  if(!added.length&&changes.length)err('Non-content PR changed site output: '+changes.join(', '));
+  const technical=!added.length;
+  if(mutated.length)err('Previously published content changed: '+mutated.join(', '));
+  if(!technical&&unrelated.length)err('Content PR contains unrelated source changes: '+unrelated.join(', '));
   if(added.length){
     const allowed=(p)=>p==='index.html'||p==='en/index.html'||p==='rss.xml'||
       /^sitemap(?:-index|-0)?\.xml$/.test(p)||
@@ -133,9 +133,15 @@ try {
     for(const changed of changes)if(!allowed(changed))err('Unexpected generated output: '+changed);
     for(const p of pages)if(!changes.includes(p.route+'index.html'))err('New page missing in output diff: '+p.route);
   }
+  console.log('SOURCE_DIFF_BEGIN');
+  for(const line of diff.trim().split('\n').filter(Boolean))console.log('SOURCE '+line);
+  console.log('SOURCE_DIFF_END');
+  console.log('OUTPUT_DIFF_BEGIN');
+  for(const changed of changes)console.log('OUTPUT '+changed);
+  console.log('OUTPUT_DIFF_END');
   console.log('QA '+(issues.length?'FAIL':'PASS')+' baseline='+b.size+
     ' candidate='+c.size+' new_pages='+added.length+' changed_outputs='+changes.length);
+  if(technical&&!issues.length)console.log('TECHNICAL PR — Claude review required');
   for(const page of pages)console.log('PAGE '+JSON.stringify(page));
-  for(const changed of changes)console.log('OUTPUT '+changed);
 }catch(e){err(String(e.message||e));}
 if(issues.length){for(const issue of issues)console.error('QA FAIL: '+issue);process.exit(1);}

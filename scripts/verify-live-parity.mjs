@@ -3,9 +3,10 @@
 // All published build files must be HTTP 200 and byte-identical; no mutations.
 import { readdirSync, readFileSync } from 'node:fs';
 import { resolve, join, relative, sep } from 'node:path';
+import { productionVerifyTimeout } from './release-control.mjs';
 const root=resolve('dist');
 const origin='https://www.ivandubai.xyz/';
-const maxMs=Number(process.env.PRODUCTION_VERIFY_TIMEOUT_MS||240000);
+const maxMs=productionVerifyTimeout();
 const intervalMs=8000, parallelism=12;
 const list=[];
 function collect(dir) {
