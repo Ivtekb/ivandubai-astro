@@ -35,6 +35,8 @@ jobs:
         run: |
           npm ci --no-audit --no-fund --prefer-offline
           TZ=UTC npm run build
+      - name: Release gate regression tests
+        run: node scripts/test-release-controls.mjs
       - name: Publication SEO and exact output-diff
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
