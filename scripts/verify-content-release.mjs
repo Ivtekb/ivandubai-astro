@@ -40,6 +40,14 @@ function checkPage(file) {
   if(!m){err('Unsupported content file: '+file);return null;}
   const sec=m[1],locale=m[2]?'en':'ru',slug=m[3];
   const route=(locale==='en'?'en/':'')+sec+'/'+slug+'/';
+  const legacy=/^(?:post|case)-[0-9]+$/.test(slug);
+  if(legacy) {
+    const counterpart='src/content/'+sec+'/'+(locale==='en'?'':'en/')+slug+'.md';
+    try {execFileSync('git',['cat-file','-e',baseSha+':'+counterpart],{stdio:'ignore'});}
+    catch {err('Numbered URL allowed ONLY for translation of a published legacy counterpart: '+route);}
+  } else if(slug.length<8||slug.length>70||!slug.includes('-')||/--|^-|-$/.test(slug)||/^(?:new|blog|article|post|case)-/.test(slug)) {
+    err('New original content requires a short descriptive SEO URL, not an arbitrary file ID: '+route);
+  }
   const built=join(currentDir,route,'index.html');
   if(!existsSync(built)){err('Missing built route: '+route);return null;}
   const source=read(file),html=read(built);
