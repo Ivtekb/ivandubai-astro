@@ -1,3 +1,5 @@
+> ⚠️ LEGACY — NOT CURRENT. This quick guide predates the accepted 2026 technical modernization. Its numbered-file, manual canonical/hreflang and `git push origin main` instructions must NOT be followed. Read root `AGENTS.md`, `docs/CODEX_CONTENT_OPERATIONS.md` and current route/schema sources first. Keep this file only as historical reference.
+
 # БЫСТРОЕ ДОБАВЛЕНИЕ ПОСТА (АНГЛИЙСКАЯ ВЕРСИЯ)
 
 ## Контекст
