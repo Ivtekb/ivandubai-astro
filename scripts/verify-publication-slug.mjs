@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // New article/case URL must be descriptive. A historic numeric translation exception
-// is allowed ONLY when the counterpart exists in origin/main. No network calls.
+// is allowed ONLY when the counterpart exists in origin/main (or a supplied verified main SHA). No network calls.
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 const args = process.argv.slice(2);
@@ -29,10 +29,12 @@ if (legacy) {
   abort('Legacy counterpart must be same ID and section in the other language');
  const parentPath = (item.section === 'blog' ? 'src/content/blog/' : 'src/content/cases/')
      + (pair.en ? 'en/' : '') + pair.slug + '.md';
+ const baseline = get('--baseline-ref') ?? 'origin/main';
+ if (!/^[a-zA-Z0-9_./-]+$/.test(baseline) || baseline.includes('..')) abort('Invalid baseline ref');
  try {
-  execFileSync('git', ['cat-file', '-e', 'origin/main:' + parentPath], {stdio:'ignore'});
+  execFileSync('git', ['cat-file', '-e', baseline + ':' + parentPath], {stdio:'ignore'});
  } catch {
-  abort('Counterpart is not a published file in origin/main: '+parentPath);
+  abort('Counterpart is not a published file in baseline ' + baseline + ': ' + parentPath + '. If using a detached build, supply --baseline-ref <main-SHA>');
  }
 }
 console.log('SLUG PASS ' + route + (legacy ? ' (verified legacy translation)' : ''));
