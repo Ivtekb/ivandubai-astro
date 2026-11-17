@@ -17,7 +17,7 @@ This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read
 
 ## Mandatory task preflight (repeat even in existing chats)
 
-1. `git status --short`; `git fetch origin main`; record `git rev-parse origin/main`, `git rev-parse HEAD`, active branch. Use a clean worktree at the current `origin/main`. If not current, rebase/switch or STOP; do not overwrite someone else's edits.
+1. Verify workspace identity using `pwd`, `git rev-parse --show-toplevel`, and `git remote get-url origin` (must be `Ivtekb/ivandubai-astro`). Then run `git status --short`; `git fetch origin main`; record `git rev-parse origin/main`, `git rev-parse HEAD`, active branch. Use a clean worktree at the current `origin/main`. If not current, rebase/switch or STOP; do not overwrite someone else's edits.
 2. Read **this file**, the applicable scoped `src/content/AGENTS.md`, `docs/CODEX_CONTENT_OPERATIONS.md`, the current `src/content.config.ts`, corresponding `src/pages/{,en/}{blog,cases}/...` routes, `src/components/BaseHead.astro`, and 1–2 recent approved examples in the same collection/language. Check the Owner Policy and newest relevant Owner decisions in issue #16. The frozen 15 Nov backlog table in #16 is *historic*; later Owner decisions override it.
 3. Print a concise PRE-FLIGHT: current main SHA; loaded instruction sources and policy availability; role Blog RU / Blog EN / Cases RU / Cases EN; exact planned input/output paths; current generated URL conventions; Owner editorial approval status; image and link dependencies; and expected changed build outputs. **STOP before editing if any item is unresolved.**
 

@@ -6,7 +6,7 @@ Status: repository-local instructions, derived from live source at main `a9c949a
 1. Highest priority: explicit latest Owner decisions and [Owner Policy](https://docs.google.com/document/d/191b_eRr0CHg7TlehV1qaJ88q9R-Aj09mwEKj835mnq8/edit) (existing published claims treated as Owner-confirmed, no re-verification).
 2. Active technical state: current checked-out repository at `origin/main`, especially `src/content.config.ts`, route generators, `BaseHead.astro`, `astro.config.mjs`, `package.json` and validated examples. Do **not** use an old date, old chat or a static docs screenshot in place of live code.
 3. Issue #16 [Owner execution register](https://github.com/Ivtekb/ivandubai-astro/issues/16) — prioritize recent Owner notes/comments over the initial frozen 15 Nov table. Previous quick-post guides and original Dante README are historical, **not** active deployment instructions.
-4. `AGENTS.md` root + scoped `src/content/AGENTS.md` or `src/content/AGENTS.md`.
+4. Root `AGENTS.md` is loaded by Codex when its working directory is inside this repository; separately read `src/content/AGENTS.md` for Blog/Case tasks, plus the applicable section of this operations guide. The nested file is intentionally outside Astro collection folders and is not automatically injected into repo-root chat context.
 5. Each Codex chat must select one specific role. Four starters are in `docs/CODEX_CHAT_STARTERS.md`. Re-run preflight *for each new task*, not just at the start of a chat.
 
 If Google Drive/owner policy is inaccessible: read the local Owner lock in `AGENTS.md`; **do not proceed with editorial publication** until policy/approval is available. If technical facts conflict, stop and raise the conflict.
