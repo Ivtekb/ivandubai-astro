@@ -3,15 +3,14 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CasePreview from '../../../components/CasePreview.astro';
 import Pagination from '../../../components/Pagination.astro';
+import { sortItemsByDateDesc } from '../../../utils/data-utils';
 
 // Dynamic routing for English cases
 export async function getStaticPaths({ paginate }) {
   // Filter English cases only (from en/ subfolder)
   const cases = (await getCollection('cases', ({ id }) => {
     return id.startsWith('en/');
-  })).sort((a, b) =>
-    new Date(b.data.publishDate) - new Date(a.data.publishDate)
-  );
+  })).sort(sortItemsByDateDesc);
   return paginate(cases, { pageSize: 8 });
 }
 

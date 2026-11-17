@@ -1,8 +1,20 @@
 import { type CollectionEntry } from 'astro:content';
 import { slugify } from './common-utils';
 
-export function sortItemsByDateDesc(itemA: CollectionEntry<'blog' | 'projects'>, itemB: CollectionEntry<'blog' | 'projects'>) {
-    return new Date(itemB.data.publishDate).getTime() - new Date(itemA.data.publishDate).getTime();
+// Total ordering makes RSS, pagination and prev/next links reproducible across
+// Astro loaders, GitHub Actions and Vercel for equal publication dates.
+export function sortItemsByDateDesc(
+    itemA: CollectionEntry<'blog' | 'projects' | 'cases'>,
+    itemB: CollectionEntry<'blog' | 'projects' | 'cases'>
+) {
+    const aTime = itemA.data.publishDate?.getTime() ?? NaN;
+    const bTime = itemB.data.publishDate?.getTime() ?? NaN;
+    const aValid = Number.isFinite(aTime);
+    const bValid = Number.isFinite(bTime);
+    if (aValid && bValid && aTime !== bTime) return bTime - aTime;
+    if (aValid !== bValid) return bValid ? 1 : -1;
+    // Codepoint ordering avoids locale-dependent sort differences.
+    return itemA.id < itemB.id ? -1 : itemA.id > itemB.id ? 1 : 0;
 }
 
 export function getAllTags(posts: CollectionEntry<'blog'>[]) {
