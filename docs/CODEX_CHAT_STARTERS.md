@@ -12,7 +12,7 @@ These are four separate chats within the real `Ivtekb/ivandubai-astro` repositor
 [Final complete text, including title]
 ```
 
-The fixed chat role determines the section and language. The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN translations must be independently approved; do not invent a translated version to publish.
+The fixed chat role determines the section and language. **For every new page with an Owner-supplied image, publishing requires BOTH `seo.image` metadata and a visible article-body hero image; after build run `scripts/verify-publication-hero.mjs` for that exact route/image, then check the live HTML and asset. A social preview image alone fails.** The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN translations must be independently approved; do not invent a translated version to publish.
 
 ## CHAT 1 — BLOG RU
 
