@@ -16,6 +16,10 @@ Read the root `AGENTS.md`, Owner Policy and `docs/CODEX_CONTENT_OPERATIONS.md` b
 
 ---
 
+For NEW content-only Blog pages, let GitHub Actions run clean baseline/candidate builds, SEO, body hero and production parity. Codex invokes `scripts/publish-release.mjs` once and does not duplicate browsers or builds. See `docs/CODEX_AUTOMATED_PUBLISHING.md`.
+
+---
+
 # Cases collection — scoped Codex instructions
 
 Read root `AGENTS.md`, Owner Policy, and `docs/CODEX_CONTENT_OPERATIONS.md`. The Owner confirms existing published case information; never challenge or rewrite previous cases.
@@ -25,4 +29,4 @@ Read root `AGENTS.md`, Owner Policy, and `docs/CODEX_CONTENT_OPERATIONS.md`. The
 - Required current metadata: `title` and `publishDate`. Optional according to current schema: `description`, `clientName`, `projectType`, `budget`, `timeline`, `isFeatured`, `seo`. Include only exact Owner-approved facts; client confidentiality is mandatory.
 - Prepare owner-supplied narrative and RU/EN editorial adaptation for approval. **No invented client quotes, performance numbers, outcome, schedule or identity**. Never publish confidential documents as source evidence.
 - Cases RU/EN templates also do NOT auto-render `seo.image` in `<Content />`: for a new case with supplied image, embed it visibly in body Markdown and run `node scripts/verify-publication-hero.mjs` for the actual Case route/image. Metadata-only image is FAIL.
-- Update only the specific approved new case and assets, never the existing published Case-1. Run `docs/SEO_AI_PUBLICATION_CHECKLIST.md` on the approved narrative and built page for clear case structure, single template-generated H1, metadata, Article/Person author/date/image, canonical and real RU/EN pairing, links/CTA, accessibility and unchanged analytics. Branch, clean UTC build/output diff, route/image/JSON-LD/link tests, Claude technical review and postrelease acceptance.
+- Update only the specific approved new case and assets, never the existing published Case-1. For new content-only Cases use the same CI-backed one-command release driver; preserve separate technical Claude review when changing templates. Run `docs/SEO_AI_PUBLICATION_CHECKLIST.md` on the approved narrative and built page for clear case structure, single template-generated H1, metadata, Article/Person author/date/image, canonical and real RU/EN pairing, links/CTA, accessibility and unchanged analytics. Branch, clean UTC build/output diff, route/image/JSON-LD/link tests, Claude technical review and postrelease acceptance.

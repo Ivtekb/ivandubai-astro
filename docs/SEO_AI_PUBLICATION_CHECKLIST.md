@@ -4,6 +4,10 @@
 
 **Source of truth:** current `origin/main`, `src/content.config.ts`, real Blog/Case route components, `src/components/BaseHead.astro`, root `AGENTS.md`, Owner Policy. If the template changes, re-inspect the code and revise the proposed check before adding content. Do not transplant old static frontmatter recipes into the current project.
 
+## Automated content-only release checks
+
+GitHub Actions Publish Quality Gate now performs two clean UTC builds, exact changed-output comparison and all NEW article/case technical SEO checks: language, one H1, title/meta length, self-canonical, Article/Person structured data, visible body hero, OG/asset parity, reciprocal hreflang when the counterpart exists, RSS and sitemap. The GitHub Action on main verifies every live production file byte-for-byte after Vercel deployment. Codex must read automated PASS/FAIL and avoid repeating npm installation, both builds and Chrome screenshots for content-only changes where Astro templates/CSS are unchanged. Independent Claude postrelease review remains a distinct evidence gate. If site runtime code/layout changes, follow the separately reviewed technical process.
+
 ## A. Editorial draft — Owner approves exact output before repository edits
 
 - A specific reader intent and clear topic, grounded in supplied/new material, with Dubai/UAE context and correct entities (districts, buildings, developers, legal names) **only where supported by the approved draft**.
