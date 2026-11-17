@@ -6,13 +6,14 @@ These are four separate chats within the real `Ivtekb/ivandubai-astro` repositor
 
 ```text
 ПУБЛИКУЙ
-Раздел: Blog RU | Blog EN | Cases RU | Cases EN (укажи один, соответствующий чату)
-Изображение: /filename.jpg
+Картинка: 28
 Текст:
-[Final complete text, including title]
+[Готовый текст для уже выбранного языкового чата, включая заголовок]
 ```
 
-The fixed chat role determines the section and language. **For every new page with an Owner-supplied image, publishing requires BOTH `seo.image` metadata and a visible article-body hero image; after build run `scripts/verify-publication-hero.mjs` for that exact route/image, then check the live HTML and asset. A social preview image alone fails.** The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN translations must be independently approved; do not invent a translated version to publish.
+The role (Blog RU / Blog EN / Cases RU / Cases EN) is **already fixed by the chat**. Do not ask for a `Раздел:` line. Resolve a numeric image reference (e.g. `28`) to its uniquely matching existing file such as `public/post-28.jpg` without asking the Owner to spell out the path. A specific full path is also accepted. Ambiguous/missing images get one question.
+
+The fixed chat role determines the section and language. **For every new page with an Owner-supplied image, publishing requires BOTH `seo.image` metadata and a visible article-body hero image; after build run `scripts/verify-publication-hero.mjs` for that exact route/image, then check the live HTML and asset. A social preview image alone fails.** The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN text is prepared and approved **outside Codex**; the explicit PUBLISH message containing that completed text authorizes its exact technical publication. Never ask Codex to translate, write, rewrite or run a draft/approval stage when PUBLISH with completed copy was given.
 
 ## CHAT 1 — BLOG RU
 
