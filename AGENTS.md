@@ -3,6 +3,7 @@
 > OWNER POLICY: https://docs.google.com/document/d/191b_eRr0CHg7TlehV1qaJ88q9R-Aj09mwEKj835mnq8/edit
 > EXECUTION REGISTER: https://github.com/Ivtekb/ivandubai-astro/issues/16
 > LOCAL WORKFLOW: [docs/CODEX_CONTENT_OPERATIONS.md](docs/CODEX_CONTENT_OPERATIONS.md)
+> SEO + AI PAGE CHECKLIST: [docs/SEO_AI_PUBLICATION_CHECKLIST.md](docs/SEO_AI_PUBLICATION_CHECKLIST.md)
 > FOUR CHAT ROLES: [docs/CODEX_CHAT_STARTERS.md](docs/CODEX_CHAT_STARTERS.md)
 
 This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read these instructions on every new task.** Always inspect the current Git worktree, relevant source files and repository docs rather than relying on the age of the chat or any old screenshot. Re-read the Owner Policy via the connected Google Drive tool at the start of a publishing task; if inaccessible, STOP before changing published content. A previous chat, plan or guide never grants new editorial authority.
@@ -18,7 +19,7 @@ This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read
 ## Mandatory task preflight (repeat even in existing chats)
 
 1. Verify workspace identity using `pwd`, `git rev-parse --show-toplevel`, and `git remote get-url origin` (must be `Ivtekb/ivandubai-astro`). Then run `git status --short`; `git fetch origin main`; record `git rev-parse origin/main`, `git rev-parse HEAD`, active branch. Use a clean worktree at the current `origin/main`. If not current, rebase/switch or STOP; do not overwrite someone else's edits.
-2. Read **this file**, the applicable scoped `src/content/AGENTS.md`, `docs/CODEX_CONTENT_OPERATIONS.md`, the current `src/content.config.ts`, corresponding `src/pages/{,en/}{blog,cases}/...` routes, `src/components/BaseHead.astro`, and 1–2 recent approved examples in the same collection/language. Check the Owner Policy and newest relevant Owner decisions in issue #16. The frozen 15 Nov backlog table in #16 is *historic*; later Owner decisions override it.
+2. Read **this file**, the applicable scoped `src/content/AGENTS.md`, `docs/CODEX_CONTENT_OPERATIONS.md`, `docs/SEO_AI_PUBLICATION_CHECKLIST.md`, the current `src/content.config.ts`, corresponding `src/pages/{,en/}{blog,cases}/...` routes, `src/components/BaseHead.astro`, and 1–2 recent approved examples in the same collection/language. Check the Owner Policy and newest relevant Owner decisions in issue #16. The frozen 15 Nov backlog table in #16 is *historic*; later Owner decisions override it.
 3. Print a concise PRE-FLIGHT: current main SHA; loaded instruction sources and policy availability; role Blog RU / Blog EN / Cases RU / Cases EN; exact planned input/output paths; current generated URL conventions; Owner editorial approval status; image and link dependencies; and expected changed build outputs. **STOP before editing if any item is unresolved.**
 
 ## Current repository truths (verify again against current code)
@@ -33,6 +34,6 @@ This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read
 
 ## Execution gate
 
-When and only when final material is approved, create the smallest isolated branch/PR; use `npm ci`, `TZ=UTC npm run build`, and compare output files against a **clean build of current `origin/main`**. Record exact expected vs actual file differences (new pages, homepage/list pagination, sitemap/RSS, public media and any approved hreflang mapping) and report unexplained changes as HOLD. No blanket assumption that only a new article HTML changes. Preview and check RU/EN route, SEO/JSON-LD, assets, links, CTA and analytics. Technical change → Claude review; publish only after Owner editorial approval; post-production verification and register updates as per Owner Protocol.
+When and only when final material is approved, create the smallest isolated branch/PR; use `npm ci`, `TZ=UTC npm run build`, and compare output files against a **clean build of current `origin/main`**. Record exact expected vs actual file differences (new pages, homepage/list pagination, sitemap/RSS, public media and any approved hreflang mapping) and report unexplained changes as HOLD. No blanket assumption that only a new article HTML changes. Preview and run the complete rendered-page SEO/AI acceptance checklist in `docs/SEO_AI_PUBLICATION_CHECKLIST.md` (heading hierarchy, source-aligned metadata and schema, index eligibility, media, exact language variants, links, routes, RSS/sitemap and analytics). Technical change → Claude review; publish only after Owner editorial approval; post-production verification and register updates as per Owner Protocol.
 
 **Deprecated legacy guides:** `docs/QUICK_BLOG_POST_GUIDE.md` and `docs/QUICK_BLOG_POST_GUIDE_RU.md` contain pre-modernization commands (including direct push to main). Do NOT use their numbered-file, canonical/hreflang or deployment instructions as the source of truth. Use the live code and `docs/CODEX_CONTENT_OPERATIONS.md`.
