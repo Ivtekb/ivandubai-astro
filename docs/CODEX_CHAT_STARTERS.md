@@ -40,7 +40,7 @@ ROLE: CASES EN. Publish only NEW English Cases when I write PUBLISH/ПУБЛИК
 
 ## Safety and handoff
 
-- Keep single PR/deployment active at once; a separate chat is not a separate production environment.
-- Codex is responsible for checking current main and actual architecture; never ask Owner to open terminal for routine Git tasks.
+- Independent PRs may be open concurrently, including Blog/Case content while an unrelated technical PR is draft. **Serialize actual merge and production deployment only.** Re-fetch main immediately before merge; re-run impacted checks if main advanced. Never wait or poll another PR (#34 or similar).
+- Codex must check the selected image exists **before** lengthy work; if uploaded into another reachable Git ref, safely fetch it first. Codex is responsible for current main, actual architecture, lockfile-controlled dependency setup, reproducible isolated build caches and prompt browser fallback; never ask Owner to open terminal for routine Git tasks.
 - If an external Claude technical review or mandatory deployment approval cannot be obtained automatically, report only that exact gate, without pretending publication occurred.
 - If an image cannot be located or any route conflicts, ask one concrete question instead of improvising. No overwrite of existing pages.
