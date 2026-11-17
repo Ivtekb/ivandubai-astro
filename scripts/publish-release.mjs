@@ -80,7 +80,7 @@ runGit(['fetch','origin','main']);
 const baseline=runGit(['rev-parse','origin/main']);
 try{git(['cat-file','-e','origin/main:'+source]);stop('Existing published page would be overwritten: '+source);}
 catch(e){if(e?.message?.startsWith('PUBLISH BLOCKED'))throw e;}
-runGit(['add','--',source]);
+runGit(['add','--',source,'public'+image]);
 const staged=runGit(['diff','--cached','--name-only']);
 if(staged)runGit(['commit','-m','Publish '+(en?'EN ':'RU ')+section+': '+slug]);
 const changes=runGit(['diff','--name-status','origin/main...HEAD']).split('\n').filter(Boolean);
