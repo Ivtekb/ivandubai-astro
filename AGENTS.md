@@ -7,7 +7,7 @@
 > FOUR CHAT ROLES: [docs/CODEX_CHAT_STARTERS.md](docs/CODEX_CHAT_STARTERS.md)
 > ONE-MESSAGE PUBLISHING: [docs/CODEX_ONE_MESSAGE_PUBLISHING.md](docs/CODEX_ONE_MESSAGE_PUBLISHING.md)
 
-This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read these instructions on every new task.** Always inspect the current Git worktree, relevant source files and repository docs rather than relying on the age of the chat or any old screenshot. Re-read the Owner Policy via the connected Google Drive tool at the start of a publishing task; if inaccessible, STOP before changing published content. A previous chat, plan or guide never grants new editorial authority.
+This repository runs the live `https://www.ivandubai.xyz/` Astro website. **Read these instructions on every new task.** Always inspect the current Git worktree, relevant source files and repository docs rather than relying on the age of the chat or any old screenshot. If the connected Google Drive Owner Policy is reachable, read it at the start of a publishing task. If Drive access is unavailable, proceed under the binding repository-local Owner rules in this AGENTS.md and docs/, which prohibit altering published content and authorize only the exact final copy/image supplied with an explicit PUBLISH command. Do not stop a valid PUBLISH solely due to unavailable Drive; stop on a substantive policy conflict, missing publication authorization, or unsupported factual/technical change. A previous chat, plan or guide never grants new editorial authority.
 
 ## Authority and STOP conditions
 
