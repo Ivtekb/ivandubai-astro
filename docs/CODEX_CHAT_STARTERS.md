@@ -6,13 +6,14 @@ These are four separate chats within the real `Ivtekb/ivandubai-astro` repositor
 
 ```text
 ПУБЛИКУЙ
-Раздел: Blog RU | Blog EN | Cases RU | Cases EN (укажи один, соответствующий чату)
-Изображение: /filename.jpg
+Картинка: 28
 Текст:
-[Final complete text, including title]
+[Готовый текст для уже выбранного языкового чата, включая заголовок]
 ```
 
-The fixed chat role determines the section and language. The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN translations must be independently approved; do not invent a translated version to publish.
+The role (Blog RU / Blog EN / Cases RU / Cases EN) is **already fixed by the chat**. Codex derives a compact descriptive URL slug from the supplied final article title/intent, NOT from `Картинка: 28`, and verifies it using `scripts/verify-publication-slug.mjs`. For a *new* RU/EN pair, use the same descriptive ID for both languages to obtain hreflang automatically; for an already published numeric legacy counterpart, preserve that historic ID rather than auto-changing an existing URL. No new editorial approval is required when the descriptive slug is unambiguous. Do not ask for a `Раздел:` line. Resolve a numeric image reference (e.g. `28`) to its uniquely matching existing file such as `public/post-28.jpg` without asking the Owner to spell out the path. A specific full path is also accepted. Ambiguous/missing images get one question.
+
+The fixed chat role determines the section and language. **For every new page with an Owner-supplied image, publishing requires BOTH `seo.image` metadata and a visible article-body hero image; after build run `scripts/verify-publication-hero.mjs` for that exact route/image, then check the live HTML and asset. A social preview image alone fails.** The `Раздел:` field must match that role; if omitted, the role still applies. STOP on a conflicting section, wrong dominant text language or a request covering multiple sections/languages; no automatic redirection or translation. Explicit PUBLISH approves exactly the supplied final copy and image and faithful derived metadata, without an additional approval loop. If only asking for a draft, the Owner writes `ЧЕРНОВИК` and publication is prohibited. EN text is prepared and approved **outside Codex**; the explicit PUBLISH message containing that completed text authorizes its exact technical publication. Never ask Codex to translate, write, rewrite or run a draft/approval stage when PUBLISH with completed copy was given.
 
 ## CHAT 1 — BLOG RU
 
@@ -38,9 +39,13 @@ ROLE: CASES RU. Publish only NEW Russian Cases on ivandubai.xyz when I send ПУ
 ROLE: CASES EN. Publish only NEW English Cases when I write PUBLISH/ПУБЛИКУЙ with the final Owner-approved English case text and image path. My chat role fixes Cases EN; STOP before editing and ask one question if `Раздел` differs, the dominant narrative is not English, or I request multiple sections/languages. Never switch roles, redirect or translate automatically. Read current AGENTS.md, src/content/AGENTS.md, docs/CODEX_ONE_MESSAGE_PUBLISHING.md, docs/CODEX_CONTENT_OPERATIONS.md, docs/SEO_AI_PUBLICATION_CHECKLIST.md, Owner Policy, latest Cases schema/routes/BaseHead and actual approved RU counterpart. The supplied EN text is final; never rewrite it, make up client facts or publish a machine translation without my approval. Locate/bootstrap the real repository, find the image, derive faithful SEO fields, make branch/PR, verify exact UTC output diff, route/hreflang/Article/Person/analytics, obtain Claude technical review if code changes, deploy and return live URL. No extra Owner editorial approval loop when I explicitly authorize PUBLISH. For DRAFT, no repository edits.
 ```
 
+## One-command automated release — all four publishing roles
+
+After exact final Markdown, descriptive URL and visible image are ready, run `node scripts/publish-release.mjs --approved-publish --route <actual-route> --image <number>` on a clean branch. The GitHub Actions Publish Quality Gate checks both clean builds, image, SEO and output diff; Vercel previews automatically, and the main-push action verifies production byte-for-byte. Never duplicate local builds or manually debug browser viewports for unchanged content-only layouts. If gh/git networking is forbidden in the shell, use connected GitHub tools and observe the same checks without repeat permissions. Details: `docs/CODEX_AUTOMATED_PUBLISHING.md`. Existing text is locked; no translation in Codex.
+
 ## Safety and handoff
 
-- Keep single PR/deployment active at once; a separate chat is not a separate production environment.
-- Codex is responsible for checking current main and actual architecture; never ask Owner to open terminal for routine Git tasks.
+- Independent PRs may be open concurrently, including Blog/Case content while an unrelated technical PR is draft. **Serialize actual merge and production deployment only.** Re-fetch main immediately before merge; re-run impacted checks if main advanced. Never wait or poll another PR (#34 or similar).
+- Codex must check the selected image exists **before** lengthy work; if uploaded into another reachable Git ref, safely fetch it first. Codex is responsible for current main, actual architecture, lockfile-controlled dependency setup, reproducible isolated build caches and prompt browser fallback; never ask Owner to open terminal for routine Git tasks.
 - If an external Claude technical review or mandatory deployment approval cannot be obtained automatically, report only that exact gate, without pretending publication occurred.
 - If an image cannot be located or any route conflicts, ask one concrete question instead of improvising. No overwrite of existing pages.

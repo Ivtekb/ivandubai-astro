@@ -1,0 +1,69 @@
+name: Publish Quality Gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+
+permissions: read-all
+
+jobs:
+  verify_content_pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Node 22 and npm cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Clean baseline build
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/site-baseline" "$BASE_SHA"
+          cd "$RUNNER_TEMP/site-baseline"
+          npm ci --no-audit --no-fund --prefer-offline
+          TZ=UTC npm run build
+      - name: Clean candidate build
+        run: |
+          npm ci --no-audit --no-fund --prefer-offline
+          TZ=UTC npm run build
+      - name: Release gate regression tests
+        run: node scripts/test-release-controls.mjs
+      - name: Publication SEO and exact output-diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          node scripts/verify-content-release.mjs \
+            --base-sha "$BASE_SHA" \
+            --base-dir "$RUNNER_TEMP/site-baseline/dist" \
+            --current-dir dist
+
+  verify_production:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    concurrency:
+      group: ivandubai-production-parity
+      cancel-in-progress: false
+    steps:
+      - name: Checkout merged main
+        uses: actions/checkout@v4
+      - name: Node 22 and npm cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Build exact main commit
+        run: |
+          npm ci --no-audit --no-fund --prefer-offline
+          TZ=UTC npm run build
+      - name: Verify every production file after Vercel deploy
+        run: node scripts/verify-live-parity.mjs
