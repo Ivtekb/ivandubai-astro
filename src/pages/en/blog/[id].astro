@@ -1,24 +1,28 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogAfterArticle from '../../../components/BlogAfterArticle.astro';
+import { sortItemsByDateDesc } from '../../../utils/data-utils';
 
 export async function getStaticPaths() {
-    // Filter English blog posts only (from en/ subfolder)
-    const posts = await getCollection('blog', ({ id }) => {
-        return id.startsWith('en/');
-    });
-    return posts.map((post) => {
-        return {
-            params: { id: post.id.replace('en/', '') },
-            props: { post: post }
-        };
-    });
+    const posts = (await getCollection('blog', ({ id }) => id.startsWith('en/'))).sort(sortItemsByDateDesc);
+    return posts.map((post, index) => ({
+        params: { id: post.id.replace('en/', '') },
+        props: {
+            post,
+            prevPost: posts[index + 1] ?? null,
+            nextPost: posts[index - 1] ?? null
+        }
+    }));
 }
 
-type Props = { post: CollectionEntry<'blog'> };
-
-const { post } = Astro.props;
-const { title, excerpt, seo } = post.data;
+type Props = {
+    post: CollectionEntry<'blog'>;
+    prevPost: CollectionEntry<'blog'> | null;
+    nextPost: CollectionEntry<'blog'> | null;
+};
+const { post, prevPost, nextPost } = Astro.props;
+const { title, excerpt, tags = [], seo } = post.data;
 const { Content } = await render(post);
 ---
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} pageType="article" publishedTime={post.data.publishDate.toISOString()} modifiedTime={post.data.updatedDate?.toISOString() || post.data.publishDate.toISOString()} keywords={post.data.tags?.join(", ")} author="Ivan Tyrtyshnyi" showHeader={false}>
@@ -30,4 +34,5 @@ const { Content } = await render(post);
             <Content />
         </div>
     </article>
+    <BlogAfterArticle locale="en" tags={tags} prevPost={prevPost} nextPost={nextPost} />
 </BaseLayout>
