@@ -51,6 +51,7 @@ function check(locale) {
         const aside = html.match(/<aside\b[^>]*\bdata-blog-related(?:\s|=|>)[^>]*>([\s\S]*?)<\/aside>/i)?.[1];
         if (aside) {
             if (!aside.includes(expectedRelated)) issues.push('Wrong related heading: ' + page);
+            if (locale === 'ru' && /Updated on\s*</i.test(aside)) issues.push('Unlocalized RU updated-date label: ' + page);
             const links = [...aside.matchAll(/<a\b[^>]*\bhref="([^"]+)"/gi)].map((x) => x[1]);
             if (!links.length) issues.push('Related block has no links: ' + page);
             for (const link of links) {
