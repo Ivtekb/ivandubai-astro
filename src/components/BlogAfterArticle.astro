@@ -1,0 +1,110 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Button from './Button.astro';
+import PostPreview from './PostPreview.astro';
+
+type Props = {
+    locale: 'ru' | 'en';
+    tags?: string[];
+    prevPost?: CollectionEntry<'blog'> | null;
+    nextPost?: CollectionEntry<'blog'> | null;
+};
+
+const { locale, tags = [], prevPost = null, nextPost = null } = Astro.props;
+const labels = locale === 'ru'
+    ? {
+        share: 'Поделиться',
+        shareAria: 'Поделиться ссылкой на статью',
+        copied: 'Ссылка скопирована',
+        failed: 'Не удалось поделиться',
+        related: 'Читайте также'
+    }
+    : {
+        share: 'Share',
+        shareAria: 'Share this article',
+        copied: 'Link copied',
+        failed: 'Unable to share',
+        related: 'Read next'
+    };
+const pageUrl = new URL(Astro.url.pathname, 'https://www.ivandubai.xyz').toString();
+---
+
+<div data-blog-after-article data-locale={locale}>
+    <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between sm:mt-12 sm:text-base">
+        {
+            tags.length > 0 && (
+                <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                    {tags.map((tag) => <span class="text-main">#{tag}</span>)}
+                </div>
+            )
+        }
+        <div>
+            <Button
+                type="button"
+                data-blog-share
+                data-url={pageUrl}
+                data-label={labels.share}
+                data-success={labels.copied}
+                data-failure={labels.failed}
+                aria-label={labels.shareAria}
+            >{labels.share}</Button>
+            <span class="sr-only" data-blog-share-status aria-live="polite"></span>
+        </div>
+    </div>
+    {
+        (prevPost || nextPost) && (
+            <aside class="my-16 sm:my-24" data-blog-related aria-label={labels.related}>
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">{labels.related}</h2>
+                {nextPost && <PostPreview post={nextPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {prevPost && <PostPreview post={prevPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            </aside>
+        )
+    }
+</div>
+
+<script>
+    const initBlogShare = () => {
+        const buttons = document.querySelectorAll<HTMLButtonElement>('[data-blog-share]');
+        buttons.forEach((button) => {
+            if (button.dataset.bound === '1') return;
+            button.dataset.bound = '1';
+            button.addEventListener('click', async () => {
+                const label = button.dataset.label || button.textContent || '';
+                const status = button.parentElement?.querySelector<HTMLElement>('[data-blog-share-status]');
+                const result = (message: string) => {
+                    button.textContent = message;
+                    if (status) status.textContent = message;
+                    window.setTimeout(() => {
+                        if (!button.isConnected) return;
+                        button.textContent = label;
+                        if (status) status.textContent = '';
+                    }, 2500);
+                };
+                const url = button.dataset.url;
+                if (!url) { result(button.dataset.failure || label); return; }
+                try {
+                    if (typeof navigator.share === 'function') {
+                        try {
+                            await navigator.share({ title: document.title, url });
+                            return;
+                        } catch (error) {
+                            if (error instanceof DOMException && error.name === 'AbortError') return;
+                        }
+                    }
+                    if (!navigator.clipboard?.writeText) throw new Error('Clipboard API unavailable');
+                    await navigator.clipboard.writeText(url);
+                    result(button.dataset.success || label);
+                } catch {
+                    result(button.dataset.failure || label);
+                }
+            });
+        });
+    };
+
+    document.addEventListener('astro:page-load', initBlogShare);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBlogShare, { once: true });
+    } else {
+        initBlogShare();
+    }
+</script>
