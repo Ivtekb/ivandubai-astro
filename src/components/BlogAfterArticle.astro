@@ -55,8 +55,8 @@ const pageUrl = new URL(Astro.url.pathname, 'https://www.ivandubai.xyz').toStrin
         (prevPost || nextPost) && (
             <aside class="my-16 sm:my-24" data-blog-related aria-label={labels.related}>
                 <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">{labels.related}</h2>
-                {nextPost && <PostPreview post={nextPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
-                {prevPost && <PostPreview post={prevPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
+                {nextPost && <PostPreview post={nextPost} class="mb-10 sm:mb-12" headingLevel="h3" updatedLabel={locale === 'ru' ? 'Обновлено' : 'Updated on'} />}
+                {prevPost && <PostPreview post={prevPost} class="mb-10 sm:mb-12" headingLevel="h3" updatedLabel={locale === 'ru' ? 'Обновлено' : 'Updated on'} />}
             </aside>
         )
     }
