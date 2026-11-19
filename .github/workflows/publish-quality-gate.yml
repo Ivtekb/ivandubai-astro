@@ -45,6 +45,8 @@ jobs:
             --base-sha "$BASE_SHA" \
             --base-dir "$RUNNER_TEMP/site-baseline/dist" \
             --current-dir dist
+      - name: Blog RU/EN after-article parity
+        run: node scripts/verify-blog-after-article.mjs dist
 
   verify_production:
     if: github.event_name == 'push'
@@ -65,5 +67,7 @@ jobs:
         run: |
           npm ci --no-audit --no-fund --prefer-offline
           TZ=UTC npm run build
+      - name: Blog RU/EN after-article parity
+        run: node scripts/verify-blog-after-article.mjs dist
       - name: Verify every production file after Vercel deploy
         run: node scripts/verify-live-parity.mjs
