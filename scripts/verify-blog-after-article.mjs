@@ -21,6 +21,29 @@ function check(locale) {
         const share = html.match(/<button\b[^>]*\bdata-blog-share(?:\s|=|>)[^>]*>[\s\S]*?<\/button>/i)?.[0] || '';
         const expectedLabel = locale === 'ru' ? 'Поделиться' : 'Share';
         const expectedRelated = locale === 'ru' ? 'Читайте также' : 'Read next';
+        // Preserve SEO and AI search eligibility while changing visible Blog navigation.
+        if (!html.includes('<html lang="' + locale + '"')) issues.push('Wrong document language: ' + page);
+        const canonicalTag = [...html.matchAll(/<link\b[^>]*>/gi)]
+            .map((match) => match[0]).find((tag) => /\brel="canonical"/i.test(tag));
+        if (!canonicalTag || !canonicalTag.includes('href="' + canonical + '"')) issues.push('Canonical changed: ' + page);
+        if (!/<meta\b[^>]*\bproperty="og:image"/i.test(html)) issues.push('OG image missing: ' + page);
+        const jsonLd = [...html.matchAll(/<script\b[^>]*\btype="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+        const schema = [];
+        for (const match of jsonLd) {
+            try {
+                const value = JSON.parse(match[1]);
+                schema.push(...(Array.isArray(value) ? value : Array.isArray(value['@graph']) ? value['@graph'] : [value]));
+            } catch {
+                issues.push('Invalid JSON-LD: ' + page);
+            }
+        }
+        if (!schema.some((item) => item['@type'] === 'Article' && item.url === canonical))
+            issues.push('Article schema missing or wrong URL: ' + page);
+        if (!schema.some((item) => item['@type'] === 'Person' && item['@id'] === 'https://www.ivandubai.xyz/#person'))
+            issues.push('Person schema missing: ' + page);
+        const twin = join(root, ...(locale === 'en' ? ['blog'] : ['en', 'blog']), entry.name, 'index.html');
+        if (existsSync(twin) && (!html.includes('hreflang="ru"') || !html.includes('hreflang="en"')))
+            issues.push('Reciprocal language alternates missing: ' + page);
         if (!wrap || !html.includes('data-locale="' + locale + '"')) issues.push('Missing or wrong locale after-article: ' + page);
         if (!share || !share.includes(expectedLabel) || !share.includes('data-url="' + canonical + '"')) issues.push('Wrong share label/URL: ' + page);
         if (!html.includes('data-success="' + (locale === 'ru' ? 'Ссылка скопирована' : 'Link copied') + '"')) issues.push('Missing localized share success: ' + page);
