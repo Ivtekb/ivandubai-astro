@@ -9,6 +9,10 @@
 
 The Codex chat already owns Blog RU/EN or Cases RU/EN role. Writing, translation and final editorial approval occur in another chat. Codex never rewrites content, asks for a second approval, or chooses another language. Image number resolves to the actual existing repository asset (e.g. public/post-28.jpg); it does not determine the page URL. New ORIGINAL pages use descriptive SEO slugs, while existing published post-28 URLs stay unchanged. No redirects are part of this pipeline.
 
+## Select the release transport first
+
+When connected GitHub tools can write and local shell `gh auth` or network is unavailable, follow **[CODEX_CONNECTOR_FIRST_FASTLANE.md](CODEX_CONNECTOR_FIRST_FASTLANE.md)** instead of attempting the CLI driver and switching transport after failure. This is the tested route for constrained Codex environments. Use the CLI section below only when the trusted terminal environment has authenticated `gh` and repository access. Both routes require the same SHA-protected PR checks, Vercel Preview, exact production parity and Owner permissions.
+
 ## Exact internal sequence after Codex assembles Markdown
 
 From a dedicated isolated branch based on latest main, verify the original JPEG and ensure the approved Markdown contains one template H1, faithful metadata and visible body image. Call once:
