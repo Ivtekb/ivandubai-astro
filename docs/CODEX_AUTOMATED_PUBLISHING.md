@@ -11,7 +11,7 @@ The Codex chat already owns Blog RU/EN or Cases RU/EN role. Writing, translation
 
 ## Select the release transport first
 
-When connected GitHub tools can write and local shell `gh auth` or network is unavailable, follow **[CODEX_CONNECTOR_FIRST_FASTLANE.md](CODEX_CONNECTOR_FIRST_FASTLANE.md)** instead of attempting the CLI driver and switching transport after failure. This is the tested route for constrained Codex environments. Use the CLI section below only when the trusted terminal environment has authenticated `gh` and repository access. Both routes require the same SHA-protected PR checks, Vercel Preview, exact production parity and Owner permissions.
+Use one consistent priority with **[CODEX_CONNECTOR_FIRST_FASTLANE.md](CODEX_CONNECTOR_FIRST_FASTLANE.md)**: if authenticated `gh` **and** repository network are **already verified** in a trusted CLI environment, use the CLI driver. Otherwise choose connected GitHub tools when they can write, without first attempting the CLI driver or retrying blocked shell access. If the connector cannot write, test `gh` authentication/network at most once, then STOP if unavailable. **Connector releases must inspect the PR changed-file list and QA log: `new_pages` ≥ 1, no `TECHNICAL PR` marker, and only added approved Markdown plus any added approved image; otherwise STOP regardless of green CI.** Both routes require SHA-protected merge, Vercel Preview, exact production parity and Owner permissions. Technical PRs never use the content-only fastlane.
 
 ## Exact internal sequence after Codex assembles Markdown
 
