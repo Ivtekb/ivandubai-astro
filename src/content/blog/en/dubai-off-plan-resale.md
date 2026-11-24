@@ -94,7 +94,7 @@ Sometimes an attractive entry price comes with restrictive exit conditions. Some
 
 **The time to understand your exit conditions is before you commit to the investment.**
 
-If you're comparing off-plan opportunities in Dubai with the intention of reselling before handover, [we can examine the payment plans and contractual exit conditions together](https://www.ivandubai.xyz/contact/).
+If you're comparing off-plan opportunities in Dubai with the intention of reselling before handover, [we can examine the payment plans and contractual exit conditions together](https://www.ivandubai.xyz/en/contact/).
 
 Sometimes a single clause in the SPA matters more than several pages of an investment presentation.
 
